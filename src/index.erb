@@ -1,0 +1,272 @@
+---
+layout: default
+---
+
+<!-- ===== Opening ===== -->
+<section id="opening">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/enterprise_support'</span></code></pre>
+    <hgroup>
+      <h1>We wrote the runtime.</h1>
+      <p class="dim"><span class="dim">We'll make sure</span> <span class="hl">yours keeps running.</snap></p>
+
+    </hgroup>
+    <p>
+      Dedicated JRuby support from the people who actually build it. Priority bug fixes, debugging, performance work, and profiling from the core developers.
+    </p>
+    <div class="actions">
+      <button data-scroll-to="packages">Headius::Support.plans</button>
+      <button class="ghost" data-scroll-to="contact">Headius.contact!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== The Pitch ===== -->
+<section id="pitch">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Your production issue is our priority</h2>
+        <p>
+          Most support contracts connect you to someone who read the docs. Ours connects you to someone who <em>wrote the code</em>. When you hit a threading issue, a memory leak, or a performance wall in JRuby, we don't need to reproduce it and escalate — we already know where to look.
+        </p>
+        <p>
+          There is no tier-one support at Headius. There is no escalation path. You are already talking to the engineers. That's the whole point.
+        </p>
+      </div>
+      <div class="card terminal">
+        <div class="title">
+          <div class="controls">
+            <span></span><span></span><span></span>
+          </div>
+          <span>irb(headius)</span>
+        </div>
+        <pre class="pane"><code class="highlight"><span class="gp">irb&gt;</span> <span class="nv">ticket</span> = <span class="k">Headius::Support</span>.open(
+  <span class="ss">priority:</span> <span class="s">"high"</span>,
+  <span class="ss">issue:</span> <span class="s">"ThreadError: deadlock"</span>
+)
+<span class="go">=&gt; #&lt;Ticket id: 4271, status: :open&gt;</span>
+
+<span class="c"># four hours later</span>
+
+<span class="gp">irb&gt;</span> ticket.reload.status
+<span class="gi">=&gt; :fix_committed</span>
+<span class="gp">irb&gt;</span> ticket.resolution
+<span class="gi">=&gt; "jruby/jruby@a3f8c2d"</span>
+<span class="gp">irb&gt;</span> ticket.patch_release
+<span class="gi">=&gt; "Released"</span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="highlight" id="services">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Support</span>
+<span class="c"># Available instance methods for all support tiers.</span></code></pre>
+      <h2>What We Actually Do</h2>
+    </div>
+    <div class="card grid">
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">email_support</span>
+<span class="c"># direct, priority, async</span></code></pre>
+        <p>Direct line to core JRuby developers. Not a ticketing black hole — an actual inbox read by the people who write the runtime. Ask anything.</p>
+      </div>
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">chat_support</span><span class="p">(</span><span class="nv">medium: :any</span><span class="p">)</span>
+<span class="c"># text, video, audio, screenshare</span></code></pre>
+        <p>Sometimes you need to share a screen and point at the thing that's broken. Text, video, and audio chat with core developers, scheduled when it works for your team.</p>
+      </div>
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">priority_bugfix!</span>
+<span class="c"># queue_position: 1, patches_welcome: always</span></code></pre>
+        <p>Your issues go to the front. Not next sprint, not next quarter. When something is blocking your deployment, it becomes our top priority to get it fixed and released.</p>
+      </div>
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">debug_and_profile</span><span class="p">(</span><span class="nv">deep: true</span><span class="p">)</span>
+<span class="c"># twenty_years_of_muscle_memory: true</span></code></pre>
+        <p>We have twenty years of muscle memory for tracking down threading bugs, memory leaks, and performance bottlenecks in JRuby. Your worst day is our Tuesday.</p>
+      </div>
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">consulting</span><span class="p">(</span><span class="nv">scope: :flexible</span><span class="p">)</span>
+<span class="c"># migration, architecture, performance_audit</span></code></pre>
+        <p>Migration planning, architecture reviews, performance audits, or just an experienced set of eyes on your JRuby deployment. Hire us by the hour or the project.</p>
+      </div>
+      <div class="service">
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">release_notify</span>
+<span class="c"># early_access: true, no_surprises: true</span></code></pre>
+        <p>Know what's coming before it lands. Advance notice of JRuby releases, security patches, and breaking changes — so your team isn't caught off guard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Interstitial ===== -->
+<section id="clients">
+  <div class="container">
+    <blockquote class="interstitial">
+        <code class="highlight c">=begin</code>
+        <p>We opened a priority ticket on Friday afternoon. By Monday morning there was a patch release. I've never seen a turnaround like that from any vendor, let alone one where the person who answered the ticket was also the person who committed the fix.</p>
+        <code class="highlight c">=end</code>
+        <cite>— Ruby J. Client, VP of Engineering at Consolidated Gemstone Corp</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ===== Packages ===== -->
+<section class="highlight" id="packages">
+  <div class="container">
+    <div>
+      <h2>Support Packages</h2>
+      <p>Pick a tier. Or keep reading for something a little more bespoke.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Professional</span> <span class="no">&lt; Support</span></code></pre>
+        <p>For teams getting started or running smaller deployments.</p>
+        <hr>
+        <ul>
+          <li>Priority email to core devs</li>
+          <li>Advance release notifications</li>
+          <li>Knowledge base access</li>
+        </ul>
+        <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Professional</span>.new.inquire!</button>
+      </div>
+      <div class="card featured">
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Expert</span> <span class="no">&lt; Professional</span></code></pre>
+        <p>For teams that need faster answers and actual fixes.</p>
+        <hr>
+        <ul>
+          <li class="inherited">include Professional</li>
+          <li>Direct chat (text, video, audio)</li>
+          <li>1 priority bug fix / month</li>
+          <li>Architecture guidance</li>
+        </ul>
+        <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Expert</span>.new.inquire!</button>
+      </div>
+      <div class="card">
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Enterprise</span> <span class="no">&lt; Expert</span></code></pre>
+        <p>For organisations running JRuby at scale in production.</p>
+        <hr>
+        <ul>
+          <li class="inherited">include Expert</li>
+          <li>Unlimited priority bug fixes</li>
+          <li>Debugging &amp; profiling sessions</li>
+          <li>Discounted consulting rates</li>
+        </ul>
+        <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Enterprise</span>.new.inquire!</button>
+      </div>
+    </div>
+    <div class="card custom two-col">
+      <div>
+        <code class="pkg-custom__sig"><span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nv">name, *args, &amp;block</span><span class="p">)</span></code>
+        <pre class="pkg-custom__body"><code><span class="c"># None of the above quite fit?</span>
+<span class="c"># We'd rather build the right thing than sell you the wrong tier.</span>
+<span class="c"># Tell us what you need — we'll figure it out together.</span>
+<span class="k">super</span> <span class="k">unless</span> Headius.can_help?<span class="p">(</span><span class="nv">name</span><span class="p">)</span></code></pre>
+      </div>
+      <div>
+        <button class="pkg-custom__cta" data-scroll-to="contact">Headius.contact!</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="highlight" id="about">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>There Is No Tier-One Support</h2>
+        <p>
+          Headius Enterprises was established in 2024, but the work goes back to 2004. Charlie has been writing JRuby and working on the JVM since Java 1.0. This isn't a pivot or a side project — it's a formalisation of support that was already happening informally for two decades.
+        </p>
+        <p>
+          We're a small team. Deliberately. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
+        </p>
+        <pre class="about__callout"><code><span class="k">#</span> We're currently planning 2026 conference travel.
+<span class="k">#</span> Come find us — we're easy to spot.</code></pre>
+      </div>
+      <div>
+        <div class="card">
+          <code><span class="k">class</span> <span class="nc">CharlesOliverNutter</span> <span class="no">&lt; Human</span></code>
+          <code># Architect &amp; Technologist</code>
+          <p>
+            Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
+          </p>
+          <div class="badges">
+            <span class="badge badge--crimson">Java Champion</span>
+            <span class="badge badge--crimson">Ruby Hero</span>
+            <span class="badge badge--amber">JavaOne Rock Star</span>
+            <span class="badge badge--teal">JAX Innovators 2012</span>
+            <span class="badge">Oracle Groundbreaker 2018</span>
+          </div>
+        </div>
+        <div class="card">
+          <code><span class="k">class</span> <span class="nc">SondraRadkeNutter</span> <span class="no">&lt; Human</span></code>
+          <code># President</code>
+          <p>
+            25 years of professional education and organisational leadership. The operational backbone and customer support management that keeps Headius running — because somebody has to make sure the engineers actually reply to emails.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Let's Talk</h2>
+        <p>
+          Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.
+        </p>
+        <ul class="list-table">
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">irl</span>
+            <span>At a Ruby or JVM conference near you</span>
+          </li>
+          <li>
+            <span class="label">vibe</span>
+            <span>Friendly. Professional. Slightly metal.</span>
+          </li>
+        </ul>
+      </div>
+      <form class="highlight" action="#" method="post">
+        <code class="contact__form-header"><span class="k">Headius</span>::<span class="nc">Inquiry</span>.new <span class="k">do</span> |f|</code>
+        <div>
+          <label for="name">f.name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label for="email">f.email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="interest">f.interested_in</label>
+          <select id="interest" name="interest">
+            <option value="">:select_one</option>
+            <option value="pro">:professional</option>
+            <option value="expert">:expert</option>
+            <option value="enterprise">:enterprise</option>
+            <option value="consulting">:consulting</option>
+            <option value="other">:something_else_entirely</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">f.message</label>
+          <textarea id="message" name="message" placeholder="Tell us about your JRuby setup..."></textarea>
+        </div>
+        <button type="submit">f.submit!</button>
+      </form>
+    </div>
+  </div>
+</section>

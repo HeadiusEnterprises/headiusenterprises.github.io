@@ -1,0 +1,141 @@
+/*
+  Syntax Highlighting — themed to match Headius palette
+  Uses Rouge/Pygments class names.
+  Dark theme by default, light and high-contrast via [data-theme].
+*/
+
+pre.highlight {
+  padding: 16px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.9;
+  overflow-x: auto;
+}
+
+.highlight .hll { background-color: var(--crimson-subtle); }
+
+/* Comments */
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs,
+.highlight .cp { color: var(--text-dim); font-style: italic; }
+
+/* Keywords */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr { color: var(--crimson-light); font-weight: 700; }
+
+/* Keyword.Type */
+.highlight .kt { color: var(--amber); font-weight: 700; }
+
+/* Operators */
+.highlight .o,
+.highlight .ow { color: var(--text-bright); font-weight: 700; }
+
+/* Strings */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1 { color: var(--teal-bright); }
+
+/* String.Symbol */
+.highlight .ss { color: var(--amber); }
+
+/* Numbers */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il { color: var(--amber-bright); }
+
+/* Name.Function */
+.highlight .nf { color: var(--amber-bright); font-weight: 700; }
+
+/* Name.Class */
+.highlight .nc { color: var(--white); font-weight: 700; }
+
+/* Name.Constant */
+.highlight .no { color: var(--text-dim); }
+
+/* Name.Builtin */
+.highlight .nb,
+.highlight .bp { color: var(--text); }
+
+/* Name.Variable */
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi { color: var(--teal-bright); }
+
+/* Name.Attribute */
+.highlight .na { color: var(--amber); }
+
+/* Name.Decorator */
+.highlight .nd { color: var(--crimson-light); font-weight: 700; }
+
+/* Name.Exception */
+.highlight .ne { color: var(--crimson-light); font-weight: 700; }
+
+/* Name.Namespace */
+.highlight .nn { color: var(--text-dim); }
+
+/* Name.Tag */
+.highlight .nt { color: var(--crimson-light); }
+
+/* Name.Label */
+.highlight .nl { color: var(--amber); font-weight: 700; }
+
+/* Name.Entity */
+.highlight .ni { color: var(--text-bright); }
+
+/* Punctuation */
+.highlight .p { color: var(--text-dim); }
+
+/* Generic.Prompt */
+.highlight .gp { color: var(--crimson-light); }
+
+/* Generic.Output */
+.highlight .go { color: var(--text-dim); }
+
+/* Generic.Inserted (success) */
+.highlight .gi { color: var(--teal-bright); }
+
+/* Generic.Error */
+.highlight .gr,
+.highlight .gt { color: var(--crimson-light); }
+
+/* Generic.Deleted */
+.highlight .gd { color: var(--crimson-light); background-color: var(--crimson-subtle); }
+
+/* Generic.Emph */
+.highlight .ge { font-style: italic; }
+
+/* Generic.Strong */
+.highlight .gs { font-weight: bold; }
+
+/* Generic.Heading */
+.highlight .gh { color: var(--white); font-weight: 700; }
+
+/* Generic.Subheading */
+.highlight .gu { color: var(--text-dim); }
+
+/* Error */
+.highlight .err { color: var(--crimson-light); }
+
+/* Text.Whitespace */
+.highlight .w { color: var(--text-dim); }

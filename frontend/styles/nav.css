@@ -1,0 +1,143 @@
+nav.highlight {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .brand {
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+
+    .sep { color: var(--crimson-bright); }
+  }
+
+  ul {
+    display: flex;
+    gap: 0.25rem;
+    list-style: none;
+
+    a {
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--crimson-light);
+        background: var(--crimson-subtle);
+      }
+    }
+  }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  box-shadow: none;
+
+  &:hover {
+    background: none;
+    box-shadow: none;
+  }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-dim);
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+}
+
+
+#theme-switcher {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+
+  #theme-icon {
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1;
+    padding: 0.4rem 1rem;
+    color: var(--text-dim);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--crimson-light);
+    }
+  }
+
+  &.open #theme-icon {
+    color: var(--crimson-light);
+  }
+
+  menu {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    top: 100%;
+    right: 0;
+    margin: 0;
+    padding: 4px 0 0;
+    min-width: 48px;
+    z-index: 200;
+    background: transparent;
+    border: none;
+    list-style: none;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 4px 0 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    li {
+      position: relative;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      color: var(--text-dim);
+      padding: 0.4rem 0.6rem;
+      text-align: center;
+      transition: all 0.15s;
+
+      &:hover {
+        background: var(--crimson-subtle);
+        color: var(--crimson-light);
+      }
+
+      &.active {
+        color: var(--crimson-light);
+      }
+    }
+  }
+
+  &.open menu {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+}
