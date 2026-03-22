@@ -1,0 +1,234 @@
+---
+layout: default
+title: Resources
+---
+
+<!-- ===== Intro ===== -->
+<section id="resources-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/resources'</span></code></pre>
+    <hgroup>
+      <h1>Resources</h1>
+      <p>Twenty years of JRuby means twenty years of documentation, blog posts, conference talks, and hard-won knowledge. Here's where to find it.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== From the Blog ===== -->
+<section class="highlight" id="blog">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Blog</span>
+<span class="c"># Recent writing from the people who build JRuby.</span></code></pre>
+      <h2>From the Blog</h2>
+    </div>
+    <div class="resources-grid">
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2025/09/jruby-jdk25-startup-time-follow-up.html" target="_blank" rel="noopener">JRuby and Leyden: Even Better Startup</a></h3>
+        <p class="resource-date">September 2025</p>
+        <p>Follow-up on JDK 25's AOT cache improvements and what they mean for JRuby startup times in production.</p>
+      <% end %>
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2025/10/packaging-ruby-apps-with-warbler-jar-files.html" target="_blank" rel="noopener">Packaging Ruby Apps with Warbler</a></h3>
+        <p class="resource-date">October 2025</p>
+        <p>How to bundle your entire Ruby application into a single executable JAR file using Warbler. Deploy anywhere Java runs.</p>
+      <% end %>
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2025/10/warbled-sidekiq.html" target="_blank" rel="noopener">Warbled Sidekiq</a></h3>
+        <p class="resource-date">October 2025</p>
+        <p>Packaging Sidekiq as an executable JAR — background jobs that deploy like any other Java artifact.</p>
+      <% end %>
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2025/04/jruby-10-part-one-whats-new.html" target="_blank" rel="noopener">JRuby 10, Part 1: What's New</a></h3>
+        <p class="resource-date">April 2025</p>
+        <p>The headline features in JRuby 10 — Ruby 3.4 compatibility, performance improvements, and the road ahead.</p>
+      <% end %>
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2025/02/boosting-jruby-startup-with-appcds-and-aotcache.html" target="_blank" rel="noopener">Boosting JRuby Startup with AppCDS</a></h3>
+        <p class="resource-date">February 2025</p>
+        <p>Practical techniques for reducing JRuby startup time using Application Class Data Sharing and AOT caching.</p>
+      <% end %>
+      <%= render Card.new do %>
+        <h3><a href="https://blog.headius.com/2024/09/jruby-on-crac-part-1-lets-get-cracking.html" target="_blank" rel="noopener">JRuby on CRaC: Let's Get CRaCking!</a></h3>
+        <p class="resource-date">September 2024</p>
+        <p>Coordinated Restore at Checkpoint — snapshotting a warm JVM to eliminate startup overhead entirely.</p>
+      <% end %>
+    </div>
+    <p class="resources-more">More at <a href="https://blog.headius.com" target="_blank" rel="noopener">blog.headius.com</a></p>
+  </div>
+</section>
+
+<!-- ===== Java Interop ===== -->
+<section id="java-interop">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::JavaInterop</span>
+<span class="c"># The whole point of JRuby, really.</span></code></pre>
+      <h2>Java Integration</h2>
+      <p>JRuby runs on the JVM, which means full access to the entire Java ecosystem from Ruby. No FFI, no shelling out, no serialisation boundaries — just direct method calls.</p>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby" target="_blank" rel="noopener">Calling Java from JRuby</a> — the essential reference for importing and using Java classes</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/JavaIntegration" target="_blank" rel="noopener">Java Integration Overview</a> — type conversion, interfaces, and the integration layer</span>
+      </li>
+      <li>
+        <span class="label">examples</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/JRubyAndJavaCodeExamples" target="_blank" rel="noopener">JRuby and Java Code Examples</a> — side-by-side Java and Ruby for common patterns</span>
+      </li>
+      <li>
+        <span class="label">embed</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/RedBridge" target="_blank" rel="noopener">RedBridge</a> — embedding JRuby inside Java applications</span>
+      </li>
+      <li>
+        <span class="label">blog</span>
+        <span><a href="https://blog.headius.com/2025/04/beautiful-charts-with-jruby-and-jfreechart.html" target="_blank" rel="noopener">Charts with JRuby and JFreeChart</a> — a practical example of Java library integration</span>
+      </li>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Deployment ===== -->
+<section class="highlight" id="deployment">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Deploy</span>
+<span class="c"># Ship Ruby apps on Java infrastructure.</span></code></pre>
+      <h2>Deployment &amp; Packaging</h2>
+      <p>JRuby applications can be packaged as standard JAR or WAR files and deployed to any Java application server. Your ops team doesn't need to learn Ruby infrastructure — it's just another JVM artifact.</p>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">tool</span>
+        <span><a href="https://github.com/jruby/warbler" target="_blank" rel="noopener">Warbler</a> — package Ruby applications as executable JAR or deployable WAR files</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/JRubyOnRails" target="_blank" rel="noopener">JRuby on Rails</a> — running Rails applications on JRuby</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/ActiveRecord-JDBC" target="_blank" rel="noopener">ActiveRecord-JDBC</a> — database connectivity via JDBC drivers</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/Servers" target="_blank" rel="noopener">Application Servers</a> — Puma, Tomcat, and other server options for JRuby</span>
+      </li>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Performance ===== -->
+<section id="performance">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Performance</span>
+<span class="c"># Making it fast, then making it faster.</span></code></pre>
+      <h2>Performance &amp; Tuning</h2>
+      <p>JRuby benefits from decades of JVM optimisation work — JIT compilation, garbage collection tuning, and real threading. These resources cover how to get the most out of it.</p>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/PerformanceTuning" target="_blank" rel="noopener">Performance Tuning</a> — JVM flags, memory settings, and JRuby-specific options</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/Improving-startup-time" target="_blank" rel="noopener">Improving Startup Time</a> — techniques for reducing cold-start overhead</span>
+      </li>
+      <li>
+        <span class="label">guide</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/Concurrency-in-jruby" target="_blank" rel="noopener">Concurrency in JRuby</a> — real threads, no GIL — how to take advantage of it</span>
+      </li>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Getting Started ===== -->
+<section class="highlight" id="getting-started">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::GettingStarted</span>
+<span class="c"># Everything you need to begin.</span></code></pre>
+      <h2>Getting Started</h2>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">home</span>
+        <span><a href="https://www.jruby.org/" target="_blank" rel="noopener">JRuby.org</a> — downloads, news, and the official starting point</span>
+      </li>
+      <li>
+        <span class="label">docs</span>
+        <span><a href="https://www.jruby.org/getting-started" target="_blank" rel="noopener">Getting Started Guide</a> — installation, first steps, and basic configuration</span>
+      </li>
+      <li>
+        <span class="label">wiki</span>
+        <span><a href="https://github.com/jruby/jruby/wiki" target="_blank" rel="noopener">JRuby Wiki</a> — the comprehensive community reference</span>
+      </li>
+      <li>
+        <span class="label">compat</span>
+        <span><a href="https://github.com/jruby/jruby/wiki/C-Extension-Alternatives" target="_blank" rel="noopener">C Extension Alternatives</a> — pure-Ruby and Java replacements for native gems</span>
+      </li>
+      <li>
+        <span class="label">source</span>
+        <span><a href="https://github.com/jruby/jruby" target="_blank" rel="noopener">GitHub</a> — source code, issues, and contributions</span>
+      </li>
+      <li>
+        <span class="label">community</span>
+        <span><a href="https://www.jruby.org/community" target="_blank" rel="noopener">Community</a> — mailing lists, chat, and how to get involved</span>
+      </li>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Talks & Presentations ===== -->
+<section id="talks-resources">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Talks</span>
+<span class="c"># Prefer video? We've done a few.</span></code></pre>
+      <h2>Talks &amp; Presentations</h2>
+      <p>Charlie has given dozens of talks at Java and Ruby conferences worldwide. The JRuby wiki has an <a href="https://github.com/jruby/jruby/wiki/JRubyPresentations" target="_blank" rel="noopener">older list of presentations</a> — here are some more recent ones.</p>
+    </div>
+    <div class="talks-grid">
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/10nArtB3LvA",
+        link_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
+        title: "JRuby: Do More with Ruby"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/pzm6I4liJlg",
+        link_url: "https://www.youtube.com/watch?v=pzm6I4liJlg",
+        title: "Bringing Ruby to the JVM"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
+        link_url: "https://www.youtube.com/watch?v=OwEDqtlBg04",
+        title: "Scaling Ruby with JRuby"
+      ) %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="highlight" id="resources-cta">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Support</span>
+<span class="c"># When the docs aren't enough.</span></code></pre>
+      <h2>Need More Than Documentation?</h2>
+      <p>Resources are great until you're staring at a production issue at 2am. Our <a href="<%= relative_url '/services' %>">support packages</a> connect you directly to the people who write JRuby — no ticket queues, no escalation paths.</p>
+      <div class="actions">
+        <a href="<%= relative_url '/services' %>" class="button">Headius::Support.plans</a>
+        <a href="<%= relative_url '/about#contact' %>" class="button ghost">Headius.contact!</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -39,6 +39,10 @@ nav.highlight {
         color: var(--crimson-light);
         background: var(--crimson-subtle);
       }
+
+      &[aria-current="page"] {
+        color: var(--crimson-light);
+      }
     }
   }
 }
