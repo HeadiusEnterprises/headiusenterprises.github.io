@@ -5,10 +5,9 @@
       <span></span><span></span><span></span>
     </button>
     <ul>
-      <% %w[services about resources].each do |page| %>
+      <% %w[services about resources contact].each do |page| %>
         <li><a href="<%= relative_url "/#{page}" %>"<%= raw(' aria-current="page"') if resource.relative_url.start_with?("/#{page}") %>><%= page %></a></li>
       <% end %>
-      <li><a href="<%= relative_url '/#contact' %>">contact</a></li>
     </ul>
     <div id="theme-switcher">
       <span id="theme-icon" aria-label="Toggle theme">◑</span>

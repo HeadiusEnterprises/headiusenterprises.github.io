@@ -1,0 +1,57 @@
+---
+layout: default
+title: Contact
+---
+
+<!-- ===== Intro ===== -->
+<section id="contact-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/contact'</span></code></pre>
+    <hgroup>
+      <h1>Get In Touch</h1>
+      <p>Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference — we'd love to hear from you.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== Contact Details + Form ===== -->
+<section class="highlight" id="contact-details">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <pre><code class="highlight"><span class="c"># == Headius::Contact</span>
+<span class="c"># The direct route. No ticket queue.</span></code></pre>
+        <h2>Direct Contact</h2>
+        <p>If you'd rather skip the form, reach us directly. The person who reads your email is the same person who'll commit the fix.</p>
+        <%= render ListTable.new do %>
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">social</span>
+            <span><a href="https://mastodon.social/@headius" target="_blank" rel="noopener me">Mastodon</a> · <a href="https://bsky.app/profile/headius.bsky.social" target="_blank" rel="noopener">Bluesky</a> · <a href="https://x.com/headius" target="_blank" rel="noopener">X</a></span>
+          </li>
+          <li>
+            <span class="label">code</span>
+            <span><a href="https://jruby.org" target="_blank" rel="noopener">JRuby.org</a></span>
+          </li>
+        <% end %>
+      </div>
+      <div>
+        <h2>Inquiry Form</h2>
+        <div class="consent-embed consent-embed--form" data-provider="Google" data-embed-url="https://docs.google.com/forms/d/e/1FAIpQLSf5vtH39Dj4hLE2DhjAruexEqbteIRiKecX6DRfVI9PfHnTGQ/viewform?embedded=true">
+          <button class="consent-embed__play" aria-label="Load contact form">
+            <svg viewBox="0 0 68 48" width="68" height="48">
+              <rect rx="10" width="68" height="48" fill="var(--crimson)"/>
+              <path d="M28 16h4l2 2h6a2 2 0 012 2v10a2 2 0 01-2 2H28a2 2 0 01-2-2V18a2 2 0 012-2zm6 5v6m-3-3h6" fill="none" stroke="var(--on-crimson)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="consent-embed__tooltip">Loading the form will connect to Google and may set cookies. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+          </button>
+          <span class="consent-embed__title">Click to load the inquiry form</span>
+          <a class="consent-embed__link" href="https://docs.google.com/forms/d/e/1FAIpQLSf5vtH39Dj4hLE2DhjAruexEqbteIRiKecX6DRfVI9PfHnTGQ/viewform" target="_blank" rel="noopener">Open form on Google</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

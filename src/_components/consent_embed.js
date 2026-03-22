@@ -30,6 +30,41 @@
     el.classList.add("consent-embed--loaded")
   }
 
+  function isFormEmbed(el) {
+    return el.classList.contains("consent-embed--form")
+  }
+
+  function openFullscreen(el) {
+    var overlay = document.createElement("div")
+    overlay.className = "consent-embed__overlay"
+
+    var close = document.createElement("button")
+    close.className = "consent-embed__close"
+    close.setAttribute("aria-label", "Close fullscreen form")
+    close.innerHTML = "×"
+    close.addEventListener("click", function () {
+      overlay.remove()
+    })
+
+    // Move the iframe into the overlay
+    var iframe = el.querySelector("iframe")
+    var clone = iframe.cloneNode(true)
+    overlay.appendChild(clone)
+    overlay.appendChild(close)
+    document.body.appendChild(overlay)
+  }
+
+  function addExpandButton(el) {
+    var btn = document.createElement("button")
+    btn.className = "consent-embed__expand"
+    btn.setAttribute("aria-label", "Expand form")
+    btn.innerHTML = "⛶"
+    btn.addEventListener("click", function () {
+      openFullscreen(el)
+    })
+    el.appendChild(btn)
+  }
+
   function initEmbeds() {
     var embeds = document.querySelectorAll(".consent-embed")
     for (var i = 0; i < embeds.length; i++) {
@@ -38,6 +73,9 @@
 
       if (hasConsent(provider)) {
         loadEmbed(embed)
+        if (isFormEmbed(embed)) {
+          addExpandButton(embed)
+        }
       } else {
         (function (el, prov) {
           var play = el.querySelector(".consent-embed__play")
@@ -51,6 +89,10 @@
               )
               for (var j = 0; j < all.length; j++) {
                 loadEmbed(all[j])
+                if (isFormEmbed(all[j])) {
+                  addExpandButton(all[j])
+                  openFullscreen(all[j])
+                }
               }
             })
           }
