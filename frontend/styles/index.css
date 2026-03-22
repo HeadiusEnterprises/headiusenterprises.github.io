@@ -107,13 +107,10 @@
     }
   }
 
-  .pkg-custom {
-    margin-top: 1.5rem;
-    background: var(--surface);
-    border: 1px dashed var(--border-bright);
-    border-radius: 6px;
+  .card.custom {
+    border-style: dashed;
+    border-color: var(--border-bright);
     padding: 2rem 2.5rem;
-    display: grid;
     grid-template-columns: 1fr auto;
     gap: 2rem;
     align-items: center;
@@ -237,40 +234,17 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  #opening h1 {
-    font-size: 2.2rem;
+  #opening hgroup {
+    font-size: 1.6rem;
   }
 
-  .two-col,
-  .site-footer__top {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .services__grid,
-  .packages__grid {
+  #packages .grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  nav ul {
-    display: none;
-
-    &.open {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 56px;
-      left: 0;
-      right: 0;
-      background: var(--void);
-      padding: 1rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      gap: 0.25rem;
-    }
-  }
-  .nav-toggle {
-    display: block;
+  blockquote {
+    padding: 0 1rem;
   }
 }

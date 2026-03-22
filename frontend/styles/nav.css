@@ -65,6 +65,28 @@ nav.highlight {
   }
 }
 
+@media (max-width: 600px) {
+  nav.highlight ul {
+    display: none;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background: var(--void);
+      padding: 1rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      gap: 0.25rem;
+    }
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
 
 #theme-switcher {
   position: relative;

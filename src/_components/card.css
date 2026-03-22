@@ -1,0 +1,106 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s;
+  position: relative;
+  margin-bottom: 2rem;
+  min-width: 0;
+
+  overflow: hidden;
+
+  &.two-col {
+    display: grid;
+  }
+
+  &.terminal {
+    padding: 0;
+
+    .title {
+      background: var(--surface-raised);
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+
+      .controls {
+        display: flex;
+        gap: 0.35rem;
+
+        span {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 1px solid var(--border-bright);
+          background: transparent;
+        }
+      }
+
+      .pane {
+        padding: 1.5rem;
+        font-size: 0.8rem;
+        line-height: 1.9;
+        color: var(--text);
+      }
+    }
+  }
+
+  &:hover {
+    border-color: var(--border-bright);
+  }
+
+  &.featured {
+    border-color: var(--crimson);
+
+    &:hover {
+      border-color: var(--crimson-bright);
+      box-shadow: 0 0 40px var(--crimson-glow);
+    }
+
+    &::before {
+      content: "# recommended";
+      position: absolute;
+      top: -10px;
+      left: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      background: var(--crimson);
+      color: var(--on-crimson);
+      font-weight: 700;
+      padding: 0.2rem 0.7rem;
+      border-radius: 3px;
+    }
+  }
+
+  &.grid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+
+    div {
+      background: var(--surface);
+      padding: 2rem;
+      transition: background 0.2s;
+      min-width: 0;
+
+      &:hover {
+        background: var(--surface-raised);
+      }
+    }
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

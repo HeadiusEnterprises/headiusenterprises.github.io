@@ -1,0 +1,31 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--border-bright);
+    border-radius: 3px;
+    color: var(--text-dim);
+    background: var(--surface-raised);
+
+    &.badge--crimson {
+      border-color: var(--crimson);
+      color: var(--crimson-light);
+    }
+
+    &.badge--amber {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    &.badge--teal {
+      border-color: var(--teal);
+      color: var(--teal-bright);
+    }
+  }
+}

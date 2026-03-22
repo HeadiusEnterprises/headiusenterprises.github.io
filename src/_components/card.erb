@@ -1,0 +1,1 @@
+<%= raw("<#{@tag} #{@attrs.map { |k, v| %(#{k}="#{v}") }.join(" ")}>") %><%= content %><%= raw("</#{@tag}>") %>

@@ -34,7 +34,7 @@ layout: default
           There is no tier-one support at Headius. There is no escalation path. You are already talking to the engineers. That's the whole point.
         </p>
       </div>
-      <div class="card terminal">
+      <%= render Card.new(variant: "terminal") do %>
         <div class="title">
           <div class="controls">
             <span></span><span></span><span></span>
@@ -55,7 +55,7 @@ layout: default
 <span class="gi">=&gt; "jruby/jruby@a3f8c2d"</span>
 <span class="gp">irb&gt;</span> ticket.patch_release
 <span class="gi">=&gt; "Released"</span></code></pre>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
@@ -68,7 +68,7 @@ layout: default
 <span class="c"># Available instance methods for all support tiers.</span></code></pre>
       <h2>What We Actually Do</h2>
     </div>
-    <div class="card grid">
+    <%= render Card.new(variant: "grid") do %>
       <div class="service">
         <pre><code class="highlight"><span class="k">def</span> <span class="nf">email_support</span>
 <span class="c"># direct, priority, async</span></code></pre>
@@ -99,7 +99,7 @@ layout: default
 <span class="c"># early_access: true, no_surprises: true</span></code></pre>
         <p>Know what's coming before it lands. Advance notice of JRuby releases, security patches, and breaking changes — so your team isn't caught off guard.</p>
       </div>
-    </div>
+    <% end %>
   </div>
 </section>
 
@@ -123,7 +123,7 @@ layout: default
       <p>Pick a tier. Or keep reading for something a little more bespoke.</p>
     </div>
     <div class="grid">
-      <div class="card">
+      <%= render Card.new do %>
         <pre><code class="highlight"><span class="k">class</span> <span class="nc">Professional</span> <span class="no">&lt; Support</span></code></pre>
         <p>For teams getting started or running smaller deployments.</p>
         <hr>
@@ -133,8 +133,8 @@ layout: default
           <li>Knowledge base access</li>
         </ul>
         <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Professional</span>.new.inquire!</button>
-      </div>
-      <div class="card featured">
+      <% end %>
+      <%= render Card.new(variant: "featured") do %>
         <pre><code class="highlight"><span class="k">class</span> <span class="nc">Expert</span> <span class="no">&lt; Professional</span></code></pre>
         <p>For teams that need faster answers and actual fixes.</p>
         <hr>
@@ -145,8 +145,8 @@ layout: default
           <li>Architecture guidance</li>
         </ul>
         <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Expert</span>.new.inquire!</button>
-      </div>
-      <div class="card">
+      <% end %>
+      <%= render Card.new do %>
         <pre><code class="highlight"><span class="k">class</span> <span class="nc">Enterprise</span> <span class="no">&lt; Expert</span></code></pre>
         <p>For organisations running JRuby at scale in production.</p>
         <hr>
@@ -157,9 +157,9 @@ layout: default
           <li>Discounted consulting rates</li>
         </ul>
         <button class="pkg__cta" data-scroll-to="contact"><span class="nc">Enterprise</span>.new.inquire!</button>
-      </div>
+      <% end %>
     </div>
-    <div class="card custom two-col">
+    <%= render Card.new(variant: %w[custom two-col]) do %>
       <div>
         <code class="pkg-custom__sig"><span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nv">name, *args, &amp;block</span><span class="p">)</span></code>
         <pre class="pkg-custom__body"><code><span class="c"># None of the above quite fit?</span>
@@ -170,7 +170,7 @@ layout: default
       <div>
         <button class="pkg-custom__cta" data-scroll-to="contact">Headius.contact!</button>
       </div>
-    </div>
+    <% end %>
   </div>
 </section>
 
@@ -190,27 +190,27 @@ layout: default
 <span class="k">#</span> Come find us — we're easy to spot.</code></pre>
       </div>
       <div>
-        <div class="card">
+        <%= render Card.new do %>
           <code><span class="k">class</span> <span class="nc">CharlesOliverNutter</span> <span class="no">&lt; Human</span></code>
           <code># Architect &amp; Technologist</code>
           <p>
             Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
           </p>
-          <div class="badges">
+          <%= render Badges.new do %>
             <span class="badge badge--crimson">Java Champion</span>
             <span class="badge badge--crimson">Ruby Hero</span>
             <span class="badge badge--amber">JavaOne Rock Star</span>
             <span class="badge badge--teal">JAX Innovators 2012</span>
             <span class="badge">Oracle Groundbreaker 2018</span>
-          </div>
-        </div>
-        <div class="card">
+          <% end %>
+        <% end %>
+        <%= render Card.new do %>
           <code><span class="k">class</span> <span class="nc">SondraRadkeNutter</span> <span class="no">&lt; Human</span></code>
           <code># President</code>
           <p>
             25 years of professional education and organisational leadership. The operational backbone and customer support management that keeps Headius running — because somebody has to make sure the engineers actually reply to emails.
           </p>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -225,7 +225,7 @@ layout: default
         <p>
           Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.
         </p>
-        <ul class="list-table">
+        <%= render ListTable.new do %>
           <li>
             <span class="label">email</span>
             <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
@@ -238,7 +238,7 @@ layout: default
             <span class="label">vibe</span>
             <span>Friendly. Professional. Slightly metal.</span>
           </li>
-        </ul>
+        <% end %>
       </div>
       <form class="highlight" action="#" method="post">
         <code class="contact__form-header"><span class="k">Headius</span>::<span class="nc">Inquiry</span>.new <span class="k">do</span> |f|</code>
