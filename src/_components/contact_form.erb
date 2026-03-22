@@ -1,0 +1,27 @@
+<form class="highlight" action="<%= @action %>" method="<%= @method %>">
+  <code class="contact__form-header"><span class="k">Headius</span>::<span class="nc">Inquiry</span>.new <span class="k">do</span> |f|</code>
+  <div>
+    <label for="name">f.name</label>
+    <input type="text" id="name" name="name" required />
+  </div>
+  <div>
+    <label for="email">f.email</label>
+    <input type="email" id="email" name="email" required />
+  </div>
+  <div>
+    <label for="interest">f.interested_in</label>
+    <select id="interest" name="interest">
+      <option value="">:select_one</option>
+      <option value="pro">:professional</option>
+      <option value="expert">:expert</option>
+      <option value="enterprise">:enterprise</option>
+      <option value="consulting">:consulting</option>
+      <option value="other">:something_else_entirely</option>
+    </select>
+  </div>
+  <div>
+    <label for="message">f.message</label>
+    <textarea id="message" name="message" placeholder="Tell us about your JRuby setup..."></textarea>
+  </div>
+  <button type="submit">f.submit!</button>
+</form>

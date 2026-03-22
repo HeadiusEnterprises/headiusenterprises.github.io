@@ -1,0 +1,171 @@
+---
+layout: default
+title: About
+---
+
+<!-- ===== Intro ===== -->
+<section id="about-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/about'</span></code></pre>
+    <hgroup>
+      <h1>There Is No Tier-One Support</h1>
+      <p>Headius Enterprises was established in 2024, but the work goes back to 2004. This isn't a pivot or a side project — it's a formalisation of support that was already happening informally for two decades.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="highlight" id="story">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Origin</span>
+<span class="c"># How twenty years of open source became a company.</span></code></pre>
+      <h2>The Short Version</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>
+          Most support companies start with a product and then hire people to answer questions about it. We did it backwards. Charlie has been building JRuby since 2004, contributing to the JVM ecosystem since Java 1.0, and helping teams debug their deployments for free for most of that time.
+        </p>
+        <p>
+          In 2024, we made it official. Not because anything changed about the work — because enough people were relying on it that it deserved a proper structure. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
+        </p>
+      </div>
+      <div>
+        <p>
+          We're a small team. Deliberately. No account managers, no support tiers staffed by people who've never seen the source code. The constraint is our advantage — every interaction is with someone who has deep, first-hand knowledge of the runtime your application depends on.
+        </p>
+        <p>
+          No other company in the world can match this level of expertise when it comes to JRuby. That's not marketing — it's just a fact about a twenty-year-old open source project with a very small number of core contributors.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Team ===== -->
+<section id="team">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Team</span>
+<span class="c"># The people behind the code and the company.</span></code></pre>
+      <h2>Who We Are</h2>
+    </div>
+    <div class="two-col">
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">CharlesOliverNutter</span> <span class="no">&lt; Human</span>
+  <span class="c"># Architect &amp; Technologist</span></code></pre>
+        <p>
+          Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby since 2004. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
+        </p>
+        <p>
+          Charlie has released commercial software, managed open-source projects, led enterprise applications, and contributed hundreds of thousands of lines of code globally. His talks on JVM bytecode, invokedynamic, and JIT compilers are consistently among the most popular at Java and Ruby conferences worldwide.
+        </p>
+        <%= render Badges.new do %>
+          <span class="badge badge--crimson">Java Champion</span>
+          <span class="badge badge--crimson">Ruby Hero</span>
+          <span class="badge badge--amber">JavaOne Rock Star</span>
+          <span class="badge badge--teal">JAX Innovators 2012</span>
+          <span class="badge">Oracle Groundbreaker 2018</span>
+        <% end %>
+      <% end %>
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">SondraRadkeNutter</span> <span class="no">&lt; Human</span>
+  <span class="c"># President</span></code></pre>
+        <p>
+          25 years of professional education and organisational leadership. Sondra has guided teams through transitions across the country and through changing structures, applying detailed organisation and follow-through to every challenge.
+        </p>
+        <p>
+          At Headius, she's the operational backbone — customer support management, business operations, and making sure the engineers actually reply to emails. Because somebody has to.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Talks ===== -->
+<section id="talks">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Talks</span>
+<span class="c"># Selected conference presentations.</span></code></pre>
+      <h2>From the Stage</h2>
+    </div>
+    <div class="talks-grid">
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/10nArtB3LvA",
+        link_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
+        title: "JRuby: Do More with Ruby"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/pzm6I4liJlg",
+        link_url: "https://www.youtube.com/watch?v=pzm6I4liJlg",
+        title: "Bringing Ruby to the JVM"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
+        link_url: "https://www.youtube.com/watch?v=OwEDqtlBg04",
+        title: "Scaling Ruby with JRuby"
+      ) %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Conferences ===== -->
+<section class="highlight" id="conferences">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Calendar</span>
+<span class="c"># Where you can find us in 2026.</span></code></pre>
+      <h2>Conference Schedule</h2>
+      <p>Come find us — we're easy to spot.</p>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">Mar 26–27</span>
+        <span><a href="https://rbqconf.com" target="_blank" rel="noopener">RBQ Conf</a> — Austin, TX</span>
+      </li>
+      <li>
+        <span class="label">Apr 22–24</span>
+        <span><a href="https://rubykaigi.org/2026/" target="_blank" rel="noopener">RubyKaigi 2026</a> — Hakodate, Hokkaido, Japan</span>
+      </li>
+      <li>
+        <span class="label">Jul 14–16</span>
+        <span><a href="https://rubyconf.org" target="_blank" rel="noopener">RubyConf 2026</a> — Las Vegas, NV</span>
+      </li>
+    <% end %>
+    <p class="conf-note">More dates to be announced. Follow us on <a href="https://mastodon.social/@headius" target="_blank" rel="noopener me">Mastodon</a> or <a href="https://bsky.app/profile/headius.bsky.social" target="_blank" rel="noopener">Bluesky</a> for updates.</p>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Get In Touch</h2>
+        <p>
+          Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference, we'd love to hear from you.
+        </p>
+        <%= render ListTable.new do %>
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">social</span>
+            <span><a href="https://mastodon.social/@headius" target="_blank" rel="noopener me">Mastodon</a> · <a href="https://bsky.app/profile/headius.bsky.social" target="_blank" rel="noopener">Bluesky</a> · <a href="https://x.com/headius" target="_blank" rel="noopener">X</a></span>
+          </li>
+          <li>
+            <span class="label">code</span>
+            <span><a href="https://jruby.org" target="_blank" rel="noopener">JRuby.org</a></span>
+          </li>
+        <% end %>
+      </div>
+      <%= render ContactForm.new %>
+    </div>
+  </div>
+</section>
