@@ -20,8 +20,23 @@
     return getConsent().indexOf(provider) !== -1
   }
 
+  function getThemeBgColor() {
+    return getComputedStyle(document.documentElement).getPropertyValue("--surface").trim()
+  }
+
+  function embedUrl(baseUrl, el) {
+    if (!isFormEmbed(el)) return baseUrl
+    var hex = getThemeBgColor()
+    // Convert hex to rgb() format for Google Forms bgcolor param
+    var r = parseInt(hex.slice(1, 3), 16)
+    var g = parseInt(hex.slice(3, 5), 16)
+    var b = parseInt(hex.slice(5, 7), 16)
+    var sep = baseUrl.indexOf("?") !== -1 ? "&" : "?"
+    return baseUrl + sep + "bgcolor=rgb(" + r + "," + g + "," + b + ")"
+  }
+
   function loadEmbed(el) {
-    var url = el.dataset.embedUrl
+    var url = embedUrl(el.dataset.embedUrl, el)
     var iframe = document.createElement("iframe")
     iframe.src = url
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -101,9 +116,41 @@
     }
   }
 
+  function updateFormBgColors() {
+    var forms = document.querySelectorAll(".consent-embed--form.consent-embed--loaded")
+    for (var i = 0; i < forms.length; i++) {
+      var el = forms[i]
+      var iframes = el.querySelectorAll("iframe")
+      for (var j = 0; j < iframes.length; j++) {
+        iframes[j].src = embedUrl(el.dataset.embedUrl, el)
+      }
+      // Also update any fullscreen overlay clones
+      var overlay = document.querySelector(".consent-embed__overlay iframe")
+      if (overlay) {
+        overlay.src = embedUrl(el.dataset.embedUrl, el)
+      }
+    }
+  }
+
+  function watchTheme() {
+    var observer = new MutationObserver(function (mutations) {
+      for (var i = 0; i < mutations.length; i++) {
+        if (mutations[i].attributeName === "data-theme") {
+          updateFormBgColors()
+          return
+        }
+      }
+    })
+    observer.observe(document.documentElement, { attributes: true })
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initEmbeds)
+    document.addEventListener("DOMContentLoaded", function () {
+      initEmbeds()
+      watchTheme()
+    })
   } else {
     initEmbeds()
+    watchTheme()
   }
 })()

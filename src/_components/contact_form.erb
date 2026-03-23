@@ -1,4 +1,4 @@
-<form class="highlight" action="<%= @action %>" method="<%= @method %>">
+<form class="highlight" action="#" method="post" onsubmit="return handleContactForm(this)">
   <code class="contact__form-header"><span class="k">Headius</span>::<span class="nc">Inquiry</span>.new <span class="k">do</span> |f|</code>
   <div>
     <label for="name">f.name</label>
@@ -12,7 +12,7 @@
     <label for="interest">f.interested_in</label>
     <select id="interest" name="interest">
       <option value="">:select_one</option>
-      <option value="pro">:professional</option>
+      <option value="professional">:professional</option>
       <option value="expert">:expert</option>
       <option value="enterprise">:enterprise</option>
       <option value="consulting">:consulting</option>
@@ -24,4 +24,5 @@
     <textarea id="message" name="message" placeholder="Tell us about your JRuby setup..."></textarea>
   </div>
   <button type="submit">f.submit!</button>
+  <p class="contact__form-alt">Or use the <a href="/contact">full inquiry form</a> on our contact page.</p>
 </form>
