@@ -60,50 +60,6 @@ layout: default
   </div>
 </section>
 
-<!-- ===== Services ===== -->
-<section class="highlight" id="services">
-  <div class="container">
-    <div>
-      <pre><code class="highlight"><span class="c"># == Headius::Support</span>
-<span class="c"># Available instance methods for all support tiers.</span></code></pre>
-      <h2>What We Actually Do</h2>
-    </div>
-    <%= render Card.new(variant: "grid") do %>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">email_support</span>
-<span class="c"># direct, priority, async</span></code></pre>
-        <p>Direct line to core JRuby developers. Not a ticketing black hole — an actual inbox read by the people who write the runtime. Ask anything.</p>
-      </div>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">chat_support</span><span class="p">(</span><span class="nv">medium: :any</span><span class="p">)</span>
-<span class="c"># text, video, audio, screenshare</span></code></pre>
-        <p>Sometimes you need to share a screen and point at the thing that's broken. Text, video, and audio chat with core developers, scheduled when it works for your team.</p>
-      </div>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">priority_bugfix!</span>
-<span class="c"># queue_position: 1, patches_welcome: always</span></code></pre>
-        <p>Your issues go to the front. Not next sprint, not next quarter. When something is blocking your deployment, it becomes our top priority to get it fixed and released.</p>
-      </div>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">debug_and_profile</span><span class="p">(</span><span class="nv">deep: true</span><span class="p">)</span>
-<span class="c"># twenty_years_of_muscle_memory: true</span></code></pre>
-        <p>We have twenty years of muscle memory for tracking down threading bugs, memory leaks, and performance bottlenecks in JRuby. Your worst day is our Tuesday.</p>
-      </div>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">consulting</span><span class="p">(</span><span class="nv">scope: :flexible</span><span class="p">)</span>
-<span class="c"># migration, architecture, performance_audit</span></code></pre>
-        <p>Migration planning, architecture reviews, performance audits, or just an experienced set of eyes on your JRuby deployment. Hire us by the hour or the project.</p>
-      </div>
-      <div class="service">
-        <pre><code class="highlight"><span class="k">def</span> <span class="nf">release_notify</span>
-<span class="c"># early_access: true, no_surprises: true</span></code></pre>
-        <p>Know what's coming before it lands. Advance notice of JRuby releases, security patches, and breaking changes — so your team isn't caught off guard.</p>
-      </div>
-    <% end %>
-  </div>
-</section>
-
-<!-- ===== Interstitial ===== -->
 <section id="clients">
   <div class="container">
     <blockquote class="interstitial">
@@ -115,7 +71,6 @@ layout: default
   </div>
 </section>
 
-<!-- ===== Packages ===== -->
 <section class="highlight" id="packages">
   <div class="container">
     <div>
@@ -171,48 +126,6 @@ layout: default
         <button class="cta" data-scroll-to="contact">Headius.contact!</button>
       </div>
     <% end %>
-  </div>
-</section>
-
-<!-- ===== About ===== -->
-<section class="highlight" id="about">
-  <div class="container">
-    <div class="two-col">
-      <div>
-        <h2>There Is No Tier-One Support</h2>
-        <p>
-          Headius Enterprises was established in 2024, but the work goes back to 2004. Charlie has been writing JRuby and working on the JVM since Java 1.0. This isn't a pivot or a side project — it's a formalisation of support that was already happening informally for two decades.
-        </p>
-        <p>
-          We're a small team. Deliberately. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
-        </p>
-        <pre class="about__callout"><code><span class="k">#</span> We're currently planning 2026 conference travel.
-<span class="k">#</span> Come find us — we're easy to spot.</code></pre>
-      </div>
-      <div>
-        <%= render Card.new do %>
-          <pre><code class="highlight"><span class="k">class</span> <span class="nc">CharlesOliverNutter</span> <span class="no">&lt; Human</span>
-<span class='c'># Architect &amp; Technologist</span></code></pre>
-          <p>
-            Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
-          </p>
-          <%= render Badges.new do %>
-            <span class="badge badge--crimson">Java Champion</span>
-            <span class="badge badge--crimson">Ruby Hero</span>
-            <span class="badge badge--amber">JavaOne Rock Star</span>
-            <span class="badge badge--teal">JAX Innovators 2012</span>
-            <span class="badge">Oracle Groundbreaker 2018</span>
-          <% end %>
-        <% end %>
-        <%= render Card.new do %>
-          <pre><code class="highlight"><span class="k">class</span> <span class="nc">SondraRadkeNutter</span> <span class="no">&lt; Human</span>
-<span class="c"># President</span></code></pre>
-          <p>
-            25 years of professional education and organisational leadership. The operational backbone and customer support management that keeps Headius running — because somebody has to make sure the engineers actually reply to emails.
-          </p>
-        <% end %>
-      </div>
-    </div>
   </div>
 </section>
 
