@@ -10,8 +10,6 @@
   margin-bottom: 2rem;
   min-width: 0;
 
-  overflow: hidden;
-
   &.two-col {
     display: grid;
   }
@@ -41,13 +39,11 @@
           background: transparent;
         }
       }
+    }
 
-      .pane {
-        padding: 1.5rem;
-        font-size: 0.8rem;
-        line-height: 1.9;
-        color: var(--text);
-      }
+    .pane {
+      padding: 1.5rem;
+      color: var(--text);
     }
   }
 
@@ -102,5 +98,9 @@
     @media (max-width: 900px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  pre + p {
+    margin-top: 1rem;
   }
 }

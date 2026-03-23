@@ -56,7 +56,7 @@
       font-size: 0.78rem;
       color: var(--text);
       padding: 0.3rem 0;
-      padding-left: 1.8rem;
+      padding-left: 2.5rem;
       position: relative;
 
       &::before {
@@ -79,15 +79,13 @@
     }
   }
 
-  .pkg__cta {
+  .cta {
     display: block;
     text-align: center;
-    padding: 0.7rem;
     font-family: var(--mono);
     font-size: 0.82rem;
     font-weight: 600;
     background: transparent;
-    border: 1px solid var(--border-bright);
     border-radius: 4px;
     color: var(--text);
     transition: all 0.2s;
@@ -97,25 +95,9 @@
       color: var(--crimson-light);
       background: var(--crimson-subtle);
     }
-
-    .pkg--featured & {
-      background: var(--crimson);
-      border-color: var(--crimson);
-      color: var(--on-crimson);
-
-      .nc { color: var(--on-crimson); }
-
-      &:hover {
-        background: var(--crimson-bright);
-        border-color: var(--crimson-bright);
-      }
-    }
   }
 
   .card.custom {
-    border-style: dashed;
-    border-color: var(--border-bright);
-    padding: 2rem 2.5rem;
     grid-template-columns: 1fr auto;
     gap: 2rem;
     align-items: center;
@@ -123,39 +105,6 @@
     @media (max-width: 900px) {
       grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
-  }
-
-  .pkg-custom__sig {
-    display: block;
-    font-size: 0.88rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .pkg-custom__body {
-    font-size: 0.78rem;
-    color: var(--text-dim);
-    line-height: 1.8;
-  }
-
-  .pkg-custom__cta {
-    display: inline-block;
-    padding: 0.7rem 1.4rem;
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    font-weight: 600;
-    background: transparent;
-    border: 1px dashed var(--border-bright);
-    border-radius: 4px;
-    color: var(--text);
-    transition: all 0.2s;
-    white-space: nowrap;
-
-    &:hover {
-      border-color: var(--crimson-light);
-      border-style: solid;
-      color: var(--crimson-light);
-      background: var(--crimson-subtle);
     }
   }
 }

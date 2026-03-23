@@ -241,3 +241,13 @@ blockquote {
     font-size: 0.78rem;
   }
 }
+
+.smaller {
+  font-size: 0.9rem;
+}
+
+hr {
+  border-width: 1px 0 0 0;
+  border-color: var(--border);
+  margin: 2rem 0 2rem 0;
+}

@@ -89,6 +89,7 @@ nav.highlight {
 
   .nav-toggle {
     display: block;
+    order: -1;
   }
 }
 
