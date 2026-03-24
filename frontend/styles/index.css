@@ -6,10 +6,23 @@
 @import "about.css";
 @import "resources.css";
 @import "contact.css";
+@import "privacy.css";
 
 #opening {
   padding: 6rem 0 5rem;
   border-top: none;
+
+  .opening__layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .opening__logo {
+    flex-shrink: 0;
+    width: 280px;
+    opacity: 0.85;
+  }
 
   hgroup {
     font-size: 2rem;
@@ -36,6 +49,14 @@
     align-items: center;
     flex-wrap: wrap;
   }
+}
+
+.pitch__logo {
+  margin-top: 2rem;
+  max-width: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #packages {
@@ -82,10 +103,12 @@
   .cta {
     display: block;
     text-align: center;
+    padding: 0.7rem;
     font-family: var(--mono);
     font-size: 0.82rem;
     font-weight: 600;
     background: transparent;
+    border: 1px solid var(--border-bright);
     border-radius: 4px;
     color: var(--text);
     transition: all 0.2s;
@@ -132,6 +155,18 @@
 @media (max-width: 900px) {
   #opening hgroup {
     font-size: 1.6rem;
+  }
+
+  #opening .opening__layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #opening .opening__logo {
+    width: 120px;
+    order: -1;
+    align-self: center;
+    margin-bottom: 2rem;
   }
 
   #packages .grid {
