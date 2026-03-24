@@ -16,7 +16,7 @@
 
 Bridgetown.configure do |config|
   # The base hostname & protocol for your site, e.g. https://example.com
-  url ""
+  url "https://headius.com"
 
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"
@@ -63,6 +63,8 @@ Bridgetown.configure do |config|
   #
   # init :dotenv
   #
+
+  init :"bridgetown-sitemap"
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #

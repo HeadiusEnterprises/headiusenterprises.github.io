@@ -49,6 +49,8 @@ GEM
       zeitwerk (~> 2.5)
     bridgetown-paginate (2.1.2)
       bridgetown-core (= 2.1.2)
+    bridgetown-sitemap (3.0.1)
+      bridgetown (>= 1.3.0, < 3.0)
     concurrent-ruby (1.3.6)
     console (1.34.3)
       fiber-annotation
@@ -168,6 +170,7 @@ PLATFORMS
 
 DEPENDENCIES
   bridgetown (~> 2.1.2)
+  bridgetown-sitemap (~> 3.0)
   puma (< 8)
 
 CHECKSUMS
@@ -180,6 +183,7 @@ CHECKSUMS
   bridgetown-core (2.1.2) sha256=4f74ba15bb806f06bcf78fa4750b5a009b78d9b7a0aef5661873df54c31ada89
   bridgetown-foundation (2.1.2) sha256=bfa7b45986fb325ab0b3ac0bcb12687a5ce689e56a1c48bbebf326a1e892f6dc
   bridgetown-paginate (2.1.2) sha256=70b05ab44c09fc6ba3b8433852cc5961ce4f458a3eda3ceeffca893e34bbaa76
+  bridgetown-sitemap (3.0.1) sha256=936bb5df59e8d950c70bca40ec0cee386c3c57581cb159701b38665067efa8f8
   concurrent-ruby (1.3.6) sha256=6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab
   console (1.34.3) sha256=869fbd74697efc4c606f102d2812b0b008e4e7fd738a91c591e8577140ec0dcc
   csv (3.3.5) sha256=6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f
