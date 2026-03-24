@@ -1,11 +1,13 @@
-<div class="consent-embed" data-provider="<%= provider %>" data-embed-url="<%= embed_url %>"<% if background %> style="background-image: url('<%= background %>')"<% end %>>
-  <button class="consent-embed__play" aria-label="Play video: <%= title %>">
-    <svg viewBox="0 0 68 48" width="68" height="48">
-      <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="var(--crimson)"/>
-      <path d="M45 24L27 14v20" fill="var(--on-crimson)"/>
-    </svg>
-    <span class="consent-embed__tooltip">Clicking play will load content from <%= provider %> and set cookies. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
-  </button>
+<div class="consent-embed-wrap">
+  <div class="consent-embed" data-provider="<%= provider %>" data-embed-url="<%= embed_url %>"<% if background %> style="background-image: url('<%= background %>')"<% end %>>
+    <button class="consent-embed__play" aria-label="Play video: <%= title %>">
+      <svg viewBox="0 0 68 48" width="68" height="48">
+        <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="var(--crimson)"/>
+        <path d="M45 24L27 14v20" fill="var(--on-crimson)"/>
+      </svg>
+      <span class="consent-embed__tooltip">Clicking play will load content from <%= provider %> and set cookies. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+    </button>
+  </div>
   <span class="consent-embed__title"><%= title %></span>
   <a class="consent-embed__link" href="<%= link_url %>" target="_blank" rel="noopener">Watch on <%= provider %></a>
 </div>
