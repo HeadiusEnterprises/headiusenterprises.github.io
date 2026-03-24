@@ -81,6 +81,25 @@
   &.consent-embed--form {
     aspect-ratio: auto;
     min-height: 500px;
+    flex-direction: column;
+
+    .consent-embed__title {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 1rem;
+    }
+
+    .consent-embed__link {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+
+      &:hover {
+        color: var(--crimson-light);
+      }
+    }
 
     iframe {
       min-height: 500px;
@@ -113,7 +132,9 @@
   }
 
   &.consent-embed--loaded {
-    .consent-embed__play {
+    .consent-embed__play,
+    .consent-embed__title,
+    .consent-embed__link {
       display: none;
     }
   }

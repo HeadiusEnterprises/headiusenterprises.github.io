@@ -117,4 +117,8 @@
   #services-intro hgroup h1 {
     font-size: 1.6rem;
   }
+
+  pre code.highlight {
+    font-size: 0.75rem;
+  }
 }

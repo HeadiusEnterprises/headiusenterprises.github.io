@@ -21,7 +21,10 @@
   </div>
   <div>
     <label for="message">f.message</label>
-    <textarea id="message" name="message" placeholder="Tell us about your JRuby setup..."></textarea>
+    <div class="message-wrap">
+      <textarea id="message" name="message" maxlength="1600" placeholder="Tell us about your JRuby setup..."></textarea>
+      <span class="char-count" hidden></span>
+    </div>
   </div>
   <button type="submit">f.submit!</button>
   <p class="contact__form-alt">Or use the <a href="/contact">full inquiry form</a> on our contact page.</p>

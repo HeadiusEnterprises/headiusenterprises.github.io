@@ -128,6 +128,11 @@ a {
   color: var(--crimson-light);
   text-decoration: none;
   transition: color 0.2s;
+
+  .icon {
+    vertical-align: -0.1em;
+    margin-right: 0.25rem;
+  }
 }
 a:hover {
   color: var(--amber-bright);

@@ -47,6 +47,17 @@ form.highlight {
     min-height: 90px;
   }
 
+  .message-wrap {
+    .char-count {
+      display: block;
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+    }
+  }
+
   select { cursor: pointer; }
 
   button {

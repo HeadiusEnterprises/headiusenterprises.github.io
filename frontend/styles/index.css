@@ -178,4 +178,8 @@
   blockquote {
     padding: 0 1rem;
   }
+
+  pre code.highlight {
+    font-size: 0.75rem;
+  }
 }
