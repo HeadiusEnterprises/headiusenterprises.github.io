@@ -1,0 +1,22 @@
+<nav class="highlight">
+  <div class="container">
+    <a href="<%= relative_url '/' %>" class="brand">headius<span class="sep">\</span>enterprises</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('nav').querySelector('ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <% %w[services about resources contact].each do |page| %>
+        <li><a href="<%= relative_url "/#{page}" %>"<%= raw(' aria-current="page"') if resource.relative_url.start_with?("/#{page}") %>><%= page %></a></li>
+      <% end %>
+    </ul>
+    <div id="theme-switcher">
+      <span id="theme-icon" aria-label="Toggle theme">◑</span>
+      <menu>
+        <li data-theme="auto">◑</li>
+        <li data-theme="dark">☽</li>
+        <li data-theme="light">☀</li>
+        <li data-theme="high-contrast">◉</li>
+      </menu>
+    </div>
+  </div>
+</nav>

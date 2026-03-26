@@ -1,0 +1,85 @@
+form.highlight {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .contact__form-header {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.25rem;
+  }
+
+  label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--text-bright);
+    background: var(--surface-raised);
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--crimson);
+      box-shadow: 0 0 0 3px var(--crimson-glow);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  .message-wrap {
+    .char-count {
+      display: block;
+      text-align: right;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-top: 0.25rem;
+    }
+  }
+
+  select { cursor: pointer; }
+
+  button {
+    font-size: 0.82rem;
+    padding: 0.75rem 1.5rem;
+    align-self: flex-start;
+  }
+
+  .contact__form-alt {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+
+    a {
+      color: var(--crimson-light);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+#contact-intro {
+  padding: 6rem 0 5rem;
+  border-top: none;
+
+  hgroup {
+    margin-top: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 640px;
+    }
+  }
+}
+
+#contact-details h2 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  #contact-intro hgroup h1 {
+    font-size: 1.6rem;
+  }
+}

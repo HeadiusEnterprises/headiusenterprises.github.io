@@ -1,0 +1,186 @@
+@import "fonts.css";
+@import "common.css";
+@import "nav.css";
+@import "footer.css";
+@import "services.css";
+@import "about.css";
+@import "resources.css";
+@import "contact.css";
+@import "privacy.css";
+@import "welcome.css";
+
+#opening {
+  padding: 6rem 0 5rem;
+  border-top: none;
+
+  .opening__layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .opening__logo {
+    flex-shrink: 0;
+    width: 280px;
+    opacity: 0.85;
+  }
+
+  hgroup {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.12;
+    color: var(--white);
+    /*max-width: 680px;*/
+    margin-bottom: 1.5rem;
+
+    .dim {
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    .hl {
+      color: var(--crimson-light);
+    }
+  }
+
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.pitch__logo {
+  margin-top: 2rem;
+  max-width: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#packages {
+  .grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    flex: 1;
+    margin-bottom: 2rem;
+
+    li {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text);
+      padding: 0.3rem 0;
+      padding-left: 2.5rem;
+      position: relative;
+
+      &::before {
+        content: "attr";
+        position: absolute;
+        left: 0;
+        color: var(--crimson-light);
+        font-size: 0.68rem;
+        font-weight: 700;
+      }
+
+      &.inherited {
+        color: var(--text-dim);
+
+        &::before {
+          content: "incl";
+          color: var(--text-dim);
+        }
+      }
+    }
+  }
+
+  .cta {
+    display: block;
+    text-align: center;
+    padding: 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid var(--border-bright);
+    border-radius: 4px;
+    color: var(--text);
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: var(--crimson-light);
+      color: var(--crimson-light);
+      background: var(--crimson-subtle);
+    }
+  }
+
+  .card.custom {
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+}
+
+#about {
+  .about__callout {
+    font-size: 0.82rem;
+    color: var(--crimson-light);
+    background: var(--crimson-subtle);
+    border-left: 3px solid var(--crimson);
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.8;
+  }
+
+}
+
+#contact {
+  h2 { margin-bottom: 1rem; }
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  #opening hgroup {
+    font-size: 1.6rem;
+  }
+
+  #opening .opening__layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #opening .opening__logo {
+    width: 120px;
+    order: -1;
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+
+  #packages .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  blockquote {
+    padding: 0 1rem;
+  }
+
+  pre code.highlight {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,164 @@
+---
+layout: default
+---
+
+<!-- ===== Opening ===== -->
+<section id="opening">
+  <div class="container opening__layout">
+    <div>
+      <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/enterprise_support'</span></code></pre>
+      <hgroup>
+        <h1>We wrote the runtime.</h1>
+        <p class="dim"><span class="dim">We'll make sure</span> <span class="hl">yours keeps running.</span></p>
+      </hgroup>
+      <p>
+        Dedicated JRuby support from the people who actually build it. Priority bug fixes, debugging, performance work, and profiling from the core developers.
+      </p>
+      <div class="actions">
+        <button data-scroll-to="packages">Headius::Support.plans</button>
+        <button class="ghost" data-scroll-to="contact">Headius.contact!</button>
+      </div>
+    </div>
+    <img src="/images/he-logo.svg" alt="Headius Enterprises" class="opening__logo" />
+  </div>
+</section>
+
+<!-- ===== The Pitch ===== -->
+<section id="pitch">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Your production issue is our priority</h2>
+        <p>
+          Most support contracts connect you to someone who read the docs. Ours connects you to someone who <em>wrote the code</em>. When you hit a threading issue, a memory leak, or a performance wall in JRuby, we don't need to reproduce it and escalate — we already know where to look.
+        </p>
+        <p>
+          There is no tier-one support at Headius. There is no escalation path. You are already talking to the engineers. That's the whole point.
+        </p>
+        <img src="/images/jruby-logo.svg" alt="JRuby" class="pitch__logo" />
+      </div>
+      <%= render Card.new(variant: "terminal") do %>
+        <div class="title">
+          <div class="controls">
+            <span></span><span></span><span></span>
+          </div>
+          <span>irb(headius)</span>
+        </div>
+        <pre class="pane"><code class="highlight"><span class="gp">irb&gt;</span> <span class="nv">ticket</span> = <span class="k">Headius::Support</span>.open(
+  <span class="ss">priority:</span> <span class="s">"high"</span>,
+  <span class="ss">issue:</span> <span class="s">"ThreadError: deadlock"</span>
+)
+<span class="go">=&gt; #&lt;Ticket id: 4271, status: :open&gt;</span>
+
+<span class="c"># four hours later</span>
+
+<span class="gp">irb&gt;</span> ticket.reload.status
+<span class="gi">=&gt; :fix_committed</span>
+<span class="gp">irb&gt;</span> ticket.resolution
+<span class="gi">=&gt; "jruby/jruby@a3f8c2d"</span>
+<span class="gp">irb&gt;</span> ticket.patch_release
+<span class="gi">=&gt; "Released"</span></code></pre>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!--
+<section id="clients">
+  <div class="container">
+    <blockquote class="interstitial">
+        <code class="highlight c">=begin</code>
+        <p>We opened a priority ticket on Friday afternoon. By Monday morning there was a patch release. I've never seen a turnaround like that from any vendor, let alone one where the person who answered the ticket was also the person who committed the fix.</p>
+        <code class="highlight c">=end</code>
+        <cite>— Ruby J. Client, VP of Engineering at Consolidated Gemstone Corp</cite>
+    </blockquote>
+  </div>
+</section>
+-->
+
+<section class="highlight" id="packages">
+  <div class="container">
+    <div>
+      <h2>Support Packages</h2>
+      <p>Pick a tier. Or keep reading for something a little more bespoke.</p>
+    </div>
+    <div class="grid">
+      <%= render Card.new do %>
+        <pre><code class="highlight smaller"><span class="k">class</span> <span class="nc">Professional</span> <span class="no">&lt; Support</span></code></pre>
+        <p>For teams getting started or running smaller deployments.</p>
+        <hr>
+        <ul>
+          <li>Priority email to core devs</li>
+          <li>Advance release notifications</li>
+          <li>Knowledge base access</li>
+        </ul>
+        <a class="cta" href="<%= relative_url '/services#professional' %>"><span class="nc">Professional</span>.new.inquire!</a>
+      <% end %>
+      <%= render Card.new(variant: "featured") do %>
+        <pre><code class="highlight smaller"><span class="k">class</span> <span class="nc">Expert</span> <span class="no">&lt; Professional</span></code></pre>
+        <p>For teams that need faster answers and actual fixes.</p>
+        <hr>
+        <ul>
+          <li class="inherited">include Professional</li>
+          <li>Direct chat (text, video, audio)</li>
+          <li>1 priority bug fix / month</li>
+          <li>Architecture guidance</li>
+        </ul>
+        <a class="cta" href="<%= relative_url '/services#expert' %>"><span class="nc">Expert</span>.new.inquire!</a>
+      <% end %>
+      <%= render Card.new do %>
+        <pre><code class="highlight smaller"><span class="k">class</span> <span class="nc">Enterprise</span> <span class="no">&lt; Expert</span></code></pre>
+        <p>For organisations running JRuby at scale in production.</p>
+        <hr>
+        <ul>
+          <li class="inherited">include Expert</li>
+          <li>Unlimited priority bug fixes</li>
+          <li>Debugging &amp; profiling sessions</li>
+          <li>Discounted consulting rates</li>
+        </ul>
+        <a class="cta" href="<%= relative_url '/services#enterprise' %>"><span class="nc">Enterprise</span>.new.inquire!</a>
+      <% end %>
+    </div>
+    <%= render Card.new(variant: %w[custom two-col]) do %>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="nv">name, *args, &amp;block</span><span class="p">)</span>
+<span class="c"># None of the above quite fit?</span>
+<span class="c"># We'd rather build the right thing than sell you the wrong tier.</span>
+<span class="c"># Tell us what you need — we'll figure it out together.</span>
+<span class="k">super</span> <span class="k">unless</span> Headius.can_help?<span class="p">(</span><span class="nv">name</span><span class="p">)</span></code></pre>
+      </div>
+      <div>
+        <button class="cta" data-scroll-to="contact">Headius.contact!</button>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Let's Talk</h2>
+        <p>
+          Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.
+        </p>
+        <%= render ListTable.new do %>
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">irl</span>
+            <span>At a Ruby or JVM conference near you</span>
+          </li>
+          <li>
+            <span class="label">vibe</span>
+            <span>Friendly. Professional. Slightly metal.</span>
+          </li>
+        <% end %>
+      </div>
+      <%= render ContactForm.new %>
+    </div>
+  </div>
+</section>

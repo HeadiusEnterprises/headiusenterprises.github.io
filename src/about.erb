@@ -1,0 +1,184 @@
+---
+layout: default
+title: About
+---
+
+<!-- ===== Intro ===== -->
+<section id="about-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/about'</span></code></pre>
+    <hgroup>
+      <h1>There Is No Tier-One Support</h1>
+      <p>Headius Enterprises was established in 2024, but the work goes back to 2004. This isn't a pivot or a side project — it's a formalisation of support that was already happening informally for two decades.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="highlight" id="story">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Origin</span>
+<span class="c"># How twenty years of open source became a company.</span></code></pre>
+      <h2>The Short Version</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <p>
+          Most support companies start with a product and then hire people to answer questions about it. We did it backwards. Charlie has been building JRuby since 2004, contributing to the JVM ecosystem since Java 1.0, and helping teams debug their deployments for free for most of that time.
+        </p>
+        <p>
+          In 2024, we made it official. Not because anything changed about the work — because enough people were relying on it that it deserved a proper structure. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
+        </p>
+      </div>
+      <div>
+        <p>
+          We're a small team. Deliberately. No account managers, no support tiers staffed by people who've never seen the source code. The constraint is our advantage — every interaction is with someone who has deep, first-hand knowledge of the runtime your application depends on.
+        </p>
+        <p>
+          No other company in the world can match this level of expertise when it comes to JRuby. That's not marketing — it's just a fact about a twenty-year-old open source project with a very small number of core contributors.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Team ===== -->
+<section id="team">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Team</span>
+<span class="c"># The people behind the code and the company.</span></code></pre>
+      <h2>Who We Are</h2>
+    </div>
+    <div class="two-col">
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">CharlesOliverNutter</span> <span class="no">&lt; Human</span>
+  <span class="c"># Architect &amp; Technologist</span></code></pre>
+        <p>
+          Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby since 2004. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
+        </p>
+        <p>
+          Charles has released commercial software, managed open-source projects, led enterprise applications, and contributed hundreds of thousands of lines of code globally. His talks on JVM bytecode, invokedynamic, and JIT compilers are consistently among the most popular at Java and Ruby conferences worldwide.
+        </p>
+        <%= render Badges.new do %>
+          <span class="badge badge--crimson">Java Champion</span>
+          <span class="badge badge--crimson">Ruby Hero</span>
+          <span class="badge badge--amber">JavaOne Rock Star</span>
+          <span class="badge badge--teal">JAX Innovators 2012</span>
+          <span class="badge">Oracle Groundbreaker 2018</span>
+        <% end %>
+        <hr>
+        <p class="smaller">
+          <a href="https://mastodon.social/@headius" target="_blank" rel="noopener me"><svg class="icon" viewBox="0 0 448 512" width="14" height="14"><path fill="currentColor" d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-60.1-27.77-159.28-27.56-218.8 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg> @headius</a> &bull;
+          <a href="https://bsky.app/profile/headius.bsky.social" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 568 501" width="14" height="14"><path fill="currentColor" d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.889-129.52 80.986-149.071-65.72 11.185-139.6-7.295-159.875-79.748C10.945 203.659 1 75.291 1 57.946 1-28.906 76.135-1.612 123.121 33.664z"/></svg> @headius</a> &bull;
+          <a href="https://x.com/Headius" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> @headius</a>
+        </p>
+      <% end %>
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">SondraRadkeNutter</span> <span class="no">&lt; Human</span>
+  <span class="c"># President</span></code></pre>
+        <p>
+          25 years of professional education and organisational leadership. Sondra has guided teams through transitions across the country and through changing structures, applying detailed organisation and follow-through to every challenge.
+        </p>
+        <p>
+          At Headius, she's the operational backbone — customer support management, business operations, and making sure the engineers actually reply to emails. Because somebody has to.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Talks ===== -->
+<section id="talks">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Talks</span>
+<span class="c"># Selected conference presentations.</span></code></pre>
+      <h2>From the Stage</h2>
+    </div>
+    <div class="talks-grid">
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/10nArtB3LvA",
+        link_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
+        title: "JRuby: Do More with Ruby",
+        background: "/images/yt_jruby_do_more_with_ruby.jpg"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/pzm6I4liJlg",
+        link_url: "https://www.youtube.com/watch?v=pzm6I4liJlg",
+        title: "Bringing Ruby to the JVM",
+        background: "/images/yt_bringing_ruby_to_the_jvm.jpg"
+      ) %>
+      <%= render ConsentEmbed.new(
+        provider: "YouTube",
+        embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
+        link_url: "https://www.youtube.com/watch?v=OwEDqtlBg04",
+        title: "Scaling Ruby with JRuby",
+        background: "/images/yt_scaling_ruby_with_jruby.jpg"
+      ) %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Conferences ===== -->
+<section class="highlight" id="conferences">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Calendar</span>
+<span class="c"># Where you can find us in 2026.</span></code></pre>
+      <h2>Conference Schedule</h2>
+      <p>Come find us — we're easy to spot.</p>
+    </div>
+    <%= render ListTable.new do %>
+      <li>
+        <span class="label">Mar 26–27</span>
+        <span><a href="https://rbqconf.com" target="_blank" rel="noopener">RBQ Conf</a> — Austin, TX</span>
+      </li>
+      <li>
+        <span class="label">Apr 17–19</span>
+        <span><a href="http://wrocloverb.com/" target="_blank" rel="noopener">wroclove.rb 2026</a> — Wrocław, Poland</span>
+      </li>
+      <li>
+        <span class="label">Apr 22–24</span>
+        <span><a href="https://rubykaigi.org/2026/" target="_blank" rel="noopener">RubyKaigi 2026</a> — Hakodate, Hokkaido, Japan</span>
+      </li>
+      <li>
+        <span class="label">Jul 14–16</span>
+        <span><a href="https://rubyconf.org" target="_blank" rel="noopener">RubyConf 2026</a> — Las Vegas, NV</span>
+      </li>
+    <% end %>
+    <p class="conf-note">More dates to be announced. Follow us on <a href="https://mastodon.social/@headius" target="_blank" rel="noopener me">Mastodon</a> or <a href="https://bsky.app/profile/headius.bsky.social" target="_blank" rel="noopener">Bluesky</a> for updates.</p>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Get In Touch</h2>
+        <p>
+          Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference, we'd love to hear from you.
+        </p>
+        <%= render ListTable.new do %>
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">social</span>
+            <span><a href="https://x.com/HeadiusEnts" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a> · <a href="https://www.linkedin.com/company/headius/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a> · <a href="https://www.facebook.com/profile.php?id=61587960190805" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a> · <a href="https://bsky.app/profile/jrubyproject.bsky.social" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 568 501" width="14" height="14"><path fill="currentColor" d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-201.21C491.866-1.611 568-28.906 568 57.947c0 17.346-9.945 145.713-15.778 166.555-20.275 72.453-94.155 90.933-159.875 79.748C507.222 323.8 536.444 388.56 473.333 453.32c-119.86 122.992-172.272-30.859-185.702-70.281-2.462-7.227-3.614-10.608-3.631-7.733-.017-2.875-1.169.506-3.631 7.733-13.43 39.422-65.842 193.273-185.702 70.281-63.111-64.76-33.889-129.52 80.986-149.071-65.72 11.185-139.6-7.295-159.875-79.748C10.945 203.659 1 75.291 1 57.946 1-28.906 76.135-1.612 123.121 33.664z"/></svg></a></span>
+          </li>
+          <li>
+            <span class="label">code</span>
+            <span><a href="https://jruby.org" target="_blank" rel="noopener">JRuby.org</a></span>
+          </li>
+        <% end %>
+      </div>
+      <%= render ContactForm.new %>
+    </div>
+  </div>
+</section>

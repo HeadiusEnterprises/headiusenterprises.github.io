@@ -1,0 +1,214 @@
+---
+layout: default
+title: JRuby Support Services
+---
+
+<!-- ===== Intro ===== -->
+<section id="services-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/support/packages'</span></code></pre>
+    <hgroup>
+      <h1>Support Packages</h1>
+      <p>Every tier connects you directly to the engineers who build JRuby. No ticket queues, no call centres, no escalation paths to nowhere. The only difference is how much of our time you need.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== Professional ===== -->
+<section class="highlight" id="professional">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Professional</span> <span class="no">&lt; Support</span>
+  <span class="c"># For teams getting started with JRuby</span>
+  <span class="c"># or running smaller deployments that</span>
+  <span class="c"># need a safety net.</span></code></pre>
+        <h2>Professional Support</h2>
+        <p>
+          A direct line to the people who write the runtime. When something doesn't behave the way you expect, you email us and someone who actually knows the answer responds. Not a junior support rep reading from a script — a core JRuby developer.
+        </p>
+        <p>
+          You also get advance notice of every release before it lands, including security patches, breaking changes, and new features. No surprises on a Friday afternoon.
+        </p>
+      </div>
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="nf">pricing:</span>
+  <span class="ss">monthly:</span>  <span class="s">"$99/mo"</span>
+  <span class="ss">yearly:</span>   <span class="s">"$995/yr"</span>  <span class="c"># save 16%</span></code></pre>
+        <hr>
+        <ul>
+          <li>Priority email to core JRuby developers</li>
+          <li>Advance release notifications</li>
+          <li>Up to 5 team members</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href="https://buy.stripe.com/fZe014gtE5Ng1nG4gg" target="_blank" rel="noopener"><span class="nc">Professional</span>.subscribe(<span class="ss">:yearly</span>)</a>
+          <a class="button ghost" href="https://buy.stripe.com/00g4hkcdo0sW2rKaEF" target="_blank" rel="noopener"><span class="nc">Professional</span>.subscribe(<span class="ss">:monthly</span>)</a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Expert ===== -->
+<section id="expert">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Expert</span> <span class="no">&lt; Professional</span>
+  <span class="c"># For teams that need faster answers, real-</span>
+  <span class="c"># time conversations, and actual fixes</span>
+  <span class="c"># not workarounds.</span></code></pre>
+        <h2>Expert Support</h2>
+        <p>
+          Everything in Professional, plus direct chat with core developers — text, video, or audio, whatever works for your team. Sometimes you need to share a screen and point at the thing that's broken. Up to one hour of live support per month is included.
+        </p>
+        <p>
+          You also get one priority bug fix per month. Not "we'll look into it" — an actual fix, committed by the person you're talking to. Your issue goes to the front of the queue, and a patch release follows.
+        </p>
+      </div>
+      <%= render Card.new(variant: "featured") do %>
+        <pre><code class="highlight"><span class="nf">pricing:</span>
+  <span class="ss">monthly:</span>  <span class="s">"$1,499/mo"</span>
+  <span class="ss">yearly:</span>   <span class="s">"$16,499/yr"</span>  <span class="c"># 1 month free</span></code></pre>
+        <hr>
+        <ul>
+          <li class="inherited">include Professional</li>
+          <li>Live chat — text, video, audio</li>
+          <li>1 hour live support / month</li>
+          <li>1 priority bug fix / month</li>
+          <li>Architecture guidance</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href="https://buy.stripe.com/9AQ29celw1x0fewbIK" target="_blank" rel="noopener"><span class="nc">Expert</span>.subscribe(<span class="ss">:yearly</span>)</a>
+          <a class="button ghost" href="https://buy.stripe.com/00geVYgtEfnQeas3cf" target="_blank" rel="noopener"><span class="nc">Expert</span>.subscribe(<span class="ss">:monthly</span>)</a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Enterprise ===== -->
+<section class="highlight" id="enterprise">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <pre><code class="highlight"><span class="k">class</span> <span class="nc">Enterprise</span> <span class="no">&lt; Expert</span>
+  <span class="c"># For organisations running JRuby at scale</span>
+  <span class="c"># in production where downtime has</span>
+  <span class="c"># real consequences.</span></code></pre>
+        <h2>Enterprise Support</h2>
+        <p>
+          Everything in Expert, without the limits. Unlimited priority bug fixes, as many live support hours as your team needs, and debugging and profiling assistance from developers with twenty years of muscle memory for tracking down threading bugs, memory leaks, and performance bottlenecks.
+        </p>
+        <p>
+          You also get discounted consulting rates for larger engagements — migration planning, architecture reviews, performance audits, or ongoing advisory work. Think of it as having a core JRuby developer on retainer.
+        </p>
+      </div>
+      <%= render Card.new do %>
+        <pre><code class="highlight"><span class="c"># Tailored to your deployment and needs.</span>
+<span class="c"># Inquire about a complimentary estimate.</span>
+<span class="nf">pricing:</span>
+  <span class="ss">plan:</span> <span class="s">"custom"</span></code></pre>
+        <hr>
+        <ul>
+          <li class="inherited">include Expert</li>
+          <li>Unlimited priority bug fixes</li>
+          <li>Unlimited live support hours</li>
+          <li>Debugging &amp; profiling sessions</li>
+          <li>Discounted consulting rates</li>
+        </ul>
+        <button data-scroll-to="contact"><span class="nc">Enterprise</span>.new.inquire!</button>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- ===== What's Included ===== -->
+<section id="included">
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><span class="c"># == Headius::Support</span>
+<span class="c"># What each service actually means.</span></code></pre>
+      <h2>What You're Getting</h2>
+    </div>
+    <%= render Card.new(variant: "grid") do %>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">email_support</span><span class="p">(</span><span class="nv">subj: </span><span class="p">,</span><span class="nv"> body: </span><span class="p">)</span></code></pre>
+        <p>A direct inbox read by the people who write JRuby. Not a ticketing system, not a chatbot — an actual person who can commit a fix the same day they read your message. All tiers.</p>
+      </div>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">release_notify</span><span class="p">(</span><span class="nv">changelog: </span><span class="p">)</span></code></pre>
+        <p>Advance notice of upcoming JRuby releases, security patches, and breaking changes before they're public. Enough lead time to test against your application and plan your rollout. All tiers.</p>
+      </div>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">chat_support</span><span class="p">(</span><span class="nv">medium: :any</span><span class="p">)</span></code></pre>
+        <p>Real-time conversations via text, video, or screen share with a core developer. Scheduled when it works for your team. Expert includes 1 hour/month; Enterprise is unlimited.</p>
+      </div>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">priority_bugfix!</span><span class="p">(</span><span class="nv">issue: </span><span class="p">)</span></code></pre>
+        <p>Your bug goes to the front of the queue. The fix is committed by the person you reported it to, and a patch release follows. Expert gets 1/month; Enterprise gets unlimited.</p>
+      </div>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">debug_and_profile</span><span class="p">(</span><span class="nv">deep: true</span><span class="p">)</span></code></pre>
+        <p>Hands-on debugging and profiling assistance from developers who've spent two decades inside the JVM. Threading issues, memory leaks, GC tuning — we've seen it before. Enterprise only.</p>
+      </div>
+      <div>
+        <pre><code class="highlight"><span class="k">def</span> <span class="nf">consulting</span><span class="p">(</span><span class="nv">scope: :flexible</span><span class="p">)</span></code></pre>
+        <p>Migration planning, architecture reviews, performance audits, or just an experienced set of eyes on your JRuby deployment. Enterprise subscribers receive discounted hourly rates.</p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<!-- ===== Terms ===== -->
+<section id="terms">
+  <div class="container">
+    <pre><code class="highlight"><span class="c"># == Headius::Support::Terms</span>
+<span class="c"># The fine print, kept readable.</span></code></pre>
+    <h2>Terms</h2>
+    <div class="terms">
+      <details>
+        <summary>Billing &amp; Cancellation</summary>
+        <p>All subscriptions are billed through Stripe. You can upgrade, downgrade, or cancel at the end of your current billing period. Yearly plans are non-refundable once the billing period has started. If you have questions about billing for your current subscription of Support, please access your billing information at <a href="https://billing.stripe.com/p/login/3cs17H29JgmQ8q4288" target="_blank" rel="noopener">this link</a>.</p>
+      </details>
+      <details>
+        <summary>Team Size</summary>
+        <p>Professional and Expert plans include up to 5 named email contacts. If your team is larger, contact us — we'll work something out.</p>
+      </details>
+      <details>
+        <summary>NDAs</summary>
+        <p>We're happy to work under NDA. Subscriptions requiring an NDA will incur a one-time NDA Servicing Fee, billed separately.</p>
+      </details>
+      <details>
+        <summary>Enterprise Pricing</summary>
+        <p>Enterprise support is customised to your deployment. Pricing may be based on developer hours, CPU units, or other resources depending on your needs. Contact us for a complimentary needs analysis and estimate.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2>Ready to talk?</h2>
+        <p>
+          Whether you know exactly which tier you need or you'd like help figuring it out, we're happy to have the conversation. No hard sell — if we can help, we'll tell you how. If we can't, we'll tell you that too.
+        </p>
+        <%= render ListTable.new do %>
+          <li>
+            <span class="label">email</span>
+            <a href="mailto:<%= site.metadata.email %>"><%= site.metadata.email %></a>
+          </li>
+          <li>
+            <span class="label">irl</span>
+            <span>At a Ruby or JVM conference near you</span>
+          </li>
+        <% end %>
+      </div>
+      <%= render ContactForm.new %>
+    </div>
+  </div>
+</section>
