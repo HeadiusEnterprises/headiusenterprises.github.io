@@ -2,6 +2,18 @@
   padding: 6rem 0 5rem;
   border-top: none;
 
+  .opening__layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .opening__logo {
+    flex-shrink: 0;
+    width: 280px;
+    opacity: 0.85;
+  }
+
   hgroup {
     margin-top: 1rem;
 
@@ -15,6 +27,20 @@
 
     p {
       max-width: 640px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .opening__layout {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .opening__logo {
+      width: 120px;
+      order: -1;
+      align-self: center;
+      margin-bottom: 1.5rem;
     }
   }
 }

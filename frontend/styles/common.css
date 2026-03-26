@@ -124,6 +124,10 @@ body {
   color: var(--on-crimson);
 }
 
+p + p {
+  margin-top: 1rem;
+}
+
 a {
   color: var(--crimson-light);
   text-decoration: none;
