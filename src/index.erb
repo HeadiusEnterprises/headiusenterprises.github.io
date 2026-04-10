@@ -63,18 +63,27 @@ layout: default
   </div>
 </section>
 
-<!--
 <section id="clients">
   <div class="container">
-    <blockquote class="interstitial">
-        <code class="highlight c">=begin</code>
-        <p>We opened a priority ticket on Friday afternoon. By Monday morning there was a patch release. I've never seen a turnaround like that from any vendor, let alone one where the person who answered the ticket was also the person who committed the fix.</p>
-        <code class="highlight c">=end</code>
-        <cite>— Ruby J. Client, VP of Engineering at Consolidated Gemstone Corp</cite>
-    </blockquote>
+    <%= render CustomerQuote.new(quotes: [
+      {
+        text: "JRuby has been integral to Poshmark's stack for over a decade and remains a cornerstone of scalability and innovation",
+        name: "Poshmark",
+        url: "https://poshmark.com/"
+      },
+      {
+        text: "[JRuby was] chosen to overcome MRI Ruby's lack of multithreading and to leverage the vast and mature ecosystem of Java",
+        name: "Logstash",
+        url: "https://www.elastic.co/logstash"
+      },
+      {
+        text: "The JRuby team has been amazingly responsive and helpful!",
+        name: "SubstituteAlert",
+        url: "https://www.subalert.com/"
+      }
+    ]) %>
   </div>
 </section>
--->
 
 <section class="highlight" id="packages">
   <div class="container">

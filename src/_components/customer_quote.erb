@@ -1,0 +1,10 @@
+<div class="customer-quote" data-customer-quote data-interval="<%= @interval %>">
+  <% @quotes.each_with_index do |q, i| %>
+    <blockquote class="interstitial<%= " is-active" if i.zero? %>">
+      <code class="highlight c">=begin</code>
+      <p><%= q[:text] %></p>
+      <code class="highlight c">=end</code>
+      <cite>— <a href="<%= q[:url] %>"><%= q[:name] %></a></cite>
+    </blockquote>
+  <% end %>
+</div>
