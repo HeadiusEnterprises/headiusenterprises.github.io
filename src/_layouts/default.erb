@@ -2,6 +2,9 @@
 <html lang="<%= site.locale %>">
   <head>
     <%= render "head", metadata: site.metadata, title: data.title %>
+    <% if resource.data.canonical_url %>
+      <link rel="canonical" href="<%= resource.data.canonical_url %>" />
+    <% end %>
   </head>
   <body>
     <%= render "navbar", metadata: site.metadata %>

@@ -36,6 +36,10 @@
   }
 
   function loadEmbed(el) {
+    if (el.dataset.scriptUrl) {
+      loadScriptEmbed(el)
+      return
+    }
     var url = embedUrl(el.dataset.embedUrl, el)
     var iframe = document.createElement("iframe")
     iframe.src = url
@@ -43,6 +47,26 @@
     iframe.allowFullscreen = true
     el.appendChild(iframe)
     el.classList.add("consent-embed--loaded")
+  }
+
+  function loadScriptEmbed(el) {
+    var tmpl = el.querySelector("template.consent-embed__template")
+    if (tmpl) {
+      el.appendChild(tmpl.content.cloneNode(true))
+      tmpl.remove()
+    }
+    el.classList.add("consent-embed--loaded")
+
+    var scriptUrl = el.dataset.scriptUrl
+    var selector = 'script[data-consent-script="' + scriptUrl + '"]'
+    if (!document.querySelector(selector)) {
+      var s = document.createElement("script")
+      s.src = scriptUrl
+      s.async = true
+      s.setAttribute("charset", "UTF-8")
+      s.setAttribute("data-consent-script", scriptUrl)
+      document.body.appendChild(s)
+    }
   }
 
   function isFormEmbed(el) {

@@ -2,6 +2,37 @@
 layout: default
 ---
 
-<h1><%= data.title %></h1>
+<section id="post">
+  <div class="container">
+    <article>
+      <header>
+        <pre><code class="highlight"><span class="c"># == Headius::Blog::Post</span></code></pre>
+        <h1><%= resource.data.title %></h1>
+        <p class="meta">
+          <time datetime="<%= resource.data.date.strftime("%Y-%m-%d") %>"><%= resource.data.date.strftime("%B %-d, %Y") %></time>
+          <% if resource.data.author %> · <span><%= resource.data.author %></span><% end %>
+        </p>
+      </header>
 
-<%= yield %>
+      <div class="body">
+        <%= yield %>
+
+        <% if (re = resource.data.reddit_embed) %>
+          <%= render ConsentEmbed.new(
+            provider: "Reddit",
+            link_url: re["url"],
+            title: re["title"],
+            script_url: "https://embed.reddit.com/widgets.js",
+            variant: "reddit"
+          ) do %>
+            <blockquote class="reddit-embed-bq" data-embed-height="<%= re["height"] || 500 %>"><a href="<%= re["url"] %>"><%= re["title"] %></a></blockquote>
+          <% end %>
+        <% end %>
+      </div>
+
+      <footer class="footer">
+        <p><a href="<%= relative_url '/blog' %>">← Back to the blog</a></p>
+      </footer>
+    </article>
+  </div>
+</section>

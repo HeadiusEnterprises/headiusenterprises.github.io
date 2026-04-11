@@ -42,3 +42,5 @@ gem "puma", "< 8"
 # gem "nokolexbor", "~> 0.6"
 
 gem "bridgetown-sitemap", "~> 3.0"
+
+gem "bridgetown-feed", "~> 4.0"

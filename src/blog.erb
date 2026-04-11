@@ -1,0 +1,29 @@
+---
+layout: default
+title: Blog
+---
+
+<!-- ===== Intro ===== -->
+<section id="blog-intro">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'headius/blog'</span></code></pre>
+    <hgroup>
+      <h1>Blog</h1>
+      <p>New writing from the team lives here from now on. The older archive is still at <a href="https://blog.headius.com" target="_blank" rel="noopener">blog.headius.com</a>. Subscribe via <a href="<%= relative_url '/feed.xml' %>">Atom feed</a>.</p>
+    </hgroup>
+  </div>
+</section>
+
+<!-- ===== Post List ===== -->
+<section class="highlight" id="blog-list">
+  <div class="container">
+    <ul class="post-list">
+      <% collections.posts.resources.sort_by { |p| p.data.date }.reverse.each do |post| %>
+        <li>
+          <time datetime="<%= post.data.date.strftime("%Y-%m-%d") %>"><%= post.data.date.strftime("%B %-d, %Y") %></time>
+          <h3><a href="<%= relative_url(post.relative_url) %>"><%= post.data.title %></a></h3>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

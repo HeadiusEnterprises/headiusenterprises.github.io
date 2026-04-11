@@ -4,6 +4,9 @@
 <title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %> &mdash; <%= metadata.tagline %><% end %></title>
 
 <meta name="description" content="<%= metadata.description %>" />
+<% if defined?(resource) && resource&.data&.canonical_url %>
+<link rel="canonical" href="<%= resource.data.canonical_url %>" />
+<% end %>
 
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,6 +17,7 @@
 <meta name="msapplication-TileColor" content="#0e0b0c" />
 <meta name="theme-color" content="#0e0b0c" />
 
+<link rel="alternate" type="application/atom+xml" title="<%= metadata.title %>" href="<%= relative_url '/feed.xml' %>" />
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <script src="<%= asset_path :js %>" defer></script>
 <%= live_reload_dev_js %>

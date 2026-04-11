@@ -78,6 +78,40 @@
   }
 
 
+  &.consent-embed--reddit {
+    aspect-ratio: auto;
+    min-height: 240px;
+    background-color: var(--surface);
+
+    .consent-embed__play {
+      padding: 1.25rem;
+      border-radius: 999px;
+      transition: background-color 0.2s, transform 0.2s;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    &.consent-embed--loaded {
+      display: block;
+      min-height: 250px;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+
+      iframe {
+        position: relative;
+        display: block;
+        inset: auto;
+        width: 100%;
+        min-height: 250px;
+        border-radius: 6px;
+      }
+    }
+  }
+
   &.consent-embed--form {
     aspect-ratio: auto;
     min-height: 500px;
