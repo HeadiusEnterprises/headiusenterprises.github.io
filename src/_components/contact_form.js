@@ -17,23 +17,29 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-// mailto: handler for the quick contact form
+// mailto: handler for contact / inquiry forms
 window.handleContactForm = function (form) {
-  var name = form.querySelector('[name="name"]').value
-  var email = form.querySelector('[name="email"]').value
-  var interest = form.querySelector('[name="interest"]').value
-  var message = form.querySelector('[name="message"]').value
+  var fields = [
+    ["name", "Name"],
+    ["company", "Company"],
+    ["role", "Role"],
+    ["interest", "Interested in"],
+    ["timeline", "Timeline"]
+  ]
 
+  var interestEl = form.querySelector('[name="interest"]')
+  var interest = interestEl ? interestEl.value : ""
   var subject = "JRuby Support Inquiry"
-  if (interest) {
-    subject += " (" + interest + ")"
-  }
+  if (interest) subject += " (" + interest + ")"
 
   var body = ""
-  if (name) body += "Name: " + name + "\n"
-  if (email) body += "Email: " + email + "\n"
-  if (interest) body += "Interested in: " + interest + "\n"
-  if (message) body += "\n" + message
+  fields.forEach(function (f) {
+    var el = form.querySelector('[name="' + f[0] + '"]')
+    if (el && el.value) body += f[1] + ": " + el.value + "\n"
+  })
+
+  var messageEl = form.querySelector('[name="message"]')
+  if (messageEl && messageEl.value) body += "\n" + messageEl.value
 
   var mailto =
     "mailto:support@headius.com" +
