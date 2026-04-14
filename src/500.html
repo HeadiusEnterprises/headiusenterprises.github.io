@@ -3,8 +3,13 @@ permalink: /500.html
 layout: default
 ---
 
-<h1>500</h1>
-
-<h2>Internal Server Error :(</h2>
-
-<p>The requested page could not be delivered.</p>
+<section id="error-page">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">raise</span> <span class="nc">Headius</span>::<span class="nc">ServerError</span>, <span class="s">"500"</span></code></pre>
+    <hgroup>
+      <h1>Internal Server Error</h1>
+      <p>Something went wrong on our end. Please try again, or head back home.</p>
+    </hgroup>
+    <p><a class="button" href="/">Home.visit!</a></p>
+  </div>
+</section>

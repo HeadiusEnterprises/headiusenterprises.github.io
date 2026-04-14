@@ -3,8 +3,13 @@ permalink: /404.html
 layout: default
 ---
 
-<h1>404</h1>
-
-<h2>Page Not Found :(</h2>
-
-<p>The requested page could not be found.</p>
+<section id="error-page">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">raise</span> <span class="nc">Headius</span>::<span class="nc">NotFound</span>, <span class="s">"404"</span></code></pre>
+    <hgroup>
+      <h1>Page Not Found</h1>
+      <p>The requested page could not be found. It may have moved, or the link may be incorrect.</p>
+    </hgroup>
+    <p><a class="button" href="/">Home.visit!</a></p>
+  </div>
+</section>
