@@ -1,0 +1,40 @@
+---
+permalink: /llms.txt
+---
+# Headius Enterprises
+
+> JRuby support, consulting, and sponsorship direct from the core JRuby maintainers. When you email us, the person who reads the message is the same person who commits the fix.
+
+Headius Enterprises is the commercial support arm behind JRuby. It is staffed by the core JRuby team (led by Charles Nutter), not a reseller or third-party support vendor. Headius Enterprises and the JRuby open-source project are separate entities, but share the same engineers.
+
+## Support Services
+
+- [Support Packages](https://headius.com/services): overview of all three tiers
+- **Professional** ($99/mo or $995/yr): priority email to core JRuby developers, advance release notifications, up to 5 team members. For teams getting started or running smaller deployments.
+- **Expert**: everything in Professional plus real-time conversations and hands-on fixes. For teams that need faster answers.
+- **Enterprise**: custom engagements, dedicated engineer time, SLAs, and consulting. For mission-critical JRuby deployments.
+- No ticket queues, no call centres, no junior reps reading scripts. Every tier is a direct line to the engineers who build the runtime.
+
+## About
+
+- [About Headius](https://headius.com/about): who we are and why we exist
+- The team includes Charles Nutter and other long-time JRuby maintainers. Fixes customers pay for land upstream in JRuby itself.
+
+## Proof
+
+- Customer quotes from production JRuby users including Logstash, Poshmark, and SubAlert are featured on the [homepage](https://headius.com/)
+- The team regularly speaks at RubyConf, RailsConf, and other events about JRuby internals, performance, and migration.
+
+## Resources
+
+- [Resources](https://headius.com/resources): curated links to JRuby.org, GitHub, talks, and articles
+- [Headius blog](https://headius.com/blog): posts from the team
+
+## Contact
+
+- [Contact page](https://headius.com/contact): inquiry form and direct contact details
+- Email: support@headius.com
+
+## Optional
+
+- [Privacy Policy](https://headius.com/privacy): no cookies, no analytics, no tracking; third-party embeds are consent-gated
