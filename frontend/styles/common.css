@@ -133,6 +133,10 @@ a {
   text-decoration: none;
   transition: color 0.2s;
 
+  [data-theme="high-contrast"] & {
+    text-decoration: underline;
+  }
+
   .icon {
     vertical-align: -0.1em;
     margin-right: 0.25rem;
