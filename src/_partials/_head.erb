@@ -25,6 +25,11 @@
 <script>
   // Apply saved theme immediately to prevent flash of wrong theme
   (function() {
+    var valid = ['auto', 'dark', 'light', 'high-contrast'];
+    var param = new URLSearchParams(window.location.search).get('theme');
+    if (param && valid.indexOf(param) !== -1) {
+      localStorage.setItem('headius-theme', param);
+    }
     var saved = localStorage.getItem('headius-theme') || 'auto';
     var theme;
     if (saved === 'auto') {
