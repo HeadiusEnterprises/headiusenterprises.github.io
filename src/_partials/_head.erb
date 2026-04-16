@@ -33,7 +33,8 @@
     var saved = localStorage.getItem('headius-theme') || 'auto';
     var theme;
     if (saved === 'auto') {
-      theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      theme = window.matchMedia('(prefers-contrast: more)').matches ? 'high-contrast'
+        : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     } else {
       theme = saved;
     }

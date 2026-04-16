@@ -80,7 +80,7 @@
 [data-theme="high-contrast"] {
   --crimson: #8a0a24;
   --crimson-bright: #a01030;
-  --crimson-light: #a01030;
+  --crimson-light: #7a0820;
   --crimson-glow: rgba(138, 10, 36, 0.2);
   --crimson-subtle: rgba(138, 10, 36, 0.08);
 
@@ -98,7 +98,7 @@
   --teal-bright: #0a6040;
 
   --text: #1a1210;
-  --text-dim: #4a4038;
+  --text-dim: #302820;
   --text-bright: #000000;
   --white: #000000;
   --on-crimson: #ffffff;

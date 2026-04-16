@@ -37,9 +37,11 @@ body > footer {
     max-width: 340px;
   }
 
-  h4 {
+  nav > strong {
+    display: block;
     font-family: var(--mono);
     font-size: 0.68rem;
+    font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--text-dim);
@@ -118,6 +120,10 @@ body > footer {
     user-select: none;
     cursor: not-allowed;
     text-align: center;
+
+    [data-theme="high-contrast"] & {
+      opacity: 1;
+    }
   }
 
   .fw {

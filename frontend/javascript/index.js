@@ -26,9 +26,11 @@ document.addEventListener("click", function (e) {
 
   function resolveTheme(mode) {
     if (mode === "auto") {
-      return window.matchMedia("(prefers-color-scheme: light)").matches
-        ? "light"
-        : "dark"
+      return window.matchMedia("(prefers-contrast: more)").matches
+        ? "high-contrast"
+        : window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark"
     }
     return mode
   }
@@ -77,6 +79,14 @@ document.addEventListener("click", function (e) {
 
   window
     .matchMedia("(prefers-color-scheme: light)")
+    .addEventListener("change", function () {
+      if (saved === "auto") {
+        applyTheme("auto")
+      }
+    })
+
+  window
+    .matchMedia("(prefers-contrast: more)")
     .addEventListener("change", function () {
       if (saved === "auto") {
         applyTheme("auto")
