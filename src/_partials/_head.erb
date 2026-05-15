@@ -1,12 +1,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<% resource_title = strip_html(strip_newlines(title)) %>
-<title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %> &mdash; <%= metadata.tagline %><% end %></title>
-
-<meta name="description" content="<%= metadata.description %>" />
-<% if defined?(resource) && resource&.data&.canonical_url %>
-<link rel="canonical" href="<%= resource.data.canonical_url %>" />
-<% end %>
+<%= seo %>
 
 <link rel="icon" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
