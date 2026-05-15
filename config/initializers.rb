@@ -66,6 +66,7 @@ Bridgetown.configure do |config|
 
   init :"bridgetown-sitemap"
   init :"bridgetown-feed"
+  init :"bridgetown-seo-tag"
 
   # Uncomment to use Bridgetown SSR (aka dynamic rendering of content via Roda):
   #

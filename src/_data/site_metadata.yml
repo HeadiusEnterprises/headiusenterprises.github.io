@@ -1,6 +1,26 @@
 # Site settings
 title: Headius Enterprises
 tagline: JRuby Support from the Source
+lang: en
 email: support@headius.com
 description: >-
   Enterprise JRuby support, consulting, and priority bug-fixing from the core developers who built it. 20+ years of JVM and Ruby expertise.
+image: /images/he-logo.svg
+logo: /images/he-logo.svg
+author:
+  name: Headius Enterprises
+  twitter: HeadiusEnts
+twitter:
+  username: HeadiusEnts
+  card: summary_large_image
+facebook:
+  publisher: https://www.facebook.com/profile.php?id=61587960190805
+social:
+  name: Headius Enterprises
+  links:
+    - https://x.com/HeadiusEnts
+    - https://www.linkedin.com/company/headius/
+    - https://www.facebook.com/profile.php?id=61587960190805
+    - https://ruby.social/@JRuby
+    - https://bsky.app/profile/jrubyproject.bsky.social
+
