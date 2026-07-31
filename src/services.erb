@@ -66,11 +66,14 @@ title: JRuby Support Services
         <p>
           You also get one priority bug fix per month. Not "we'll look into it" — an actual fix, committed by the person you're talking to. Your issue goes to the front of the queue, and a patch release follows.
         </p>
+        <p>
+          <b>Note: Expert service is billed on a bi-monthly basis (two months at a time) or yearly.</b>
+        </p>
       </div>
       <%= render Card.new(variant: "featured") do %>
         <pre><code class="highlight"><span class="nf">pricing:</span>
-  <span class="ss">monthly:</span>  <span class="s">"$1,499/mo"</span>
-  <span class="ss">yearly:</span>   <span class="s">"$16,499/yr"</span>  <span class="c"># 1 month free</span></code></pre>
+  <span class="ss">bimonthly:</span> <span class="s">"$2,999/2mo"</span>
+  <span class="ss">yearly:</span>    <span class="s">"$16,499/yr"</span>  <span class="c"># 1 month free</span></code></pre>
         <hr>
         <ul>
           <li class="inherited">include Professional</li>
@@ -81,7 +84,7 @@ title: JRuby Support Services
         </ul>
         <div class="actions">
           <a class="button" href="https://buy.stripe.com/9AQ29celw1x0fewbIK" target="_blank" rel="noopener"><span class="nc">Expert</span>.subscribe(<span class="ss">:yearly</span>)</a>
-          <a class="button ghost" href="https://buy.stripe.com/00geVYgtEfnQeas3cf" target="_blank" rel="noopener"><span class="nc">Expert</span>.subscribe(<span class="ss">:monthly</span>)</a>
+          <a class="button ghost" href="https://buy.stripe.com/5kQ9ATf8LeKS6vp4JNeIw04" target="_blank" rel="noopener"><span class="nc">Expert</span>.subscribe(<span class="ss">:bimonthly</span>)</a>
         </div>
       <% end %>
     </div>
