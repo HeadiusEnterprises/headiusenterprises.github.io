@@ -1,0 +1,18 @@
+<section id="opening">
+  <div class="container opening__layout">
+    <div>
+      <pre><code class="highlight"><span class="k">require</span> <span class="s">'<%= @require_path %>'</span></code></pre>
+      <hgroup>
+        <h1><%= @heading %></h1>
+        <p class="dim"><span class="dim"><%= @subheading_prefix %></span> <span class="hl"><%= @subheading_highlight %></span></p>
+      </hgroup>
+      <%= markdownify @body %>
+      <div class="actions">
+        <% @actions.each do |action| %>
+          <button<% if action[:style] == "ghost" %> class="ghost"<% end %> data-scroll-to="<%= action[:target] %>"><%= action[:label] %></button>
+        <% end %>
+      </div>
+    </div>
+    <img src="<%= @image %>" alt="<%= @image_alt %>" class="opening__logo" />
+  </div>
+</section>

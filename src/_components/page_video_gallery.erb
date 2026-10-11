@@ -1,0 +1,20 @@
+<section<% unless @section_id.to_s.empty? %> id="<%= @section_id %>"<% end %><% if @highlighted %> class="highlight"<% end %>>
+  <div class="container">
+    <% unless @eyebrow.to_s.empty? %>
+      <pre><code class="highlight"><%= @eyebrow %></code></pre>
+    <% end %>
+    <h2><%= @heading %></h2>
+    <%= markdownify @intro %>
+    <div class="talks-grid">
+      <% @videos.each do |video| %>
+        <%= render ConsentEmbed.new(
+          provider: "YouTube",
+          title: video[:title],
+          link_url: video[:video_url],
+          embed_url: video[:embed_url],
+          background: video[:background]
+        ) %>
+      <% end %>
+    </div>
+  </div>
+</section>

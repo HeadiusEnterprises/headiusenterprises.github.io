@@ -1,0 +1,11 @@
+.page-group {
+  display: grid;
+  grid-template-columns: repeat(var(--page-group-columns), minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .page-group {
+    grid-template-columns: 1fr;
+  }
+}

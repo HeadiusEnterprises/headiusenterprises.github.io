@@ -1,0 +1,23 @@
+<section id="<%= @section_id %>"<% if @highlighted %> class="highlight"<% end %>>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h2><%= @heading %></h2>
+        <%= markdownify @body %>
+        <%= render ListTable.new do %>
+          <% @details.each do |detail| %>
+            <li>
+              <span class="label"><%= detail[:label] %></span>
+              <% if detail[:url].to_s.empty? %>
+                <span><%= detail[:value] %></span>
+              <% else %>
+                <a href="<%= detail[:url] %>"><%= detail[:value] %></a>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </div>
+      <%= render ContactForm.new %>
+    </div>
+  </div>
+</section>

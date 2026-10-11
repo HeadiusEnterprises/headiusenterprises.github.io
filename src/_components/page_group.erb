@@ -1,0 +1,9 @@
+<section<% if @highlighted %> class="highlight"<% end %>>
+  <div class="container">
+    <h2><%= @heading %></h2>
+    <%= markdownify @intro %>
+    <div class="page-group" style="--page-group-columns: <%= @columns %>">
+      <%= content %>
+    </div>
+  </div>
+</section>

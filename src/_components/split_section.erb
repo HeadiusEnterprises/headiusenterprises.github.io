@@ -1,0 +1,12 @@
+<section id="<%= @section_id %>"<% if @highlighted %> class="highlight"<% end %>>
+  <div class="container">
+    <div>
+      <pre><code class="highlight"><%= @eyebrow %></code></pre>
+      <h2><%= @heading %></h2>
+    </div>
+    <div class="two-col">
+      <div><%= markdownify @left_body %></div>
+      <div><%= markdownify @right_body %></div>
+    </div>
+  </div>
+</section>

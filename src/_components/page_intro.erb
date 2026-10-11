@@ -1,0 +1,9 @@
+<section id="<%= @section_id %>">
+  <div class="container">
+    <pre><code class="highlight"><span class="k">require</span> <span class="s">'<%= @require_path %>'</span></code></pre>
+    <hgroup>
+      <h1><%= @heading %></h1>
+      <%= markdownify @body %>
+    </hgroup>
+  </div>
+</section>

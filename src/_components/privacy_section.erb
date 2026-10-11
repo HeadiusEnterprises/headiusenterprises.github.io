@@ -1,0 +1,7 @@
+<section id="privacy">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated"><strong>Last updated:</strong> <%= @updated %></p>
+    <%= markdownify(content.to_s.empty? ? @body : content) %>
+  </div>
+</section>

@@ -17,6 +17,7 @@ desc "Build the site in a test environment"
 task :test do
   ENV["BRIDGETOWN_ENV"] = "test"
   Bridgetown::Commands::Build.start
+  sh "ruby -Itest test/component_pages_test.rb"
 end
 
 desc "Runs the clean command"

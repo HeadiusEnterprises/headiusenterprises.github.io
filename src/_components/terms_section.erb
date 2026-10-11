@@ -1,0 +1,14 @@
+<section id="<%= @section_id %>">
+  <div class="container">
+    <pre><code class="highlight"><%= @eyebrow %></code></pre>
+    <h2><%= @heading %></h2>
+    <div class="terms">
+      <% @terms.each do |term| %>
+        <details>
+          <summary><%= term[:heading] %></summary>
+          <%= markdownify term[:body] %>
+        </details>
+      <% end %>
+    </div>
+  </div>
+</section>

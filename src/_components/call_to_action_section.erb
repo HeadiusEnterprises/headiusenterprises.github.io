@@ -1,0 +1,16 @@
+<section id="<%= @section_id %>"<% if @highlighted %> class="highlight"<% end %>>
+  <div class="container">
+    <div>
+      <% unless @eyebrow.to_s.empty? %>
+        <pre><code class="highlight"><%= @eyebrow %></code></pre>
+      <% end %>
+      <h2><%= @heading %></h2>
+      <%= markdownify @body %>
+      <div class="actions">
+        <% @actions.each do |action| %>
+          <a href="<%= url_for action[:url] %>" class="button<%= " ghost" if action[:style] == "ghost" %>"><%= action[:label] %></a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

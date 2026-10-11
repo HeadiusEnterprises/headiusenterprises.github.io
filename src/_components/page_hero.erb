@@ -1,0 +1,21 @@
+<section class="page-hero">
+  <div class="container opening__layout">
+    <div>
+      <% unless @eyebrow.to_s.empty? %>
+        <pre><code class="highlight"><%= @eyebrow %></code></pre>
+      <% end %>
+      <h1><%= @heading %></h1>
+      <%= markdownify @body %>
+      <% if @actions.any? %>
+        <div class="actions">
+          <% @actions.each do |action| %>
+            <a class="button<%= " ghost" if action[:style] == "ghost" %>" href="<%= url_for action[:url] %>"><%= action[:label] %></a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <% unless @image.to_s.empty? %>
+      <img src="<%= @image %>" alt="<%= @image_alt %>" class="opening__logo" />
+    <% end %>
+  </div>
+</section>
