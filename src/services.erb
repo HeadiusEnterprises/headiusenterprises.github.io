@@ -1,7 +1,6 @@
 ---
 layout: default
 title: JRuby Support Services
-portside: components
 ---
 
 <%= render PageIntro.new(
@@ -131,21 +130,37 @@ portside: components
   ]
 ) %>
 
-<%= render HomeContact.new(
+<%= render Section.new(
   section_id: "contact",
-  highlighted: false,
-  heading: "Ready to talk?",
-  body: "Whether you know exactly which tier you need or you'd like help figuring it out, we're happy to have the conversation. No hard sell — if we can help, we'll tell you how. If we can't, we'll tell you that too.",
-  details: [
-    {
-      label: "email",
-      value: "support@headius.com",
-      url: "mailto:support@headius.com"
-    },
-    {
-      label: "irl",
-      value: "At a Ruby or JVM conference near you",
-      url: ""
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render Heading.new(
+        text: "Ready to talk?",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Whether you know exactly which tier you need or you'd like help figuring it out, we're happy to have the conversation. No hard sell — if we can help, we'll tell you how. If we can't, we'll tell you that too.
+      <% end %>
+      <%= render LabeledList.new(
+        items: [
+          {
+            label: "email",
+            body: "[support@headius.com](mailto:support@headius.com)"
+          },
+          {
+            label: "irl",
+            body: "At a Ruby or JVM conference near you"
+          }
+        ]
+      ) %>
+    <% end %>
+    <%= render ContactForm.new(
+    ) %>
+  <% end %>
+<% end %>

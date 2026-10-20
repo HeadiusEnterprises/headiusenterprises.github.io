@@ -1,0 +1,17 @@
+type: PageCard
+label: Card
+content: body
+fields:
+  title:
+    type: text
+  body:
+    type: markdown
+  image:
+    type: image
+  image_alt:
+    label: Image description
+    type: text
+  link_label:
+    type: text
+  link_url:
+    type: url

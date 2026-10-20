@@ -1,0 +1,28 @@
+type: PageVideoGallery
+label: Video Gallery
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  eyebrow:
+    type: text
+  heading:
+    type: text
+  intro:
+    type: markdown
+  highlighted:
+    type: boolean
+  videos:
+    type: list
+    fields:
+      title:
+        type: text
+      video_url:
+        label: Video link
+        type: url
+      embed_url:
+        label: Embed link
+        type: url
+      background:
+        label: Background image
+        type: image

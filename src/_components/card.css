@@ -100,7 +100,9 @@
     }
   }
 
-  pre + p {
+  pre + p,
+  .highlighter-rouge + p,
+  .code-block + p {
     margin-top: 1rem;
   }
 }

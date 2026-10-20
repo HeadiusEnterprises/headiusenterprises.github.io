@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Boosting JRuby Startup with AppCDS and AOT caching"
-date: "2025-02-13"
+title: Boosting JRuby Startup with AppCDS and AOT caching
+date: '2025-02-13'
 author: Charles Oliver Nutter
 canonical_url: https://blog.headius.com/2025/02/boosting-jruby-startup-with-appcds-and-aotcache.html
-permalink: /blog/boosting-jruby-startup-with-appcds-and-aotcache/
+permalink: "/blog/boosting-jruby-startup-with-appcds-and-aotcache/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 Hello again friends! Today I'll show how you can improve JRuby startup right today, as well as a sneak preview of some exciting new developments in this area!
 
 ## Application Class Data Store (AppCDS)
@@ -144,3 +146,4 @@ The same flags shown above will work with JRuby 9.4, but there's no `--nocache` 
 Have fun, and let us know how it goes!
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/javavirtualmachine/comments/1ioncqe/boosting_jruby_startup_with_appcds_and_aot_caching/)
+<% end %>

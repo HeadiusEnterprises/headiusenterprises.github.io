@@ -1,17 +1,18 @@
 ---
 layout: post
-title: "Warbled Sidekiq: Zero-install Executable for JVM"
-date: "2025-10-23"
+title: 'Warbled Sidekiq: Zero-install Executable for JVM'
+date: '2025-10-23'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/10/warbled-sidekiq.html
-permalink: /blog/warbled-sidekiq/
+permalink: "/blog/warbled-sidekiq/"
 reddit_embed:
   url: https://www.reddit.com/r/ruby/comments/1oe8mx6/warbled_sidekiq_zeroinstall_executable_for_jvm/
-  title: "Warbled Sidekiq: Zero-install Executable for JVM"
+  title: 'Warbled Sidekiq: Zero-install Executable for JVM'
   height: 500
 ---
+<%= render MarkdownBlock.new(
+) do %>
 In my previous post, I showed [how to use Warbler](https://blog.headius.com/2025/10/packaging-ruby-apps-with-warbler-jar-files.html) to package a simple image-processing tool as an executable jar. This post will demonstrate how to "warble" a larger project: the [Sidekiq background job server](https://sidekiq.org/)!
 
 ## Warbling Sidekiq
@@ -187,3 +188,4 @@ JRuby is clearly the future of Ruby in the enterprise, and Warbler is a huge par
 
 ## Join the discussion on r/ruby!
 
+<% end %>

@@ -1,0 +1,6 @@
+<% rendered = markdownify content.to_s.sub(/\A\r?\n/, '').sub(/\r?\n\z/, '') -%>
+<% if @css_class.to_s.empty? -%>
+  <%= rendered -%>
+<% else -%>
+  <div class="<%= @css_class %>"><%= rendered -%></div>
+<% end -%>

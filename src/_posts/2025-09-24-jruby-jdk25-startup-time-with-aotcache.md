@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "JRuby and JDK 25: Startup Time with AOTCache"
-date: "2025-09-24"
+title: 'JRuby and JDK 25: Startup Time with AOTCache'
+date: '2025-09-24'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/09/jruby-jdk25-startup-time-with-aotcache.html
-permalink: /blog/jruby-jdk25-startup-time-with-aotcache/
+permalink: "/blog/jruby-jdk25-startup-time-with-aotcache/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 [JDK 25](https://openjdk.org/projects/jdk/25/) is the newest LTS release since JDK 21, and it ships with a gaggle of amazing VM-level features. This post will cover one of the most important improvements for command-line ecosystems like JRuby's: the AOTCache (ahead-of-time cache) and its ability to pre-optimize code for future runs.
 
 We'll explore how AOTCache can speed up your JRuby workflow, starting with a discussion of JRuby startup time challenges and finishing with "coming soon" features that didn't quite make it into the JDK 25 release.
@@ -379,3 +380,4 @@ What will the Ruby world be like when JRuby users can have true parallelism, wor
 We're about to find out.
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/ruby/comments/1npiavg/jruby_and_jdk_25_startup_time_with_aotcache/)
+<% end %>

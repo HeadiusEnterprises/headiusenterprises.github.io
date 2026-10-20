@@ -1,0 +1,8 @@
+type: Heading
+label: Heading
+fields:
+  text:
+    type: text
+  level:
+    type: number
+    default: 2

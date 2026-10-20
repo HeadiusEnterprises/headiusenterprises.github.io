@@ -3,7 +3,8 @@ layout: default
 title: Welcome to Headius
 sitemap: false
 ---
-
+<%= render ErbBlock.new(
+) do %>
 <section id="welcome-intro">
   <div class="container opening__layout">
     <div>
@@ -53,3 +54,4 @@ sitemap: false
     </div>
   </div>
 </section>
+<% end %>

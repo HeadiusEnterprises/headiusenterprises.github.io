@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Updating Deprecations with Version Information"
-date: "2025-10-10"
+title: Updating Deprecations with Version Information
+date: '2025-10-10'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/10/updating-deprecations-with-version.html
-permalink: /blog/updating-deprecations-with-version/
+permalink: "/blog/updating-deprecations-with-version/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 Java 9 added the ability to mark a `@Deprecated` annotation with a "since" version, so we figured it was worth updating JRuby.
 
 ## Deprecation in Java
@@ -91,3 +92,4 @@ Enjoy!
 ## [Join the discussion on r/ruby!](https://www.reddit.com/r/ruby/comments/1o3eiid/updating_jrubys_deprecations_with_since_version/)
 
 ## [Join the discussion on r/java!](https://www.reddit.com/r/java/comments/1o3eku0/updating_historical_deprecations_with_since/)
+<% end %>

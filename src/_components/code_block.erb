@@ -1,0 +1,3 @@
+<div class="code-block<%= " code-block--unframed" unless @framed %>">
+  <%= markdownify "```#{@language}\n#{content.to_s.sub(/\A\r?\n/, '').sub(/\r?\n\z/, '')}\n```" -%>
+</div>

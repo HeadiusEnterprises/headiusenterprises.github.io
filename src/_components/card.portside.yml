@@ -1,0 +1,5 @@
+type: Card
+label: Card
+children:
+  accepts: [CodeBlock, MarkdownBlock]
+  layout: vertical

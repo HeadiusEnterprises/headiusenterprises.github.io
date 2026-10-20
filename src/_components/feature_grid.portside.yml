@@ -1,0 +1,17 @@
+type: FeatureGrid
+label: Feature Grid
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  eyebrow:
+    type: text
+  heading:
+    type: text
+  features:
+    type: list
+    fields:
+      code:
+        type: text
+      body:
+        type: markdown

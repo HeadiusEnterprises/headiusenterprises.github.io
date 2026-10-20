@@ -1,0 +1,25 @@
+type: PageHero
+label: Hero
+fields:
+  eyebrow:
+    label: Code heading
+    type: text
+  heading:
+    type: text
+  body:
+    type: markdown
+  image:
+    type: image
+  image_alt:
+    label: Image description
+    type: text
+  actions:
+    type: list
+    fields:
+      label:
+        type: text
+      url:
+        type: url
+      style:
+        type: select
+        options: [primary, ghost]

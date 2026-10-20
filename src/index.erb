@@ -1,7 +1,6 @@
 ---
 layout: default
 image: /images/he-logo.svg
-portside: components
 ---
 
 <%= render HomeHero.new(
@@ -101,24 +100,41 @@ portside: components
   ) %>
 <% end %>
 
-<%= render HomeContact.new(
-  heading: "Let's Talk",
-  body: "Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.",
-  details: [
-    {
-      label: "email",
-      value: "support@headius.com",
-      url: "mailto:support@headius.com"
-    },
-    {
-      label: "irl",
-      value: "At a Ruby or JVM conference near you",
-      url: ""
-    },
-    {
-      label: "vibe",
-      value: "Friendly. Professional. Slightly metal.",
-      url: ""
-    }
-  ]
-) %>
+<%= render Section.new(
+  section_id: "contact",
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render Heading.new(
+        text: "Let's Talk",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.
+      <% end %>
+      <%= render LabeledList.new(
+        items: [
+          {
+            label: "email",
+            body: "[support@headius.com](mailto:support@headius.com)"
+          },
+          {
+            label: "irl",
+            body: "At a Ruby or JVM conference near you"
+          },
+          {
+            label: "vibe",
+            body: "Friendly. Professional. Slightly metal."
+          }
+        ]
+      ) %>
+    <% end %>
+    <%= render ContactForm.new(
+    ) %>
+  <% end %>
+<% end %>

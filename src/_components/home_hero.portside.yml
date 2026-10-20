@@ -1,0 +1,31 @@
+type: HomeHero
+label: Home Hero
+fields:
+  require_path:
+    label: Required library
+    type: text
+  heading:
+    type: text
+  subheading_prefix:
+    label: Subheading
+    type: text
+  subheading_highlight:
+    label: Highlighted subheading
+    type: text
+  body:
+    type: markdown
+  image:
+    type: image
+  image_alt:
+    label: Image description
+    type: text
+  actions:
+    type: list
+    fields:
+      label:
+        type: text
+      target:
+        type: text
+      style:
+        type: select
+        options: [primary, ghost]

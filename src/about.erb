@@ -1,7 +1,6 @@
 ---
 layout: default
 title: About
-portside: components
 ---
 
 <%= render PageIntro.new(
@@ -15,26 +14,71 @@ portside: components
   section_id: "story",
   eyebrow: "# == Headius::Origin\n# How twenty years of open source became a company.",
   heading: "The Short Version",
-  left_body: "Most support companies start with a product and then hire people to answer questions about it. We did it backwards. Charlie has been building JRuby since 2004, contributing to the JVM ecosystem since Java 1.0, and helping teams debug their deployments for free for most of that time.\n\nIn 2024, we made it official. Not because anything changed about the work — because enough people were relying on it that it deserved a proper structure. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.",
-  right_body: "We're a small team. Deliberately. No account managers, no support tiers staffed by people who've never seen the source code. The constraint is our advantage — every interaction is with someone who has deep, first-hand knowledge of the runtime your application depends on.\n\nNo other company in the world can match this level of expertise when it comes to JRuby. That's not marketing — it's just a fact about a twenty-year-old open source project with a very small number of core contributors.",
   highlighted: true
-) %>
+) do %>
+  <%= render Column.new(
+  ) do %>
+    <%= render MarkdownBlock.new(
+    ) do %>
+Most support companies start with a product and then hire people to answer questions about it. We did it backwards. Charlie has been building JRuby since 2004, contributing to the JVM ecosystem since Java 1.0, and helping teams debug their deployments for free for most of that time.
 
-<%= render TeamSection.new(
+In 2024, we made it official. Not because anything changed about the work — because enough people were relying on it that it deserved a proper structure. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
+    <% end %>
+  <% end %>
+  <%= render Column.new(
+  ) do %>
+    <%= render MarkdownBlock.new(
+    ) do %>
+We're a small team. Deliberately. No account managers, no support tiers staffed by people who've never seen the source code. The constraint is our advantage — every interaction is with someone who has deep, first-hand knowledge of the runtime your application depends on.
+
+No other company in the world can match this level of expertise when it comes to JRuby. That's not marketing — it's just a fact about a twenty-year-old open source project with a very small number of core contributors.
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render SplitSection.new(
   section_id: "team",
   eyebrow: "# == Headius::Team\n# The people behind the code and the company.",
   heading: "Who We Are",
-  people: [
-    {
-      code: "class CharlesOliverNutter < Human\n  # Architect & Technologist",
-      body: "Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby since 2004. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.\n\nCharles has released commercial software, managed open-source projects, led enterprise applications, and contributed hundreds of thousands of lines of code globally. His talks on JVM bytecode, invokedynamic, and JIT compilers are consistently among the most popular at Java and Ruby conferences worldwide.\n\n**Java Champion** · **Ruby Hero** · **JavaOne Rock Star** · **JAX Innovators 2012** · **Oracle Groundbreaker 2018**\n\n[Mastodon](https://mastodon.social/@headius) · [Bluesky](https://bsky.app/profile/headius.bsky.social) · [X](https://x.com/Headius)"
-    },
-    {
-      code: "class SondraRadkeNutter < Human\n  # President",
-      body: "25 years of professional education and organisational leadership. Sondra has guided teams through transitions across the country and through changing structures, applying detailed organisation and follow-through to every challenge.\n\nAt Headius, she's the operational backbone — customer support management, business operations, and making sure the engineers actually reply to emails. Because somebody has to."
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render Card.new(
+  ) do %>
+    <%= render CodeBlock.new(
+      language: "ruby",
+      framed: false
+    ) do %>
+class CharlesOliverNutter < Human
+  # Architect & Technologist
+    <% end %>
+    <%= render MarkdownBlock.new(
+    ) do %>
+Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby since 2004. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
+
+Charles has released commercial software, managed open-source projects, led enterprise applications, and contributed hundreds of thousands of lines of code globally. His talks on JVM bytecode, invokedynamic, and JIT compilers are consistently among the most popular at Java and Ruby conferences worldwide.
+
+**Java Champion** · **Ruby Hero** · **JavaOne Rock Star** · **JAX Innovators 2012** · **Oracle Groundbreaker 2018**
+
+[Mastodon](https://mastodon.social/@headius) · [Bluesky](https://bsky.app/profile/headius.bsky.social) · [X](https://x.com/Headius)
+    <% end %>
+  <% end %>
+  <%= render Card.new(
+  ) do %>
+    <%= render CodeBlock.new(
+      language: "ruby",
+      framed: false
+    ) do %>
+class SondraRadkeNutter < Human
+  # President
+    <% end %>
+    <%= render MarkdownBlock.new(
+    ) do %>
+25 years of professional education and organisational leadership. Sondra has guided teams through transitions across the country and through changing structures, applying detailed organisation and follow-through to every challenge.
+
+At Headius, she's the operational backbone — customer support management, business operations, and making sure the engineers actually reply to emails. Because somebody has to.
+    <% end %>
+  <% end %>
+<% end %>
 
 <%= render PageVideoGallery.new(
   section_id: "talks",
@@ -64,59 +108,92 @@ portside: components
   ]
 ) %>
 
-<%= render ListSection.new(
+<%= render Section.new(
   section_id: "conferences",
-  eyebrow: "# == Headius::Calendar\n# Where you can find us in 2026.",
-  heading: "Conference Schedule",
-  intro: "Come find us — we're easy to spot.",
-  highlighted: true,
-  items: [
-    {
-      label: "Mar 26–27",
-      body: "[RBQ Conf](https://rbqconf.com) — Austin, TX"
-    },
-    {
-      label: "Apr 17–19",
-      body: "[wroclove.rb 2026](http://wrocloverb.com/) — Wrocław, Poland"
-    },
-    {
-      label: "Apr 22–24",
-      body: "[RubyKaigi 2026](https://rubykaigi.org/2026/) — Hakodate, Hokkaido, Japan"
-    },
-    {
-      label: "Jul 14–16",
-      body: "[RubyConf 2026](https://rubyconf.org) — Las Vegas, NV"
-    }
-  ],
-  note: "More dates to be announced. Follow us on [Mastodon](https://mastodon.social/@headius) or [Bluesky](https://bsky.app/profile/headius.bsky.social) for updates.",
-  note_class: "conf-note"
-) %>
+  highlighted: true
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Calendar
+# Where you can find us in 2026.
+  <% end %>
+  <%= render Heading.new(
+    text: "Conference Schedule",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+    css_class: ""
+  ) do %>
+Come find us — we're easy to spot.
+  <% end %>
+  <%= render LabeledList.new(
+    items: [
+      {
+        label: "Mar 26–27",
+        body: "[RBQ Conf](https://rbqconf.com) — Austin, TX"
+      },
+      {
+        label: "Apr 17–19",
+        body: "[wroclove.rb 2026](http://wrocloverb.com/) — Wrocław, Poland"
+      },
+      {
+        label: "Apr 22–24",
+        body: "[RubyKaigi 2026](https://rubykaigi.org/2026/) — Hakodate, Hokkaido, Japan"
+      },
+      {
+        label: "Jul 14–16",
+        body: "[RubyConf 2026](https://rubyconf.org) — Las Vegas, NV"
+      }
+    ]
+  ) %>
+  <%= render MarkdownBlock.new(
+    css_class: "conf-note"
+  ) do %>
+More dates to be announced. Follow us on [Mastodon](https://mastodon.social/@headius) or [Bluesky](https://bsky.app/profile/headius.bsky.social) for updates.
+  <% end %>
+<% end %>
 
-<%= render HomeContact.new(
+<%= render Section.new(
   section_id: "contact",
-  highlighted: false,
-  heading: "Get In Touch",
-  body: "Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference, we'd love to hear from you.",
-  details: [
-    {
-      label: "email",
-      value: "support@headius.com",
-      url: "mailto:support@headius.com"
-    },
-    {
-      label: "x",
-      value: "@HeadiusEnts",
-      url: "https://x.com/HeadiusEnts"
-    },
-    {
-      label: "linkedin",
-      value: "Headius",
-      url: "https://www.linkedin.com/company/headius/"
-    },
-    {
-      label: "code",
-      value: "JRuby.org",
-      url: "https://jruby.org"
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render Heading.new(
+        text: "Get In Touch",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference, we'd love to hear from you.
+      <% end %>
+      <%= render LabeledList.new(
+        items: [
+          {
+            label: "email",
+            body: "[support@headius.com](mailto:support@headius.com)"
+          },
+          {
+            label: "x",
+            body: "[@HeadiusEnts](https://x.com/HeadiusEnts)"
+          },
+          {
+            label: "linkedin",
+            body: "[Headius](https://www.linkedin.com/company/headius/)"
+          },
+          {
+            label: "code",
+            body: "[JRuby.org](https://jruby.org)"
+          }
+        ]
+      ) %>
+    <% end %>
+    <%= render ContactForm.new(
+    ) %>
+  <% end %>
+<% end %>

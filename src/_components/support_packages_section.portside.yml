@@ -1,0 +1,9 @@
+type: SupportPackagesSection
+label: Support Packages
+children:
+  accepts: [SupportPlan]
+fields:
+  heading:
+    type: text
+  intro:
+    type: markdown

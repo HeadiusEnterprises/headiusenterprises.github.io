@@ -1,0 +1,23 @@
+type: ArticleGrid
+label: Article Grid
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  eyebrow:
+    type: text
+  heading:
+    type: text
+  articles:
+    type: list
+    fields:
+      title:
+        type: text
+      url:
+        type: url
+      date:
+        type: text
+      body:
+        type: markdown
+  note:
+    type: markdown

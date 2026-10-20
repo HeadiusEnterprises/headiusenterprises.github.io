@@ -1,0 +1,16 @@
+type: ContactPageSection
+label: Contact Details
+fields:
+  heading:
+    type: text
+  body:
+    type: markdown
+  details:
+    type: list
+    fields:
+      label:
+        type: text
+      value:
+        type: text
+      url:
+        type: url

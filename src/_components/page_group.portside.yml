@@ -1,0 +1,14 @@
+type: PageGroup
+label: Component Group
+children:
+  accepts: [PageCard]
+fields:
+  heading:
+    type: text
+  intro:
+    type: markdown
+  columns:
+    type: number
+    default: 2
+  highlighted:
+    type: boolean

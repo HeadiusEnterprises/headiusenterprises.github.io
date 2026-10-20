@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "3D Charts and More with JRuby and JFreeChart"
-date: "2025-05-01"
+title: 3D Charts and More with JRuby and JFreeChart
+date: '2025-05-01'
 author: Charles Oliver Nutter
 published: true
 canonical_url: https://blog.headius.com/2025/05/3d-charts-and-more-with-jruby-and-jfreechart.html
-permalink: /blog/3d-charts-and-more-with-jruby-and-jfreechart/
+permalink: "/blog/3d-charts-and-more-with-jruby-and-jfreechart/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 After playing with JFreeChart and JRuby and writing up a lovely blog post called "[Beautiful Charts with JRuby and JFreeChart](https://blog.headius.com/2025/04/beautiful-charts-with-jruby-and-jfreechart.html)" it seems that [some folks](https://www.reddit.com/r/ruby/comments/1kbqh5l/creating_beautiful_charts_with_jruby_and/) did not agree with my assessment of the charts as "beautiful" and others did not realize the power of what they'd just seen.
 
 So, let's see if this one grabs your attention. As before, this example is available in the [headius/jruby-charts](https://github.com/headius/jruby-charts) repository.
@@ -244,3 +246,4 @@ JRuby is being actively developed by me and the rest of the JRuby team. We're wo
 So, what would you like to see next?
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/ruby/comments/1kcbthz/3d_charts_svg_and_pdf_with_jruby_and_jfreechart/)
+<% end %>

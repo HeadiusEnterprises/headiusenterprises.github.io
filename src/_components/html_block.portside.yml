@@ -1,0 +1,6 @@
+type: HTMLBlock
+label: HTML (trusted)
+content: html
+fields:
+  html:
+    type: markdown

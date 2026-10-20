@@ -1,0 +1,15 @@
+type: SplitSection
+label: Two-column Section
+children:
+  accepts: [Card, Column]
+  layout: horizontal
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  eyebrow:
+    type: text
+  heading:
+    type: text
+  highlighted:
+    type: boolean

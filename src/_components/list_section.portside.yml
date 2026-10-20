@@ -1,0 +1,26 @@
+type: ListSection
+label: Labeled List
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  eyebrow:
+    type: text
+  heading:
+    type: text
+  intro:
+    type: markdown
+  highlighted:
+    type: boolean
+  items:
+    type: list
+    fields:
+      label:
+        type: text
+      body:
+        type: markdown
+  note:
+    type: markdown
+  note_class:
+    label: Note style
+    type: text

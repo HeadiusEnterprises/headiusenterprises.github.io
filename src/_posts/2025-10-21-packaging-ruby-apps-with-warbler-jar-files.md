@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Packaging Ruby Apps with Warbler: Executable JAR Files"
-date: "2025-10-21"
+title: 'Packaging Ruby Apps with Warbler: Executable JAR Files'
+date: '2025-10-21'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/10/packaging-ruby-apps-with-warbler-jar-files.html
-permalink: /blog/packaging-ruby-apps-with-warbler-jar-files/
+permalink: "/blog/packaging-ruby-apps-with-warbler-jar-files/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 [Warbler](https://github.com/jruby/warbler) is the JRuby ecosystem's tool for packaging up Ruby apps with all dependencies in a single deployable file. We've just released an update, so let's explore how to use Warbler to create all-in-one packaged Ruby apps!
 
 ## Application Packaging for the Java World
@@ -328,3 +329,4 @@ If you're interested in packaging your Ruby tools for easy, secure distribution 
 
 ## [Join the discussion on r/ruby!](https://www.reddit.com/r/ruby/comments/1ocje8h/packaging_ruby_apps_with_warbler_executable_jar/)
 
+<% end %>

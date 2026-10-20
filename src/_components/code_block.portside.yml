@@ -1,0 +1,12 @@
+type: CodeBlock
+label: Code
+content: code
+fields:
+  language:
+    type: text
+    default: plaintext
+  framed:
+    type: boolean
+    default: true
+  code:
+    type: markdown

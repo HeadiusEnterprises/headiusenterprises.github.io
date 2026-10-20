@@ -1,0 +1,16 @@
+type: CustomerQuotesSection
+label: Customer Quotes
+fields:
+  interval:
+    label: Rotation interval
+    type: number
+    default: 8000
+  quotes:
+    type: list
+    fields:
+      text:
+        type: text
+      name:
+        type: text
+      url:
+        type: url

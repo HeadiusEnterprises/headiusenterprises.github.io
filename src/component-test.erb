@@ -2,7 +2,6 @@
 layout: default
 title: Component Builder Test
 sitemap: false
-portside: components
 ---
 <%= render PageHero.new(
   eyebrow: "require 'headius/component_builder'",
@@ -24,11 +23,48 @@ portside: components
   ]
 ) %>
 
-<%= render HomeContact.new(
-  heading: "Blah Contact",
-  body: "Hey there.",
-  details: []
-) %>
+<%= render Section.new(
+  section_id: "contact-test",
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render Heading.new(
+        text: "Blah Contact",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Hey there.
+      <% end %>
+      <%= render LabeledList.new(
+        items: []
+      ) %>
+    <% end %>
+    <%= render ContactForm.new(
+    ) %>
+  <% end %>
+<% end %>
+
+<%= render CodeBlock.new(
+  language: "ruby"
+) do %>
+class GenericExample < Component
+end
+<% end %>
+
+<%= render MarkdownBlock.new(
+) do %>
+This is **generic Markdown**.
+<% end %>
+
+<%= render HTMLBlock.new(
+) do %>
+<aside data-generic-html="true"><strong>Trusted HTML</strong></aside>
+<% end %>
 
 <%= render PageVideoGallery.new(
   heading: "Strongly typed list items",

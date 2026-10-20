@@ -1,0 +1,30 @@
+type: ServiceTier
+label: Service Tier
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  code:
+    type: text
+  heading:
+    type: text
+  body:
+    type: markdown
+  pricing:
+    type: markdown
+  features:
+    type: markdown
+  highlighted:
+    type: boolean
+  featured:
+    type: boolean
+  actions:
+    type: list
+    fields:
+      label:
+        type: text
+      url:
+        type: url
+      style:
+        type: select
+        options: [primary, ghost]

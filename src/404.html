@@ -1,8 +1,9 @@
 ---
-permalink: /404.html
+permalink: "/404.html"
 layout: default
 ---
-
+<%= render HTMLBlock.new(
+) do %>
 <section id="error-page">
   <div class="container">
     <pre><code class="highlight"><span class="k">raise</span> <span class="nc">Headius</span>::<span class="nc">NotFound</span>, <span class="s">"404"</span></code></pre>
@@ -13,3 +14,4 @@ layout: default
     <p><a class="button" href="/">Home.visit!</a></p>
   </div>
 </section>
+<% end %>

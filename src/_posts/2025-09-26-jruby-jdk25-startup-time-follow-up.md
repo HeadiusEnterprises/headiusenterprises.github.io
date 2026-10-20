@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "JRuby and Leyden: Even Better Startup"
-date: "2025-09-26"
+title: 'JRuby and Leyden: Even Better Startup'
+date: '2025-09-26'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/09/jruby-jdk25-startup-time-follow-up.html
-permalink: /blog/jruby-jdk25-startup-time-follow-up/
+permalink: "/blog/jruby-jdk25-startup-time-follow-up/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 At the end of my post on JRuby and JDK 25 startup time features, I teased a bit of the unreleased improvements from [Project Leyden](https://openjdk.org/projects/leyden/). It turns out the latest commits improve startup time **even more**, so it seems worth posting a quick follow-up!
 
 ## Project Leyden is LIT
@@ -100,3 +101,4 @@ But wow it's exciting stuff. I have been telling JRuby users for years that "it'
 My previous post neglected to mention other options for improving JRuby startup, like the [Project CRaC "checkpoint and restore" feature](https://blog.headius.com/2024/09/jruby-on-crac-part-1-lets-get-cracking.html) I blogged about previously and alternative JVMs like [IBM Semeru](https://developer.ibm.com/languages/semeru-runtimes/) (aka "OpenJ9") and its [Shared Class Cache](https://www.ibm.com/docs/en/semeru-runtime-ce-z/17.0.0?topic=sharing-introduction) and [JITServer](https://www.ibm.com/docs/en/semeru-runtime-ce-z/17.0.0?topic=documentation-jitserver-technology) features. We'll explore those and other options in an upcoming post!
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/ruby/comments/1nr630x/jruby_and_leyden_even_better_startup/)
+<% end %>
