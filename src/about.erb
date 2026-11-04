@@ -2,111 +2,176 @@
 layout: default
 title: About
 ---
-
 <%= render PageIntro.new(
   section_id: "about-intro",
   require_path: "headius/about",
   heading: "There Is No Tier-One Support",
-  body: "Headius Enterprises was established in 2024, but the work goes back to 2004. This isn't a pivot or a side project — it's a formalisation of support that was already happening informally for two decades."
+  body: "Headius Enterprises was established in 2024, but the work goes back to 2004. This isn't a pivot or a side project \u2014 it's a formalisation of support that was already happening informally for two decades."
 ) %>
 
-<%= render SplitSection.new(
+<%= render Section.new(
   section_id: "story",
-  eyebrow: "# == Headius::Origin\n# How twenty years of open source became a company.",
-  heading: "The Short Version",
   highlighted: true
 ) do %>
-  <%= render Column.new(
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false,
+    size: "medium"
   ) do %>
-    <%= render MarkdownBlock.new(
+# == Headius::Origin
+# How twenty years of open source became a company.
+  <% end %>
+
+  <%= render Heading.new(
+    text: "The Short Version",
+    level: 2
+  ) %>
+
+  <%= render Columns.new(
+    css_class: ""
+  ) do %>
+    <%= render Column.new(
     ) do %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
 Most support companies start with a product and then hire people to answer questions about it. We did it backwards. Charlie has been building JRuby since 2004, contributing to the JVM ecosystem since Java 1.0, and helping teams debug their deployments for free for most of that time.
 
 In 2024, we made it official. Not because anything changed about the work — because enough people were relying on it that it deserved a proper structure. When you contact Headius for help, the person who responds is the same person who'll commit the fix. There's no handoff, no translation layer, no game of telephone between your problem and the solution.
+      <% end %>
     <% end %>
-  <% end %>
-  <%= render Column.new(
-  ) do %>
-    <%= render MarkdownBlock.new(
+
+    <%= render Column.new(
     ) do %>
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
 We're a small team. Deliberately. No account managers, no support tiers staffed by people who've never seen the source code. The constraint is our advantage — every interaction is with someone who has deep, first-hand knowledge of the runtime your application depends on.
 
 No other company in the world can match this level of expertise when it comes to JRuby. That's not marketing — it's just a fact about a twenty-year-old open source project with a very small number of core contributors.
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
 
-<%= render SplitSection.new(
+<%= render Section.new(
   section_id: "team",
-  eyebrow: "# == Headius::Team\n# The people behind the code and the company.",
-  heading: "Who We Are",
   highlighted: false
 ) do %>
-  <%= render Card.new(
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false,
+    size: "medium"
   ) do %>
-    <%= render CodeBlock.new(
-      language: "ruby",
-      framed: false
+# == Headius::Team
+# The people behind the code and the company.
+  <% end %>
+
+  <%= render Heading.new(
+    text: "Who We Are",
+    level: 2
+  ) %>
+
+  <%= render Columns.new(
+    css_class: ""
+  ) do %>
+    <%= render Card.new(
+      variant: "plain"
     ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false,
+        size: "medium"
+      ) do %>
 class CharlesOliverNutter < Human
   # Architect & Technologist
-    <% end %>
-    <%= render MarkdownBlock.new(
-    ) do %>
+      <% end %>
+
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
 Three decades of software development, deep expertise in JVM internals, Ruby, bytecode, and invokedynamic. Co-lead of JRuby since 2004. Regular conference speaker on Java, Ruby, and the weird wonderful space where they overlap.
 
 Charles has released commercial software, managed open-source projects, led enterprise applications, and contributed hundreds of thousands of lines of code globally. His talks on JVM bytecode, invokedynamic, and JIT compilers are consistently among the most popular at Java and Ruby conferences worldwide.
 
-**Java Champion** · **Ruby Hero** · **JavaOne Rock Star** · **JAX Innovators 2012** · **Oracle Groundbreaker 2018**
+**Java Champion**{:.badge .badge--crimson}
+**Ruby Hero**{:.badge .badge--crimson}
+**JavaOne Rock Star**{:.badge .badge--amber}
+**JAX Innovators 2012**{:.badge .badge--teal}
+**Oracle Groundbreaker 2018**{:.badge}
+{: .badges}
 
-[Mastodon](https://mastodon.social/@headius) · [Bluesky](https://bsky.app/profile/headius.bsky.social) · [X](https://x.com/Headius)
+---
+
+[@headius](https://mastodon.social/@headius){:.social-link .social-link--mastodon target="_blank" rel="noopener me"} · [@headius](https://bsky.app/profile/headius.bsky.social){:.social-link .social-link--bluesky target="_blank" rel="noopener"} · [@headius](https://x.com/Headius){:.social-link .social-link--x target="_blank" rel="noopener"}
+{: .smaller .social-links}
+      <% end %>
     <% end %>
-  <% end %>
-  <%= render Card.new(
-  ) do %>
-    <%= render CodeBlock.new(
-      language: "ruby",
-      framed: false
+
+    <%= render Card.new(
+      variant: "plain"
     ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false,
+        size: "medium"
+      ) do %>
 class SondraRadkeNutter < Human
   # President
-    <% end %>
-    <%= render MarkdownBlock.new(
-    ) do %>
+      <% end %>
+
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
 25 years of professional education and organisational leadership. Sondra has guided teams through transitions across the country and through changing structures, applying detailed organisation and follow-through to every challenge.
 
 At Headius, she's the operational backbone — customer support management, business operations, and making sure the engineers actually reply to emails. Because somebody has to.
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
 
-<%= render PageVideoGallery.new(
+<%= render Section.new(
   section_id: "talks",
-  eyebrow: "# == Headius::Talks\n# Selected conference presentations.",
-  heading: "From the Stage",
-  intro: "",
-  highlighted: false,
-  videos: [
-    {
-      title: "JRuby: Do More with Ruby",
-      video_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
-      embed_url: "https://www.youtube-nocookie.com/embed/10nArtB3LvA",
-      background: "/images/yt_jruby_do_more_with_ruby.jpg"
-    },
-    {
-      title: "Bringing Ruby to the JVM",
-      video_url: "https://www.youtube.com/watch?v=pzm6I4liJlg",
-      embed_url: "https://www.youtube-nocookie.com/embed/pzm6I4liJlg",
-      background: "/images/yt_bringing_ruby_to_the_jvm.jpg"
-    },
-    {
-      title: "Scaling Ruby with JRuby",
-      video_url: "https://www.youtube.com/watch?v=OwEDqtlBg04",
-      embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
-      background: "/images/yt_scaling_ruby_with_jruby.jpg"
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false,
+    size: "medium"
+  ) do %>
+# == Headius::Talks
+# Selected conference presentations.
+  <% end %>
+
+  <%= render Heading.new(
+    text: "From the Stage",
+    level: 2
+  ) %>
+
+  <%= render VideoList.new(
+    videos: [
+      {
+        title: "JRuby: Do More with Ruby",
+        video_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
+        embed_url: "https://www.youtube-nocookie.com/embed/10nArtB3LvA",
+        background: "/images/yt_jruby_do_more_with_ruby.jpg"
+      },
+      {
+        title: "Bringing Ruby to the JVM",
+        video_url: "https://www.youtube.com/watch?v=pzm6I4liJlg",
+        embed_url: "https://www.youtube-nocookie.com/embed/pzm6I4liJlg",
+        background: "/images/yt_bringing_ruby_to_the_jvm.jpg"
+      },
+      {
+        title: "Scaling Ruby with JRuby",
+        video_url: "https://www.youtube.com/watch?v=OwEDqtlBg04",
+        embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
+        background: "/images/yt_scaling_ruby_with_jruby.jpg"
+      }
+    ]
+  ) %>
+<% end %>
 
 <%= render Section.new(
   section_id: "conferences",
@@ -114,40 +179,45 @@ At Headius, she's the operational backbone — customer support management, busi
 ) do %>
   <%= render CodeBlock.new(
     language: "ruby",
-    framed: false
+    framed: false,
+    size: "medium"
   ) do %>
 # == Headius::Calendar
 # Where you can find us in 2026.
   <% end %>
+
   <%= render Heading.new(
     text: "Conference Schedule",
     level: 2
   ) %>
+
   <%= render MarkdownBlock.new(
     css_class: ""
   ) do %>
 Come find us — we're easy to spot.
   <% end %>
+
   <%= render LabeledList.new(
     items: [
       {
-        label: "Mar 26–27",
-        body: "[RBQ Conf](https://rbqconf.com) — Austin, TX"
+        label: "Mar 26\u201327",
+        body: "[RBQ Conf](https://rbqconf.com) \u2014 Austin, TX"
       },
       {
-        label: "Apr 17–19",
-        body: "[wroclove.rb 2026](http://wrocloverb.com/) — Wrocław, Poland"
+        label: "Apr 17\u201319",
+        body: "[wroclove.rb 2026](http://wrocloverb.com/) \u2014 Wroc\u0142aw, Poland"
       },
       {
-        label: "Apr 22–24",
-        body: "[RubyKaigi 2026](https://rubykaigi.org/2026/) — Hakodate, Hokkaido, Japan"
+        label: "Apr 22\u201324",
+        body: "[RubyKaigi 2026](https://rubykaigi.org/2026/) \u2014 Hakodate, Hokkaido, Japan"
       },
       {
-        label: "Jul 14–16",
-        body: "[RubyConf 2026](https://rubyconf.org) — Las Vegas, NV"
+        label: "Jul 14\u201316",
+        body: "[RubyConf 2026](https://rubyconf.org) \u2014 Las Vegas, NV"
       }
     ]
   ) %>
+
   <%= render MarkdownBlock.new(
     css_class: "conf-note"
   ) do %>
@@ -160,6 +230,7 @@ More dates to be announced. Follow us on [Mastodon](https://mastodon.social/@hea
   highlighted: false
 ) do %>
   <%= render Columns.new(
+    css_class: ""
   ) do %>
     <%= render Column.new(
     ) do %>
@@ -167,11 +238,13 @@ More dates to be announced. Follow us on [Mastodon](https://mastodon.social/@hea
         text: "Get In Touch",
         level: 2
       ) %>
+
       <%= render MarkdownBlock.new(
         css_class: ""
       ) do %>
 Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference, we'd love to hear from you.
       <% end %>
+
       <%= render LabeledList.new(
         items: [
           {
@@ -193,7 +266,9 @@ Whether you want to talk about JRuby support, have us speak at your event, or ju
         ]
       ) %>
     <% end %>
+
     <%= render ContactForm.new(
+      variant: "standard"
     ) %>
   <% end %>
 <% end %>

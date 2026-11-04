@@ -1,0 +1,11 @@
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .component-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,103 +1,236 @@
 ---
 layout: default
-image: /images/he-logo.svg
+image: "/images/he-logo.svg"
 ---
-
-<%= render HomeHero.new(
-  require_path: "headius/enterprise_support",
-  heading: "We wrote the runtime.",
-  subheading_prefix: "We'll make sure",
-  subheading_highlight: "yours keeps running.",
-  body: "Dedicated JRuby support from the people who actually build it. Priority bug fixes, debugging, performance work, and profiling from the core developers.",
-  image: "/images/he-logo.svg",
-  image_alt: "Headius Enterprises",
-  actions: [
-    {
-      label: "Headius::Support.plans",
-      target: "packages",
-      style: "primary"
-    },
-    {
-      label: "Headius.contact!",
-      target: "contact",
-      style: "ghost"
-    }
-  ]
-) %>
-
-<%= render HomePitch.new(
-  heading: "Your production issue is our priority",
-  body: "Most support contracts connect you to someone who read the docs. Ours connects you to someone who *wrote the code*. When you hit a threading issue, a memory leak, or a performance wall in JRuby, we don't need to reproduce it and escalate — we already know where to look.",
-  secondary_body: "There is no tier-one support at Headius. There is no escalation path. You are already talking to the engineers. That's the whole point.",
-  image: "/images/jruby-logo.svg",
-  image_alt: "JRuby"
-) %>
-
-<%= render CustomerQuotesSection.new(
-  interval: 8000,
-  quotes: [
-    {
-      text: "JRuby has been integral to Poshmark's stack for over a decade and remains a cornerstone of scalability and innovation",
-      name: "Poshmark",
-      url: "https://poshmark.com/"
-    },
-    {
-      text: "[JRuby was] chosen to overcome MRI Ruby's lack of multithreading and to leverage the vast and mature ecosystem of Java",
-      name: "Logstash",
-      url: "https://www.elastic.co/logstash"
-    },
-    {
-      text: "The JRuby team has been amazingly responsive and helpful!",
-      name: "SubstituteAlert",
-      url: "https://www.subalert.com/"
-    }
-  ]
-) %>
-
-<%= render SupportPackagesSection.new(
-  heading: "Support Packages",
-  intro: "Pick a tier. Or keep reading for something a little more bespoke."
+<%= render Section.new(
+  section_id: "opening",
+  highlighted: false
 ) do %>
-  <%= render SupportPlan.new(
-    name: "Professional",
-    inheritance: "Support",
-    body: "For teams getting started or running smaller deployments.",
-    features: "- Priority email to core devs\n- Advance release notifications\n- Knowledge base access",
-    link_label: "Professional.new.inquire!",
-    link_url: "/services#professional",
-    featured: false,
-    custom: false
+  <%= render Columns.new(
+    css_class: "opening__layout"
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false,
+        size: "large"
+      ) do %>
+require 'headius/enterprise_support'
+      <% end %>
+
+      <%= render Heading.new(
+        text: "We wrote the runtime.",
+        level: 1
+      ) %>
+
+      <%= render MarkdownBlock.new(
+        css_class: "opening__subheading"
+      ) do %>
+We'll make sure **yours keeps running.**{:.hl}
+      <% end %>
+
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Dedicated JRuby support from the people who actually build it. Priority bug fixes, debugging, performance work, and profiling from the core developers.
+      <% end %>
+
+      <%= render Actions.new(
+        actions: [
+          {
+            label: "Headius::Support.plans",
+            url: "",
+            target: "packages",
+            style: "primary",
+            new_window: false
+          },
+          {
+            label: "Headius.contact!",
+            url: "",
+            target: "contact",
+            style: "ghost",
+            new_window: false
+          }
+        ]
+      ) %>
+    <% end %>
+
+    <%= render Image.new(
+      src: "/images/he-logo.svg",
+      alt: "Headius Enterprises",
+      css_class: "opening__logo"
+    ) %>
+  <% end %>
+<% end %>
+
+<%= render Section.new(
+  section_id: "pitch",
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+    css_class: ""
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render Heading.new(
+        text: "Your production issue is our priority",
+        level: 2
+      ) %>
+
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+Most support contracts connect you to someone who read the docs. Ours connects you to someone who *wrote the code*. When you hit a threading issue, a memory leak, or a performance wall in JRuby, we don't need to reproduce it and escalate — we already know where to look.
+      <% end %>
+
+      <%= render MarkdownBlock.new(
+        css_class: ""
+      ) do %>
+There is no tier-one support at Headius. There is no escalation path. You are already talking to the engineers. That's the whole point.
+      <% end %>
+
+      <%= render Image.new(
+        src: "/images/jruby-logo.svg",
+        alt: "JRuby",
+        css_class: "pitch__logo"
+      ) %>
+    <% end %>
+
+    <%= render Card.new(
+      variant: "terminal"
+    ) do %>
+      <%= render HTMLBlock.new(
+      ) do %>
+<div class="title">
+  <div class="controls">
+    <span></span><span></span><span></span>
+  </div>
+  <span>irb(headius)</span>
+</div>
+<pre class="pane"><code class="highlight"><span class="gp">irb&gt;</span> <span class="nv">ticket</span> = <span class="k">Headius::Support</span>.open(
+  <span class="ss">priority:</span> <span class="s">"high"</span>,
+  <span class="ss">issue:</span> <span class="s">"ThreadError: deadlock"</span>
+)
+<span class="go">=&gt; #&lt;Ticket id: 4271, status: :open&gt;</span>
+
+<span class="c"># four hours later</span>
+
+<span class="gp">irb&gt;</span> ticket.reload.status
+<span class="gi">=&gt; :fix_committed</span>
+<span class="gp">irb&gt;</span> ticket.resolution
+<span class="gi">=&gt; "jruby/jruby@a3f8c2d"</span>
+<span class="gp">irb&gt;</span> ticket.patch_release
+<span class="gi">=&gt; "Released"</span></code></pre>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Section.new(
+  section_id: "clients",
+  highlighted: false
+) do %>
+  <%= render CustomerQuote.new(
+    interval: 8000,
+    quotes: [
+      {
+        text: "JRuby has been integral to Poshmark's stack for over a decade and remains a cornerstone of scalability and innovation",
+        name: "Poshmark",
+        url: "https://poshmark.com/"
+      },
+      {
+        text: "[JRuby was] chosen to overcome MRI Ruby's lack of multithreading and to leverage the vast and mature ecosystem of Java",
+        name: "Logstash",
+        url: "https://www.elastic.co/logstash"
+      },
+      {
+        text: "The JRuby team has been amazingly responsive and helpful!",
+        name: "SubstituteAlert",
+        url: "https://www.subalert.com/"
+      }
+    ]
   ) %>
-  <%= render SupportPlan.new(
-    name: "Expert",
-    inheritance: "Professional",
-    body: "For teams that need faster answers and actual fixes.",
-    features: "- include Professional\n- Direct chat (text, video, audio)\n- 1 priority bug fix / month\n- Architecture guidance",
-    link_label: "Expert.new.inquire!",
-    link_url: "/services#expert",
-    featured: true,
-    custom: false
+<% end %>
+
+<%= render Section.new(
+  section_id: "packages",
+  highlighted: true
+) do %>
+  <%= render Heading.new(
+    text: "Support Packages",
+    level: 2
   ) %>
-  <%= render SupportPlan.new(
-    name: "Enterprise",
-    inheritance: "Expert",
-    body: "For organisations running JRuby at scale in production.",
-    features: "- include Expert\n- Unlimited priority bug fixes\n- Debugging & profiling sessions\n- Discounted consulting rates",
-    link_label: "Enterprise.new.inquire!",
-    link_url: "/services#enterprise",
-    featured: false,
-    custom: false
-  ) %>
-  <%= render SupportPlan.new(
-    name: "Custom",
-    inheritance: "Support",
-    body: "```ruby\ndef method_missing(name, *args, &block)\n  # None of the above quite fit?\n  # We'd rather build the right thing than sell you the wrong tier.\n  # Tell us what you need — we'll figure it out together.\n  super unless Headius.can_help?(name)\nend\n```",
-    features: "",
-    link_label: "Headius.contact!",
-    link_url: "/#contact",
-    featured: false,
-    custom: true
-  ) %>
+
+  <%= render MarkdownBlock.new(
+    css_class: ""
+  ) do %>
+Pick a tier. Or keep reading for something a little more bespoke.
+  <% end %>
+
+  <%= render Grid.new(
+    columns: 3,
+    css_class: "grid"
+  ) do %>
+    <%= render SupportPlan.new(
+      name: "Professional",
+      inheritance: "Support",
+      body: "For teams getting started or running smaller deployments.",
+      features: "- Priority email to core devs\n- Advance release notifications\n- Knowledge base access",
+      link_label: "Professional.new.inquire!",
+      link_url: "/services#professional",
+      featured: false
+    ) %>
+
+    <%= render SupportPlan.new(
+      name: "Expert",
+      inheritance: "Professional",
+      body: "For teams that need faster answers and actual fixes.",
+      features: "- include Professional\n- Direct chat (text, video, audio)\n- 1 priority bug fix / month\n- Architecture guidance",
+      link_label: "Expert.new.inquire!",
+      link_url: "/services#expert",
+      featured: true
+    ) %>
+
+    <%= render SupportPlan.new(
+      name: "Enterprise",
+      inheritance: "Expert",
+      body: "For organisations running JRuby at scale in production.",
+      features: "- include Expert\n- Unlimited priority bug fixes\n- Debugging & profiling sessions\n- Discounted consulting rates",
+      link_label: "Enterprise.new.inquire!",
+      link_url: "/services#enterprise",
+      featured: false
+    ) %>
+
+    <%= render Card.new(
+      variant: "custom"
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false,
+        size: "large"
+      ) do %>
+def method_missing(name, *args, &block)
+  # None of the above quite fit?
+  # We'd rather build the right thing than sell you the wrong tier.
+  # Tell us what you need — we'll figure it out together.
+  super unless Headius.can_help?(name)
+end
+      <% end %>
+
+      <%= render Actions.new(
+        actions: [
+          {
+            label: "Headius.contact!",
+            url: "/#contact",
+            target: "",
+            style: "ghost",
+            new_window: false
+          }
+        ]
+      ) %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <%= render Section.new(
@@ -105,6 +238,7 @@ image: /images/he-logo.svg
   highlighted: false
 ) do %>
   <%= render Columns.new(
+    css_class: ""
   ) do %>
     <%= render Column.new(
     ) do %>
@@ -112,11 +246,13 @@ image: /images/he-logo.svg
         text: "Let's Talk",
         level: 2
       ) %>
+
       <%= render MarkdownBlock.new(
         css_class: ""
       ) do %>
 Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks on a Friday? Whatever your situation, we'd like to hear about it. We're not going to hard-sell you — if we can help, we'll tell you how. If we can't, we'll tell you that too.
       <% end %>
+
       <%= render LabeledList.new(
         items: [
           {
@@ -134,7 +270,9 @@ Evaluating JRuby? Migrating to it? Already running it and hoping nothing breaks 
         ]
       ) %>
     <% end %>
+
     <%= render ContactForm.new(
+      variant: "standard"
     ) %>
   <% end %>
 <% end %>

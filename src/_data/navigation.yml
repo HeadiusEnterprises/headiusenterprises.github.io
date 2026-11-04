@@ -1,0 +1,63 @@
+links:
+  services:
+    label: Services
+    url: /services/
+  about:
+    label: About
+    url: /about/
+  resources:
+    label: Resources
+    url: /resources/
+  blog:
+    label: Blog
+    url: /blog/
+  contact:
+    label: Contact
+    url: /contact/
+  services_overview:
+    label: Overview
+    url: /services
+  professional:
+    label: Professional
+    url: /services#professional
+  expert:
+    label: Expert
+    url: /services#expert
+  enterprise:
+    label: Enterprise
+    url: /services#enterprise
+  jruby:
+    label: JRuby.org
+    url: https://jruby.org
+  wiki:
+    label: Wiki
+    url: https://github.com/jruby/jruby/wiki
+  getting_started:
+    label: Getting Started
+    url: https://github.com/jruby/jruby/wiki/GettingStarted
+  talks_and_articles:
+    label: Talks & articles
+    url: /resources
+
+menus:
+  header:
+    - services
+    - about
+    - resources
+    - blog
+    - contact
+  footer:
+    support:
+      - services_overview
+      - professional
+      - expert
+      - enterprise
+    company:
+      - about
+      - contact
+      - jruby
+    resources:
+      - blog
+      - wiki
+      - getting_started
+      - talks_and_articles

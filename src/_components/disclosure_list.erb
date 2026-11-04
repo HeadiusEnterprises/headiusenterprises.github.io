@@ -1,0 +1,8 @@
+<div class="disclosures">
+  <% @items.each do |item| %>
+    <details>
+      <summary><%= item[:summary] %></summary>
+      <%= markdownify item[:body] %>
+    </details>
+  <% end %>
+</div>

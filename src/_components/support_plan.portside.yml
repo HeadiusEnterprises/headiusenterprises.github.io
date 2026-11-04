@@ -15,5 +15,3 @@ fields:
     type: url
   featured:
     type: boolean
-  custom:
-    type: boolean

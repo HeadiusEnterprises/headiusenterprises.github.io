@@ -5,7 +5,7 @@ fields:
     label: Section ID
     type: text
   require_path:
-    label: Required library
+    label: Require
     type: text
   heading:
     type: text

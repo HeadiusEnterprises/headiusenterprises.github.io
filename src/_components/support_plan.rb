@@ -1,5 +1,5 @@
 class SupportPlan < Bridgetown::Component
-  def initialize(name:, inheritance:, body:, features:, link_label:, link_url:, featured: false, custom: false)
+  def initialize(name:, inheritance:, body:, features:, link_label:, link_url:, featured: false)
     @name = name
     @inheritance = inheritance
     @body = body
@@ -7,6 +7,5 @@ class SupportPlan < Bridgetown::Component
     @link_label = link_label
     @link_url = link_url
     @featured = featured
-    @custom = custom
   end
 end

@@ -3,9 +3,21 @@ layout: default
 title: Privacy Policy
 ---
 
-<%= render PrivacySection.new(
-  updated: "April 2026"
+<%= render Section.new(
+  section_id: "privacy",
+  highlighted: false
 ) do %>
+  <%= render Heading.new(
+    text: "Privacy Policy",
+    level: 1
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+**Last updated:** April 2026
+{: .updated}
+  <% end %>
+  <%= render MarkdownBlock.new(
+  ) do %>
 Headius Enterprises ("we", "us", "our") operates the website headius.com. This policy describes what personal data we collect, how we use it, and what rights you have regarding that data.
 
 ## What We Collect
@@ -71,4 +83,5 @@ If we make changes to this policy, we will update the date at the top of this pa
 
 Headius Enterprises<br>
 [support@headius.com](mailto:support@headius.com)
+  <% end %>
 <% end %>

@@ -7,12 +7,12 @@
     <% end %>
   </head>
   <body>
-    <%= render "navbar", metadata: site.metadata %>
+    <%= render "navbar", navigation: site.data.navigation %>
 
     <main>
       <%= yield %>
     </main>
 
-    <%= render "footer", metadata: site.metadata %>
+    <%= render "footer", navigation: site.data.navigation %>
   </body>
 </html>

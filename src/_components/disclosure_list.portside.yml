@@ -1,0 +1,12 @@
+type: DisclosureList
+label: Disclosure List
+description: Expandable summaries with formatted details
+fields:
+  items:
+    type: list
+    layout: vertical
+    fields:
+      summary:
+        type: text
+      body:
+        type: markdown

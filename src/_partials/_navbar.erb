@@ -5,8 +5,9 @@
       <span></span><span></span><span></span>
     </button>
     <ul>
-      <% %w[services about resources blog contact].each do |page| %>
-        <li><a href="<%= relative_url "/#{page}/" %>"<%= raw(' aria-current="page"') if resource.relative_url.start_with?("/#{page}") %>><%= page %></a></li>
+      <% navigation.menus.header.each do |id| %>
+        <% link = navigation.links[id] %>
+        <li><a href="<%= relative_url link.url %>"<%= raw(' aria-current="page"') if resource.relative_url.start_with?(link.url.delete_suffix("/")) %>><%= link.label %></a></li>
       <% end %>
     </ul>
     <div id="theme-switcher">

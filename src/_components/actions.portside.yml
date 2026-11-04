@@ -1,0 +1,19 @@
+type: Actions
+label: Actions
+fields:
+  actions:
+    type: list
+    fields:
+      label:
+        type: text
+      url:
+        type: url
+      target:
+        label: Scroll target
+        type: text
+      style:
+        type: select
+        options: [primary, ghost]
+      new_window:
+        label: Open in new window
+        type: boolean

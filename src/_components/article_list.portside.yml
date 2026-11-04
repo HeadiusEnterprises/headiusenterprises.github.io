@@ -1,0 +1,14 @@
+type: ArticleList
+label: Article List
+fields:
+  articles:
+    type: list
+    fields:
+      title:
+        type: text
+      url:
+        type: url
+      date:
+        type: text
+      body:
+        type: markdown

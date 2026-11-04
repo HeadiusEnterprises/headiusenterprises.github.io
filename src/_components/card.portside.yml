@@ -1,5 +1,10 @@
 type: Card
 label: Card
 children:
-  accepts: [CodeBlock, MarkdownBlock]
+  accepts: [Actions, CodeBlock, HTMLBlock, MarkdownBlock]
   layout: vertical
+fields:
+  variant:
+    type: select
+    options: [plain, featured, terminal, grid, custom]
+    default: plain

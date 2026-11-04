@@ -10,125 +10,343 @@ title: JRuby Support Services
   body: "Every tier connects you directly to the engineers who build JRuby. No ticket queues, no call centres, no escalation paths to nowhere. The only difference is how much of our time you need."
 ) %>
 
-<%= render ServiceTier.new(
+<%= render Section.new(
   section_id: "professional",
-  code: "class Professional < Support\n  # For teams getting started with JRuby\n  # or running smaller deployments that\n  # need a safety net.",
-  heading: "Professional Support",
-  body: "A direct line to the people who write the runtime. When something doesn't behave the way you expect, you email us and someone who actually knows the answer responds. Not a junior support rep reading from a script — a core JRuby developer.\n\nYou also get advance notice of every release before it lands, including security patches, breaking changes, and new features. No surprises on a Friday afternoon.",
-  pricing: "pricing:\n  monthly:  \"$99/mo\"\n  yearly:   \"$995/yr\"  # save 16%",
-  features: "- Priority email to core JRuby developers\n- Advance release notifications\n- Up to 5 team members",
-  highlighted: true,
-  featured: false,
-  actions: [
-    {
-      label: "Professional.subscribe(:yearly)",
-      url: "https://buy.stripe.com/fZe014gtE5Ng1nG4gg",
-      style: "primary"
-    },
-    {
-      label: "Professional.subscribe(:monthly)",
-      url: "https://buy.stripe.com/00g4hkcdo0sW2rKaEF",
-      style: "ghost"
-    }
-  ]
-) %>
+  highlighted: true
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+class Professional < Support
+  # For teams getting started with JRuby
+  # or running smaller deployments that
+  # need a safety net.
+      <% end %>
+      <%= render Heading.new(
+        text: "Professional Support",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+A direct line to the people who write the runtime. When something doesn't behave the way you expect, you email us and someone who actually knows the answer responds. Not a junior support rep reading from a script — a core JRuby developer.
 
-<%= render ServiceTier.new(
+You also get advance notice of every release before it lands, including security patches, breaking changes, and new features. No surprises on a Friday afternoon.
+      <% end %>
+    <% end %>
+    <%= render Card.new(
+      variant: "plain"
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "yaml"
+      ) do %>
+pricing:
+  monthly:  "$99/mo"
+  yearly:   "$995/yr"  # save 16%
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+---
+- Priority email to core JRuby developers
+- Advance release notifications
+- Up to 5 team members
+      <% end %>
+      <%= render Actions.new(
+        actions: [
+          {
+            label: "Professional.subscribe(:yearly)",
+            url: "https://buy.stripe.com/fZe014gtE5Ng1nG4gg",
+            target: "",
+            style: "primary",
+            new_window: true
+          },
+          {
+            label: "Professional.subscribe(:monthly)",
+            url: "https://buy.stripe.com/00g4hkcdo0sW2rKaEF",
+            target: "",
+            style: "ghost",
+            new_window: true
+          }
+        ]
+      ) %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Section.new(
   section_id: "expert",
-  code: "class Expert < Professional\n  # For teams that need faster answers, real-\n  # time conversations, and actual fixes\n  # not workarounds.",
-  heading: "Expert Support",
-  body: "Everything in Professional, plus direct chat with core developers — text, video, or audio, whatever works for your team. Sometimes you need to share a screen and point at the thing that's broken. Up to one hour of live support per month is included.\n\nYou also get one priority bug fix per month. Not \"we'll look into it\" — an actual fix, committed by the person you're talking to. Your issue goes to the front of the queue, and a patch release follows.\n\n**Note: Expert service is billed on a bi-monthly basis (two months at a time) or yearly.**",
-  pricing: "pricing:\n  bimonthly: \"$2,999/2mo\"\n  yearly:    \"$16,499/yr\"  # 1 month free",
-  features: "- include Professional\n- Live chat — text, video, audio\n- 1 hour live support / month\n- 1 priority bug fix / month\n- Architecture guidance",
-  highlighted: false,
-  featured: true,
-  actions: [
-    {
-      label: "Expert.subscribe(:yearly)",
-      url: "https://buy.stripe.com/9AQ29celw1x0fewbIK",
-      style: "primary"
-    },
-    {
-      label: "Expert.subscribe(:bimonthly)",
-      url: "https://buy.stripe.com/5kQ9ATf8LeKS6vp4JNeIw04",
-      style: "ghost"
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+class Expert < Professional
+  # For teams that need faster answers, real-
+  # time conversations, and actual fixes
+  # not workarounds.
+      <% end %>
+      <%= render Heading.new(
+        text: "Expert Support",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Everything in Professional, plus direct chat with core developers — text, video, or audio, whatever works for your team. Sometimes you need to share a screen and point at the thing that's broken. Up to one hour of live support per month is included.
 
-<%= render ServiceTier.new(
+You also get one priority bug fix per month. Not "we'll look into it" — an actual fix, committed by the person you're talking to. Your issue goes to the front of the queue, and a patch release follows.
+
+**Note: Expert service is billed on a bi-monthly basis (two months at a time) or yearly.**
+      <% end %>
+    <% end %>
+    <%= render Card.new(
+      variant: "featured"
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "yaml"
+      ) do %>
+pricing:
+  bimonthly: "$2,999/2mo"
+  yearly:    "$16,499/yr"  # 1 month free
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+---
+- include Professional
+- Live chat — text, video, audio
+- 1 hour live support / month
+- 1 priority bug fix / month
+- Architecture guidance
+      <% end %>
+      <%= render Actions.new(
+        actions: [
+          {
+            label: "Expert.subscribe(:yearly)",
+            url: "https://buy.stripe.com/9AQ29celw1x0fewbIK",
+            target: "",
+            style: "primary",
+            new_window: true
+          },
+          {
+            label: "Expert.subscribe(:bimonthly)",
+            url: "https://buy.stripe.com/5kQ9ATf8LeKS6vp4JNeIw04",
+            target: "",
+            style: "ghost",
+            new_window: true
+          }
+        ]
+      ) %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Section.new(
   section_id: "enterprise",
-  code: "class Enterprise < Expert\n  # For organisations running JRuby at scale\n  # in production where downtime has\n  # real consequences.",
-  heading: "Enterprise Support",
-  body: "Everything in Expert, without the limits. Unlimited priority bug fixes, as many live support hours as your team needs, and debugging and profiling assistance from developers with twenty years of muscle memory for tracking down threading bugs, memory leaks, and performance bottlenecks.\n\nYou also get discounted consulting rates for larger engagements — migration planning, architecture reviews, performance audits, or ongoing advisory work. Think of it as having a core JRuby developer on retainer.",
-  pricing: "# Tailored to your deployment and needs.\n# Inquire about a complimentary estimate.\npricing:\n  plan: \"custom\"",
-  features: "- include Expert\n- Unlimited priority bug fixes\n- Unlimited live support hours\n- Debugging & profiling sessions\n- Discounted consulting rates",
-  highlighted: true,
-  featured: false,
-  actions: [
-    {
-      label: "Enterprise.new.inquire!",
-      url: "/contact",
-      style: "primary"
-    }
-  ]
-) %>
+  highlighted: true
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+class Enterprise < Expert
+  # For organisations running JRuby at scale
+  # in production where downtime has
+  # real consequences.
+      <% end %>
+      <%= render Heading.new(
+        text: "Enterprise Support",
+        level: 2
+      ) %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Everything in Expert, without the limits. Unlimited priority bug fixes, as many live support hours as your team needs, and debugging and profiling assistance from developers with twenty years of muscle memory for tracking down threading bugs, memory leaks, and performance bottlenecks.
 
-<%= render FeatureGrid.new(
+You also get discounted consulting rates for larger engagements — migration planning, architecture reviews, performance audits, or ongoing advisory work. Think of it as having a core JRuby developer on retainer.
+      <% end %>
+    <% end %>
+    <%= render Card.new(
+      variant: "plain"
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "yaml"
+      ) do %>
+# Tailored to your deployment and needs.
+# Inquire about a complimentary estimate.
+pricing:
+  plan: "custom"
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+---
+- include Expert
+- Unlimited priority bug fixes
+- Unlimited live support hours
+- Debugging & profiling sessions
+- Discounted consulting rates
+      <% end %>
+      <%= render Actions.new(
+        actions: [
+          {
+            label: "Enterprise.new.inquire!",
+            url: "/contact",
+            target: "",
+            style: "primary",
+            new_window: true
+          }
+        ]
+      ) %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render Section.new(
   section_id: "included",
-  eyebrow: "# == Headius::Support\n# What each service actually means.",
-  heading: "What You're Getting",
-  features: [
-    {
-      code: "def email_support(subj:, body:)",
-      body: "A direct inbox read by the people who write JRuby. Not a ticketing system, not a chatbot — an actual person who can commit a fix the same day they read your message. All tiers."
-    },
-    {
-      code: "def release_notify(changelog:)",
-      body: "Advance notice of upcoming JRuby releases, security patches, and breaking changes before they're public. Enough lead time to test against your application and plan your rollout. All tiers."
-    },
-    {
-      code: "def chat_support(medium: :any)",
-      body: "Real-time conversations via text, video, or screen share with a core developer. Scheduled when it works for your team. Expert includes 1 hour/month; Enterprise is unlimited."
-    },
-    {
-      code: "def priority_bugfix!(issue:)",
-      body: "Your bug goes to the front of the queue. The fix is committed by the person you reported it to, and a patch release follows. Expert gets 1/month; Enterprise gets unlimited."
-    },
-    {
-      code: "def debug_and_profile(deep: true)",
-      body: "Hands-on debugging and profiling assistance from developers who've spent two decades inside the JVM. Threading issues, memory leaks, GC tuning — we've seen it before. Enterprise only."
-    },
-    {
-      code: "def consulting(scope: :flexible)",
-      body: "Migration planning, architecture reviews, performance audits, or just an experienced set of eyes on your JRuby deployment. Enterprise subscribers receive discounted hourly rates."
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Support
+# What each service actually means.
+  <% end %>
+  <%= render Heading.new(
+    text: "What You're Getting",
+    level: 2
+  ) %>
+  <%= render Grid.new(
+    columns: 2,
+    css_class: "card grid"
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def email_support(subj:, body:)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+A direct inbox read by the people who write JRuby. Not a ticketing system, not a chatbot — an actual person who can commit a fix the same day they read your message. All tiers.
+      <% end %>
+    <% end %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def release_notify(changelog:)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Advance notice of upcoming JRuby releases, security patches, and breaking changes before they're public. Enough lead time to test against your application and plan your rollout. All tiers.
+      <% end %>
+    <% end %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def chat_support(medium: :any)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Real-time conversations via text, video, or screen share with a core developer. Scheduled when it works for your team. Expert includes 1 hour/month; Enterprise is unlimited.
+      <% end %>
+    <% end %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def priority_bugfix!(issue:)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Your bug goes to the front of the queue. The fix is committed by the person you reported it to, and a patch release follows. Expert gets 1/month; Enterprise gets unlimited.
+      <% end %>
+    <% end %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def debug_and_profile(deep: true)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Hands-on debugging and profiling assistance from developers who've spent two decades inside the JVM. Threading issues, memory leaks, GC tuning — we've seen it before. Enterprise only.
+      <% end %>
+    <% end %>
+    <%= render Column.new(
+    ) do %>
+      <%= render CodeBlock.new(
+        language: "ruby",
+        framed: false
+      ) do %>
+def consulting(scope: :flexible)
+      <% end %>
+      <%= render MarkdownBlock.new(
+      ) do %>
+Migration planning, architecture reviews, performance audits, or just an experienced set of eyes on your JRuby deployment. Enterprise subscribers receive discounted hourly rates.
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
-<%= render TermsSection.new(
+<%= render Section.new(
   section_id: "terms",
-  eyebrow: "# == Headius::Support::Terms\n# The fine print, kept readable.",
-  heading: "Terms",
-  terms: [
-    {
-      heading: "Billing & Cancellation",
-      body: "All subscriptions are billed through Stripe. You can upgrade, downgrade, or cancel at the end of your current billing period. Yearly plans are non-refundable once the billing period has started. If you have questions about billing for your current subscription of Support, please access your billing information at [this link](https://billing.stripe.com/p/login/3cs17H29JgmQ8q4288)."
-    },
-    {
-      heading: "Team Size",
-      body: "Professional and Expert plans include up to 5 named email contacts. If your team is larger, contact us — we'll work something out."
-    },
-    {
-      heading: "NDAs",
-      body: "We're happy to work under NDA. Subscriptions requiring an NDA will incur a one-time NDA Servicing Fee, billed separately."
-    },
-    {
-      heading: "Enterprise Pricing",
-      body: "Enterprise support is customised to your deployment. Pricing may be based on developer hours, CPU units, or other resources depending on your needs. Contact us for a complimentary needs analysis and estimate."
-    }
-  ]
-) %>
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Support::Terms
+# The fine print, kept readable.
+  <% end %>
+  <%= render Heading.new(
+    text: "Terms",
+    level: 2
+  ) %>
+  <%= render DisclosureList.new(
+    items: [
+      {
+        summary: "Billing & Cancellation",
+        body: "All subscriptions are billed through Stripe. You can upgrade, downgrade, or cancel at the end of your current billing period. Yearly plans are non-refundable once the billing period has started. If you have questions about billing for your current subscription of Support, please access your billing information at [this link](https://billing.stripe.com/p/login/3cs17H29JgmQ8q4288)."
+      },
+      {
+        summary: "Team Size",
+        body: "Professional and Expert plans include up to 5 named email contacts. If your team is larger, contact us — we'll work something out."
+      },
+      {
+        summary: "NDAs",
+        body: "We're happy to work under NDA. Subscriptions requiring an NDA will incur a one-time NDA Servicing Fee, billed separately."
+      },
+      {
+        summary: "Enterprise Pricing",
+        body: "Enterprise support is customised to your deployment. Pricing may be based on developer hours, CPU units, or other resources depending on your needs. Contact us for a complimentary needs analysis and estimate."
+      }
+    ]
+  ) %>
+<% end %>
 
 <%= render Section.new(
   section_id: "contact",

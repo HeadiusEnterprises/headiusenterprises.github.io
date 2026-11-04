@@ -1,8 +1,0 @@
-type: PrivacySection
-label: Privacy Policy
-content: body
-fields:
-  updated:
-    type: text
-  body:
-    type: markdown

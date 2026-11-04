@@ -1,1 +1,1 @@
-<div class="two-col"><%= content %></div>
+<div class="<%= ["two-col", @css_class].compact.reject(&:empty?).join(" ") %>"><%= content %></div>

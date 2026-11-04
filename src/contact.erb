@@ -10,44 +10,54 @@ title: Contact
   body: "Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference — we'd love to hear from you."
 ) %>
 
-<%= render ContactPageSection.new(
-  heading: "",
-  body: "Tell us your requirements and learn more about JRuby Support.",
-  details: [
-    {
-      label: "email",
-      value: "support@headius.com",
-      url: "mailto:support@headius.com"
-    },
-    {
-      label: "x",
-      value: "@HeadiusEnts",
-      url: "https://x.com/HeadiusEnts"
-    },
-    {
-      label: "linkedin",
-      value: "Headius",
-      url: "https://www.linkedin.com/company/headius/"
-    },
-    {
-      label: "facebook",
-      value: "Headius",
-      url: "https://www.facebook.com/profile.php?id=61587960190805"
-    },
-    {
-      label: "bluesky",
-      value: "@jrubyproject",
-      url: "https://bsky.app/profile/jrubyproject.bsky.social"
-    },
-    {
-      label: "github",
-      value: "jruby",
-      url: "https://github.com/jruby/"
-    },
-    {
-      label: "web",
-      value: "JRuby.org",
-      url: "https://jruby.org"
-    }
-  ]
-) %>
+<%= render Section.new(
+  section_id: "contact-details",
+  highlighted: true
+) do %>
+  <%= render Columns.new(
+  ) do %>
+    <%= render Column.new(
+    ) do %>
+      <%= render MarkdownBlock.new(
+        css_class: "contact-details__intro"
+      ) do %>
+Tell us your requirements and learn more about JRuby Support.
+      <% end %>
+      <%= render LabeledList.new(
+        items: [
+          {
+            label: "email",
+            body: "[support@headius.com](mailto:support@headius.com){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "x",
+            body: "[@HeadiusEnts](https://x.com/HeadiusEnts){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "linkedin",
+            body: "[Headius](https://www.linkedin.com/company/headius/){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "facebook",
+            body: "[Headius](https://www.facebook.com/profile.php?id=61587960190805){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "bluesky",
+            body: "[@jrubyproject](https://bsky.app/profile/jrubyproject.bsky.social){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "github",
+            body: "[jruby](https://github.com/jruby/){:target=\"_blank\" rel=\"noopener\"}"
+          },
+          {
+            label: "web",
+            body: "[JRuby.org](https://jruby.org){:target=\"_blank\" rel=\"noopener\"}"
+          }
+        ]
+      ) %>
+    <% end %>
+    <%= render ContactForm.new(
+      variant: "full"
+    ) %>
+  <% end %>
+<% end %>

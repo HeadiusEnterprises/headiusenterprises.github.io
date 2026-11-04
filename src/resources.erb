@@ -10,11 +10,23 @@ title: Resources
   body: "Twenty years of JRuby means twenty years of documentation, blog posts, conference talks, and hard-won knowledge. Here's where to find it."
 ) %>
 
-<%= render ArticleGrid.new(
+<%= render Section.new(
   section_id: "blog",
-  eyebrow: "# == Headius::Blog\n# Recent writing from the people who build JRuby.",
-  heading: "From the Blog",
-  articles: [
+  highlighted: true
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Blog
+# Recent writing from the people who build JRuby.
+  <% end %>
+  <%= render Heading.new(
+    text: "From the Blog",
+    level: 2
+  ) %>
+  <%= render ArticleList.new(
+    articles: [
     {
       title: "JRuby and Leyden: Even Better Startup",
       url: "https://blog.headius.com/2025/09/jruby-jdk25-startup-time-follow-up.html",
@@ -51,17 +63,36 @@ title: Resources
       date: "September 2024",
       body: "Coordinated Restore at Checkpoint — snapshotting a warm JVM to eliminate startup overhead entirely."
     }
-  ],
-  note: "Read more on the [Headius blog](/blog), or browse the full archive at [blog.headius.com](https://blog.headius.com)."
-) %>
+    ]
+  ) %>
+  <%= render MarkdownBlock.new(
+    css_class: "resources-more"
+  ) do %>
+Read more on the [Headius blog](/blog), or browse the full archive at [blog.headius.com](https://blog.headius.com).
+  <% end %>
+<% end %>
 
-<%= render ListSection.new(
+<%= render Section.new(
   section_id: "java-interop",
-  eyebrow: "# == Headius::JavaInterop\n# The whole point of JRuby, really.",
-  heading: "Java Integration",
-  intro: "JRuby runs on the JVM, which means full access to the entire Java ecosystem from Ruby. No FFI, no shelling out, no serialisation boundaries — just direct method calls.",
-  highlighted: false,
-  items: [
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::JavaInterop
+# The whole point of JRuby, really.
+  <% end %>
+  <%= render Heading.new(
+    text: "Java Integration",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+JRuby runs on the JVM, which means full access to the entire Java ecosystem from Ruby. No FFI, no shelling out, no serialisation boundaries — just direct method calls.
+  <% end %>
+  <%= render LabeledList.new(
+    items: [
     {
       label: "guide",
       body: "[Calling Java from JRuby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby) — the essential reference for importing and using Java classes"
@@ -82,18 +113,31 @@ title: Resources
       label: "blog",
       body: "[Charts with JRuby and JFreeChart](https://blog.headius.com/2025/04/beautiful-charts-with-jruby-and-jfreechart.html) — a practical example of Java library integration"
     }
-  ],
-  note: "",
-  note_class: ""
-) %>
+    ]
+  ) %>
+<% end %>
 
-<%= render ListSection.new(
+<%= render Section.new(
   section_id: "deployment",
-  eyebrow: "# == Headius::Deploy\n# Ship Ruby apps on Java infrastructure.",
-  heading: "Deployment & Packaging",
-  intro: "JRuby applications can be packaged as standard JAR or WAR files and deployed to any Java application server. Your ops team doesn't need to learn Ruby infrastructure — it's just another JVM artifact.",
-  highlighted: true,
-  items: [
+  highlighted: true
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Deploy
+# Ship Ruby apps on Java infrastructure.
+  <% end %>
+  <%= render Heading.new(
+    text: "Deployment & Packaging",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+JRuby applications can be packaged as standard JAR or WAR files and deployed to any Java application server. Your ops team doesn't need to learn Ruby infrastructure — it's just another JVM artifact.
+  <% end %>
+  <%= render LabeledList.new(
+    items: [
     {
       label: "tool",
       body: "[Warbler](https://github.com/jruby/warbler) — package Ruby applications as executable JAR or deployable WAR files"
@@ -110,18 +154,31 @@ title: Resources
       label: "guide",
       body: "[Application Servers](https://github.com/jruby/jruby/wiki/Servers) — Puma, Tomcat, and other server options for JRuby"
     }
-  ],
-  note: "",
-  note_class: ""
-) %>
+    ]
+  ) %>
+<% end %>
 
-<%= render ListSection.new(
+<%= render Section.new(
   section_id: "performance",
-  eyebrow: "# == Headius::Performance\n# Making it fast, then making it faster.",
-  heading: "Performance & Tuning",
-  intro: "JRuby benefits from decades of JVM optimisation work — JIT compilation, garbage collection tuning, and real threading. These resources cover how to get the most out of it.",
-  highlighted: false,
-  items: [
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Performance
+# Making it fast, then making it faster.
+  <% end %>
+  <%= render Heading.new(
+    text: "Performance & Tuning",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+JRuby benefits from decades of JVM optimisation work — JIT compilation, garbage collection tuning, and real threading. These resources cover how to get the most out of it.
+  <% end %>
+  <%= render LabeledList.new(
+    items: [
     {
       label: "guide",
       body: "[Performance Tuning](https://github.com/jruby/jruby/wiki/PerformanceTuning) — JVM flags, memory settings, and JRuby-specific options"
@@ -134,18 +191,27 @@ title: Resources
       label: "guide",
       body: "[Concurrency in JRuby](https://github.com/jruby/jruby/wiki/Concurrency-in-jruby) — real threads, no GIL — how to take advantage of it"
     }
-  ],
-  note: "",
-  note_class: ""
-) %>
+    ]
+  ) %>
+<% end %>
 
-<%= render ListSection.new(
+<%= render Section.new(
   section_id: "getting-started",
-  eyebrow: "# == Headius::GettingStarted\n# Everything you need to begin.",
-  heading: "Getting Started",
-  intro: "",
-  highlighted: true,
-  items: [
+  highlighted: true
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::GettingStarted
+# Everything you need to begin.
+  <% end %>
+  <%= render Heading.new(
+    text: "Getting Started",
+    level: 2
+  ) %>
+  <%= render LabeledList.new(
+    items: [
     {
       label: "home",
       body: "[JRuby.org](https://www.jruby.org/) — downloads, news, and the official starting point"
@@ -170,18 +236,31 @@ title: Resources
       label: "community",
       body: "[Community](https://www.jruby.org/community) — mailing lists, chat, and how to get involved"
     }
-  ],
-  note: "",
-  note_class: ""
-) %>
+    ]
+  ) %>
+<% end %>
 
-<%= render PageVideoGallery.new(
+<%= render Section.new(
   section_id: "talks-resources",
-  eyebrow: "# == Headius::Talks\n# Prefer video? We've done a few.",
-  heading: "Talks & Presentations",
-  intro: "Charles has given dozens of talks at Java and Ruby conferences worldwide. The JRuby wiki has an [older list of presentations](https://github.com/jruby/jruby/wiki/JRubyPresentations) — here are some more recent ones.",
-  highlighted: false,
-  videos: [
+  highlighted: false
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Talks
+# Prefer video? We've done a few.
+  <% end %>
+  <%= render Heading.new(
+    text: "Talks & Presentations",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+Charles has given dozens of talks at Java and Ruby conferences worldwide. The JRuby wiki has an [older list of presentations](https://github.com/jruby/jruby/wiki/JRubyPresentations) — here are some more recent ones.
+  <% end %>
+  <%= render VideoList.new(
+    videos: [
     {
       title: "JRuby: Do More with Ruby",
       video_url: "https://www.youtube.com/watch?v=10nArtB3LvA",
@@ -200,25 +279,45 @@ title: Resources
       embed_url: "https://www.youtube-nocookie.com/embed/OwEDqtlBg04",
       background: "/images/yt_scaling_ruby_with_jruby.jpg"
     }
-  ]
-) %>
+    ]
+  ) %>
+<% end %>
 
-<%= render CallToActionSection.new(
+<%= render Section.new(
   section_id: "resources-cta",
-  eyebrow: "# == Headius::Support\n# When the docs aren't enough.",
-  heading: "Need More Than Documentation?",
-  body: "Resources are great until you're staring at a production issue at 2am. Our [support packages](/services) connect you directly to the people who write JRuby — no ticket queues, no escalation paths.",
-  highlighted: true,
-  actions: [
-    {
-      label: "Headius::Support.plans",
-      url: "/services",
-      style: "primary"
-    },
-    {
-      label: "Headius.contact!",
-      url: "/contact",
-      style: "ghost"
-    }
-  ]
-) %>
+  highlighted: true
+) do %>
+  <%= render CodeBlock.new(
+    language: "ruby",
+    framed: false
+  ) do %>
+# == Headius::Support
+# When the docs aren't enough.
+  <% end %>
+  <%= render Heading.new(
+    text: "Need More Than Documentation?",
+    level: 2
+  ) %>
+  <%= render MarkdownBlock.new(
+  ) do %>
+Resources are great until you're staring at a production issue at 2am. Our [support packages](/services) connect you directly to the people who write JRuby — no ticket queues, no escalation paths.
+  <% end %>
+  <%= render Actions.new(
+    actions: [
+      {
+        label: "Headius::Support.plans",
+        url: "/services",
+        target: "",
+        style: "primary",
+        new_window: false
+      },
+      {
+        label: "Headius.contact!",
+        url: "/contact",
+        target: "",
+        style: "ghost",
+        new_window: false
+      }
+    ]
+  ) %>
+<% end %>

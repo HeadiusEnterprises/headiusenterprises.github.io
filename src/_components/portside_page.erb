@@ -1,7 +1,0 @@
-<% components.each do |definition| %>
-  <%= render component_for(definition) do %>
-    <% if definition["children"]&.any? %>
-      <%= render PortsidePage.new(components: definition["children"]) %>
-    <% end %>
-  <% end %>
-<% end %>
