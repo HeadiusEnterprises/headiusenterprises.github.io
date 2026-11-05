@@ -1,6 +1,11 @@
 <nav class="highlight">
   <div class="container">
-    <a href="<%= relative_url '/' %>" class="brand">headius<span class="sep">\</span>enterprises</a>
+    <% home = navigation.links[navigation.menus.home] %>
+    <% if home %>
+      <a href="<%= relative_url home.url %>" class="brand" aria-label="<%= home.label %>">headius<span class="sep">\</span>enterprises</a>
+    <% else %>
+      <span class="brand">headius<span class="sep">\</span>enterprises</span>
+    <% end %>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.closest('nav').querySelector('ul').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>

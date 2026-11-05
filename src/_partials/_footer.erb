@@ -36,8 +36,11 @@
       <span>&copy; 2024&ndash;2026 Headius Enterprises.<br>&nbsp;&nbsp;All rights reserved.</span>
       <span class="metal">\m/</span>
       <span>
-        <a href="<%= relative_url '/privacy' %>">Privacy</a>
-        <a href="<%= relative_url '/services#terms' %>">Terms</a>
+        <% navigation.menus.legal.each do |id| %>
+          <% link = navigation.links[id] %>
+          <% external = !link.url.start_with?("/") %>
+          <a href="<%= external ? link.url : relative_url(link.url) %>"<%= raw(' target="_blank" rel="noopener"') if external %>><%= link.label %></a>
+        <% end %>
       </span>
     </div>
     <div class="fw">

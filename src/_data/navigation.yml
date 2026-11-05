@@ -1,4 +1,7 @@
 links:
+  home:
+    label: Home
+    url: /
   services:
     label: Services
     url: /services/
@@ -38,8 +41,15 @@ links:
   talks_and_articles:
     label: Talks & articles
     url: /resources
+  privacy:
+    label: Privacy
+    url: /privacy
+  terms:
+    label: Terms
+    url: /services#terms
 
 menus:
+  home: home
   header:
     - services
     - about
@@ -61,3 +71,6 @@ menus:
       - wiki
       - getting_started
       - talks_and_articles
+  legal:
+    - privacy
+    - terms

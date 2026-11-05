@@ -2,12 +2,11 @@
 layout: default
 title: Contact
 ---
-
 <%= render PageIntro.new(
   section_id: "contact-intro",
   require_path: "headius/contact",
   heading: "Get In Touch",
-  body: "Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference — we'd love to hear from you."
+  body: "Whether you want to talk about JRuby support, have us speak at your event, or just want to say hello at a conference \u2014 we'd love to hear from you."
 ) %>
 
 <%= render Section.new(
@@ -15,6 +14,7 @@ title: Contact
   highlighted: true
 ) do %>
   <%= render Columns.new(
+    css_class: ""
   ) do %>
     <%= render Column.new(
     ) do %>
@@ -23,6 +23,7 @@ title: Contact
       ) do %>
 Tell us your requirements and learn more about JRuby Support.
       <% end %>
+
       <%= render LabeledList.new(
         items: [
           {
@@ -31,23 +32,23 @@ Tell us your requirements and learn more about JRuby Support.
           },
           {
             label: "x",
-            body: "[@HeadiusEnts](https://x.com/HeadiusEnts){:target=\"_blank\" rel=\"noopener\"}"
+            body: "[@HeadiusEnts](https://x.com/HeadiusEnts){:.social-link .social-link--x target=\"_blank\" rel=\"noopener\"}"
           },
           {
             label: "linkedin",
-            body: "[Headius](https://www.linkedin.com/company/headius/){:target=\"_blank\" rel=\"noopener\"}"
+            body: "[Headius](https://www.linkedin.com/company/headius/){:.social-link .social-link--linkedin target=\"_blank\" rel=\"noopener\"}"
           },
           {
             label: "facebook",
-            body: "[Headius](https://www.facebook.com/profile.php?id=61587960190805){:target=\"_blank\" rel=\"noopener\"}"
+            body: "[Headius](https://www.facebook.com/profile.php?id=61587960190805){:.social-link .social-link--facebook target=\"_blank\" rel=\"noopener\"}"
           },
           {
             label: "bluesky",
-            body: "[@jrubyproject](https://bsky.app/profile/jrubyproject.bsky.social){:target=\"_blank\" rel=\"noopener\"}"
+            body: "[@jrubyproject](https://bsky.app/profile/jrubyproject.bsky.social){:.social-link .social-link--bluesky target=\"_blank\" rel=\"noopener\"}"
           },
           {
             label: "github",
-            body: "[jruby](https://github.com/jruby/){:target=\"_blank\" rel=\"noopener\"}"
+            body: "[jruby](https://github.com/jruby/){:.social-link .social-link--github target=\"_blank\" rel=\"noopener\"}"
           },
           {
             label: "web",
@@ -56,6 +57,7 @@ Tell us your requirements and learn more about JRuby Support.
         ]
       ) %>
     <% end %>
+
     <%= render ContactForm.new(
       variant: "full"
     ) %>
