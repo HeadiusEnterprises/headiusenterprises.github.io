@@ -1,0 +1,8 @@
+<%= render ListTable.new do %>
+  <% @items.each do |item| %>
+    <li>
+      <span class="label"><%= item[:label] %></span>
+      <span><%= raw markdownify(item[:body]).sub(/\A<p>/, "").sub(/<\/p>\s*\z/, "") %></span>
+    </li>
+  <% end %>
+<% end %>

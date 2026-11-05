@@ -1,17 +1,18 @@
 ---
 layout: post
-title: "Non-null variable declaration in Java using instanceof patterns"
-date: "2025-12-04"
+title: Non-null variable declaration in Java using instanceof patterns
+date: '2025-12-04'
 author: Charles Oliver Nutter
 published: true
-
 canonical_url: https://blog.headius.com/2025/12/inline-null-check-with-instanceof.html
-permalink: /blog/inline-null-check-with-instanceof/
+permalink: "/blog/inline-null-check-with-instanceof/"
 reddit_embed:
   url: https://www.reddit.com/r/java/comments/1pdv016/nullchecking_the_fun_way_with_instanceof_patterns/
   title: Null-checking the fun way with instanceof patterns
   height: 500
 ---
+<%= render MarkdownBlock.new(
+) do %>
 Ever since [JRuby 10 upgraded to Java 21](https://blog.jruby.org/2025/04/jruby-10-part-1-whats-new), I've been re-learning Java with all the excellent language enhancements of the past decade. One of my favorites has to be the `instanceof` [pattern matching features](https://openjdk.org/jeps/394) added in Java 16. Today I also realized I can use an `instanceof` pattern to null-check and assign a variable at the same time.
 
 ## Using instanceof to null-check
@@ -115,3 +116,4 @@ So with the performance question out of the way, only one remains:
 What do you think?
 
 ## Join the discussion on r/java!
+<% end %>

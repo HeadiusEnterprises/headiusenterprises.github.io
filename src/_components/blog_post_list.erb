@@ -1,0 +1,12 @@
+<section class="highlight" id="blog-list">
+  <div class="container">
+    <ul class="post-list">
+      <% view_context.collections.posts.resources.sort_by { |post| post.data.date }.reverse.each do |post| %>
+        <li>
+          <time datetime="<%= post.data.date.strftime("%Y-%m-%d") %>"><%= post.data.date.strftime("%B %-d, %Y") %></time>
+          <h3><a href="<%= relative_url(post.relative_url) %>"><%= post.data.title %></a></h3>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

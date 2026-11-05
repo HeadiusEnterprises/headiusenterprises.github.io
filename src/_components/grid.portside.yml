@@ -1,0 +1,11 @@
+type: Grid
+label: Grid
+children:
+  layout: horizontal
+fields:
+  columns:
+    type: number
+    default: 3
+  css_class:
+    label: CSS class
+    type: text

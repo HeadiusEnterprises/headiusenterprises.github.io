@@ -23,6 +23,10 @@
   margin-bottom: 1rem;
 }
 
+.contact-details__intro {
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 900px) {
   #contact-intro hgroup h1 {
     font-size: 1.6rem;

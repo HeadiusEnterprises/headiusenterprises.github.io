@@ -7,32 +7,19 @@
           JRuby runtime support from the core developers who built it. We wrote the code. We fix the bugs. We answer the phone.
         </p>
       </div>
-      <nav aria-label="Support">
-        <strong>Support</strong>
-        <ul>
-          <li><a href="<%= relative_url '/services' %>">Overview</a></li>
-          <li><a href="<%= relative_url '/services#professional' %>">Professional</a></li>
-          <li><a href="<%= relative_url '/services#expert' %>">Expert</a></li>
-          <li><a href="<%= relative_url '/services#enterprise' %>">Enterprise</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Company">
-        <strong>Company</strong>
-        <ul>
-          <li><a href="<%= relative_url '/about' %>">About</a></li>
-          <li><a href="<%= relative_url '/contact' %>">Contact</a></li>
-          <li><a href="https://jruby.org" target="_blank" rel="noopener">JRuby.org</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Resources">
-        <strong>Resources</strong>
-        <ul>
-          <li><a href="<%= relative_url '/blog' %>">Blog</a></li>
-          <li><a href="https://github.com/jruby/jruby/wiki" target="_blank" rel="noopener">Wiki</a></li>
-          <li><a href="https://github.com/jruby/jruby/wiki/GettingStarted" target="_blank" rel="noopener">Getting Started</a></li>
-          <li><a href="<%= relative_url '/resources' %>">Talks & articles</a></li>
-        </ul>
-      </nav>
+      <% navigation.menus.footer.each do |group, ids| %>
+        <% label = group.to_s.tr("_-", " ").split.map(&:capitalize).join(" ") %>
+        <nav aria-label="<%= label %>">
+          <strong><%= label %></strong>
+          <ul>
+            <% ids.each do |id| %>
+              <% link = navigation.links[id] %>
+              <% external = !link.url.start_with?("/") %>
+              <li><a href="<%= external ? link.url : relative_url(link.url) %>"<%= raw(' target="_blank" rel="noopener"') if external %>><%= link.label %></a></li>
+            <% end %>
+          </ul>
+        </nav>
+      <% end %>
       <nav aria-label="Social">
         <strong>Social</strong>
         <ul>
@@ -49,8 +36,11 @@
       <span>&copy; 2024&ndash;2026 Headius Enterprises.<br>&nbsp;&nbsp;All rights reserved.</span>
       <span class="metal">\m/</span>
       <span>
-        <a href="<%= relative_url '/privacy' %>">Privacy</a>
-        <a href="<%= relative_url '/services#terms' %>">Terms</a>
+        <% navigation.menus.legal.each do |id| %>
+          <% link = navigation.links[id] %>
+          <% external = !link.url.start_with?("/") %>
+          <a href="<%= external ? link.url : relative_url(link.url) %>"<%= raw(' target="_blank" rel="noopener"') if external %>><%= link.label %></a>
+        <% end %>
       </span>
     </div>
     <div class="fw">

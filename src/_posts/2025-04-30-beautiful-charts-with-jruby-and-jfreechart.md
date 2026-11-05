@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "Creating Beautiful Charts with JRuby and JFreeChart"
-date: "2025-04-30"
+title: Creating Beautiful Charts with JRuby and JFreeChart
+date: '2025-04-30'
 author: Charles Oliver Nutter
 published: true
 canonical_url: https://blog.headius.com/2025/04/beautiful-charts-with-jruby-and-jfreechart.html
-permalink: /blog/beautiful-charts-with-jruby-and-jfreechart/
+permalink: "/blog/beautiful-charts-with-jruby-and-jfreechart/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 I recently returned from [RubyKaigi](https://rubykaigi.org/2025/) where I had the opportunity to sit down with members of the Japanese Ruby community and show them a little bit of JRuby. One of the items that came up a few times was the difficulty of utilizing external libraries from Ruby: if it's a C library, typically you have to either write a C extension or do the extra work of writing up an FFI binding.
 
 If the library is not implemented in C or Ruby, things get even weirder.
@@ -248,3 +250,4 @@ JFreeChart is just one charting library out of many in the Java ecosystem, and t
 Ruby faces many challenges these days, and we're solving them one at a time with JRuby and the JVM. I hope you will experiment with JRuby yourself and create something beautiful!
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/ruby/comments/1kbqh5l/creating_beautiful_charts_with_jruby_and/)
+<% end %>

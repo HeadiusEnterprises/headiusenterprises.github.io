@@ -1,0 +1,17 @@
+type: VideoList
+label: Video List
+fields:
+  videos:
+    type: list
+    fields:
+      title:
+        type: text
+      video_url:
+        label: Video link
+        type: url
+      embed_url:
+        label: Embed link
+        type: url
+      background:
+        label: Background image
+        type: image

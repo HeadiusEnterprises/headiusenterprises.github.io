@@ -1,0 +1,13 @@
+type: PageIntro
+label: Page Introduction
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  require_path:
+    label: Require
+    type: text
+  heading:
+    type: text
+  body:
+    type: markdown

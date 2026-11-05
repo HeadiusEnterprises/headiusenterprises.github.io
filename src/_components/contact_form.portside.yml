@@ -1,0 +1,7 @@
+type: ContactForm
+label: Contact Form
+fields:
+  variant:
+    type: select
+    options: [standard, full]
+    default: standard

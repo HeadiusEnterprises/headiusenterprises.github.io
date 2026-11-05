@@ -1,12 +1,14 @@
 ---
 layout: post
-title: "JRuby 10, Part 1: What's New"
-date: "2025-04-09"
+title: 'JRuby 10, Part 1: What''s New'
+date: '2025-04-09'
 author: Charles Oliver Nutter
 published: true
 canonical_url: https://blog.headius.com/2025/04/jruby-10-part-one-whats-new.html
-permalink: /blog/jruby-10-part-one-whats-new/
+permalink: "/blog/jruby-10-part-one-whats-new/"
 ---
+<%= render MarkdownBlock.new(
+) do %>
 I am very excited to introduce you to JRuby 10, our biggest leap forward since "JRuby 9000" was released almost a decade ago.
 
 With up-to-date Ruby compatibility, support for modern JVM features, and a big cleanup of internal code and external APIs, we believe this is our most important release ever. This article will provide a first look at these improvements and help you get started on your JRuby 10 journey.
@@ -233,3 +235,4 @@ Over the coming weeks, I'll publish more detailed posts on each of these areas t
 Ruby's future depends on projects like JRuby and creative developers like you. Let's show them what we can do!
 
 ## [Join the discussion on Reddit!](https://www.reddit.com/r/ruby/comments/1jv91vy/jruby_10_part_1_whats_new/)
+<% end %>

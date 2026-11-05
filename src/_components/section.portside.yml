@@ -1,0 +1,10 @@
+type: Section
+label: Section
+children:
+  layout: vertical
+fields:
+  section_id:
+    label: Section ID
+    type: text
+  highlighted:
+    type: boolean

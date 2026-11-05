@@ -1,0 +1,17 @@
+.code-block--small pre.highlight {
+  font-size: 0.7rem;
+}
+
+.code-block--medium pre.highlight {
+  font-size: 0.8rem;
+}
+
+.code-block--large pre.highlight {
+  font-size: 1rem;
+}
+
+.code-block--unframed pre.highlight {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}

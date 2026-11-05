@@ -1,0 +1,12 @@
+type: Image
+label: Image
+fields:
+  src:
+    label: Image
+    type: image
+  alt:
+    label: Alternative text
+    type: text
+  css_class:
+    label: CSS class
+    type: text

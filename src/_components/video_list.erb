@@ -1,0 +1,11 @@
+<div class="talks-grid">
+  <% @videos.each do |video| %>
+    <%= render ConsentEmbed.new(
+      provider: "YouTube",
+      title: video[:title],
+      link_url: video[:video_url],
+      embed_url: video[:embed_url],
+      background: video[:background]
+    ) %>
+  <% end %>
+</div>

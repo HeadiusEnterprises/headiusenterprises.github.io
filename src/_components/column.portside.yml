@@ -1,0 +1,4 @@
+type: Column
+label: Column
+children:
+  layout: vertical

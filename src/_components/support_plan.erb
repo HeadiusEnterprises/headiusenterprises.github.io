@@ -1,0 +1,7 @@
+<%= render Card.new(variant: (@featured ? "featured" : nil)) do %>
+  <pre><code class="highlight smaller"><span class="k">class</span> <span class="nc"><%= @name %></span> <span class="no">&lt; <%= @inheritance %></span></code></pre>
+  <%= markdownify @body %>
+  <hr>
+  <%= markdownify @features %>
+  <a class="cta" href="<%= url_for @link_url %>"><%= @link_label %></a>
+<% end %>

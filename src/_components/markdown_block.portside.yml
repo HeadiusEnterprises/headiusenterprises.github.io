@@ -1,0 +1,9 @@
+type: MarkdownBlock
+label: Markdown
+content: body
+fields:
+  css_class:
+    label: CSS class
+    type: text
+  body:
+    type: markdown

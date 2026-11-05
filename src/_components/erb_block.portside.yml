@@ -1,0 +1,6 @@
+type: ErbBlock
+label: ERB (trusted)
+content: erb
+fields:
+  erb:
+    type: markdown

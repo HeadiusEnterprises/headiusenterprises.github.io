@@ -1,0 +1,10 @@
+<div class="actions">
+  <% @actions.each do |action| %>
+    <% classes = ["button", ("ghost" if action[:style] == "ghost")].compact.join(" ") %>
+    <% if action[:target].to_s.empty? %>
+      <a href="<%= url_for action[:url] %>" class="<%= classes %>"<% if action[:new_window] %> target="_blank" rel="noopener"<% end %>><%= action[:label] %></a>
+    <% else %>
+      <button class="<%= classes %>" data-scroll-to="<%= action[:target] %>"><%= action[:label] %></button>
+    <% end %>
+  <% end %>
+</div>

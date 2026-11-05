@@ -1,0 +1,16 @@
+type: CodeBlock
+label: Code
+content: code
+fields:
+  language:
+    type: text
+    default: plaintext
+  framed:
+    type: boolean
+    default: true
+  size:
+    type: select
+    options: [small, medium, large]
+    default: medium
+  code:
+    type: markdown

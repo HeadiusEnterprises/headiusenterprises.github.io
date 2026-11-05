@@ -1,0 +1,17 @@
+type: SupportPlan
+label: Support Plan
+fields:
+  name:
+    type: text
+  inheritance:
+    type: text
+  body:
+    type: markdown
+  features:
+    type: markdown
+  link_label:
+    type: text
+  link_url:
+    type: url
+  featured:
+    type: boolean

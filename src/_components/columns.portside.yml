@@ -1,0 +1,8 @@
+type: Columns
+label: Columns
+children:
+  layout: horizontal
+fields:
+  css_class:
+    label: CSS class
+    type: text

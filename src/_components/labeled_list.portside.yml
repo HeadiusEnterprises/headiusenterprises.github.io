@@ -1,0 +1,10 @@
+type: LabeledList
+label: Labeled List
+fields:
+  items:
+    type: list
+    fields:
+      label:
+        type: text
+      body:
+        type: markdown
